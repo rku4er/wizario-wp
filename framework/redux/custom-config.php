@@ -221,6 +221,7 @@
                 </div>
 
                 <?php
+
                 $item_info = ob_get_contents();
 
                 ob_end_clean();
@@ -237,12 +238,30 @@
                 // ACTUAL DECLARATION OF SECTIONS
                 $this->sections[] = array(
                     'title'  => __( 'Home Settings', 'redux-framework-demo' ),
-                    'desc'   => __( 'Redux Framework was created with the developer in mind. It allows for any theme developer to have an advanced theme panel with most of the features a developer would need. For more information check out the Github repo at: <a href="https://github.com/ReduxFramework/Redux-Framework">https://github.com/ReduxFramework/Redux-Framework</a>', 'redux-framework-demo' ),
+                    'desc'   => __( 'Description Lorem Ipsum', 'redux-framework-demo' ),
                     'icon'   => 'el-icon-home',
                     // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                     'fields' => array(
 
                         array(
+                            'title'       => __( 'Color: Custom', 'shoestrap' ),
+                            'desc'        => __( 'Select your custom color.' ),
+                            'id'          => 'color_custom',
+                            'default'     => '#428bca',
+                            'compiler'    => true,
+                            'transparent' => false,
+                            'type'        => 'color'
+                        ),
+
+                        array(
+                            'id'       => 'opt-raw_info',
+                            'type'     => 'info',
+                            //'required' => array( '18', 'equals', array( '1', '2' ) ),
+                            'raw_html' => true,
+                            'desc'     => $sampleHTML,
+                        ),
+
+                        /*array(
                             'id'       => 'opt-web-fonts',
                             'type'     => 'media',
                             'title'    => __( 'Web Fonts', 'redux-framework-demo' ),
@@ -542,15 +561,15 @@
                                 'font-size'   => '33px',
                                 'line-height' => '40px'
                             ),
-                        ),
+                        ),*/
                     ),
                 );
 
-                $this->sections[] = array(
+                /*$this->sections[] = array(
                     'type' => 'divide',
-                );
+                );*/
 
-                $this->sections[] = array(
+                /*$this->sections[] = array(
                     'icon'   => 'el-icon-cogs',
                     'title'  => __( 'General Settings', 'redux-framework-demo' ),
                     'fields' => array(
@@ -606,30 +625,30 @@
                             'theme'    => 'monokai',
                             'desc'     => 'Possible modes can be found at <a href="http://ace.c9.io" target="_blank">http://ace.c9.io/</a>.',
                             'default'  => "#header{\nmargin: 0 auto;\n}"
-                        ),
+                        ),*/
                         /*
-                    array(
-                        'id'        => 'opt-ace-editor-js',
-                        'type'      => 'ace_editor',
-                        'title'     => __('JS Code', 'redux-framework-demo'),
-                        'subtitle'  => __('Paste your JS code here.', 'redux-framework-demo'),
-                        'mode'      => 'javascript',
-                        'theme'     => 'chrome',
-                        'desc'      => 'Possible modes can be found at <a href="http://ace.c9.io" target="_blank">http://ace.c9.io/</a>.',
-                        'default'   => "jQuery(document).ready(function(){\n\n});"
-                    ),
-                    array(
-                        'id'        => 'opt-ace-editor-php',
-                        'type'      => 'ace_editor',
-                        'title'     => __('PHP Code', 'redux-framework-demo'),
-                        'subtitle'  => __('Paste your PHP code here.', 'redux-framework-demo'),
-                        'mode'      => 'php',
-                        'theme'     => 'chrome',
-                        'desc'      => 'Possible modes can be found at <a href="http://ace.c9.io" target="_blank">http://ace.c9.io/</a>.',
-                        'default'   => '<?php\nisset ( $redux ) ? true : false;\n?>'
-                    ),
-                    */
                         array(
+                            'id'        => 'opt-ace-editor-js',
+                            'type'      => 'ace_editor',
+                            'title'     => __('JS Code', 'redux-framework-demo'),
+                            'subtitle'  => __('Paste your JS code here.', 'redux-framework-demo'),
+                            'mode'      => 'javascript',
+                            'theme'     => 'chrome',
+                            'desc'      => 'Possible modes can be found at <a href="http://ace.c9.io" target="_blank">http://ace.c9.io/</a>.',
+                            'default'   => "jQuery(document).ready(function(){\n\n});"
+                        ),
+                        array(
+                            'id'        => 'opt-ace-editor-php',
+                            'type'      => 'ace_editor',
+                            'title'     => __('PHP Code', 'redux-framework-demo'),
+                            'subtitle'  => __('Paste your PHP code here.', 'redux-framework-demo'),
+                            'mode'      => 'php',
+                            'theme'     => 'chrome',
+                            'desc'      => 'Possible modes can be found at <a href="http://ace.c9.io" target="_blank">http://ace.c9.io/</a>.',
+                            'default'   => '<?php\nisset ( $redux ) ? true : false;\n?>'
+                        ),
+                    */
+                       /* array(
                             'id'       => 'opt-editor',
                             'type'     => 'editor',
                             'title'    => __( 'Footer Text', 'redux-framework-demo' ),
@@ -644,9 +663,9 @@
                             //'placeholder' => array('username' => 'Enter your Username')
                         )
                     )
-                );
+                );*/
 
-                $this->sections[] = array(
+                /*$this->sections[] = array(
                     'icon'       => 'el-icon-website',
                     'title'      => __( 'Styling Options', 'redux-framework-demo' ),
                     'subsection' => true,
@@ -807,7 +826,7 @@
                             'validate' => 'html',
                         ),
                     )
-                );
+                );*/
 
                 /**
                  *  Note here I used a 'heading' in the sections array construct
@@ -815,7 +834,7 @@
                  * instead of reusing the 'title' value.  This can be done on any
                  * section - kp
                  */
-                $this->sections[] = array(
+                /*$this->sections[] = array(
                     'icon'    => 'el-icon-bullhorn',
                     'title'   => __( 'Field Validation', 'redux-framework-demo' ),
                     'heading' => __( 'Validate ALL fields within Redux.', 'redux-framework-demo' ),
@@ -978,9 +997,9 @@
                             'validate' => 'js'
                         ),
                     )
-                );
+                );*/
 
-                $this->sections[] = array(
+                /*$this->sections[] = array(
                     'icon'   => 'el-icon-check',
                     'title'  => __( 'Radio/Checkbox Fields', 'redux-framework-demo' ),
                     'desc'   => __( '<p class="description">This is the Description. Again HTML is allowed</p>', 'redux-framework-demo' ),
@@ -1126,9 +1145,9 @@
                             )
                         ),
                     )
-                );
+                );*/
 
-                $this->sections[] = array(
+                /*$this->sections[] = array(
                     'icon'   => 'el-icon-list-alt',
                     'title'  => __( 'Select Fields', 'redux-framework-demo' ),
                     'desc'   => __( '<p class="description">This is the Description. Again HTML is allowed</p>', 'redux-framework-demo' ),
@@ -1318,9 +1337,9 @@
                             'desc'     => __( 'Here\'s a list of all the elusive icons by name and icon.', 'redux-framework-demo' ),
                         ),
                     )
-                );
+                );*/
 
-                $theme_info = '<div class="redux-framework-section-desc">';
+                /*$theme_info = '<div class="redux-framework-section-desc">';
                 $theme_info .= '<p class="redux-framework-theme-data description theme-uri">' . __( '<strong>Theme URL:</strong> ', 'redux-framework-demo' ) . '<a href="' . $this->theme->get( 'ThemeURI' ) . '" target="_blank">' . $this->theme->get( 'ThemeURI' ) . '</a></p>';
                 $theme_info .= '<p class="redux-framework-theme-data description theme-author">' . __( '<strong>Author:</strong> ', 'redux-framework-demo' ) . $this->theme->get( 'Author' ) . '</p>';
                 $theme_info .= '<p class="redux-framework-theme-data description theme-version">' . __( '<strong>Version:</strong> ', 'redux-framework-demo' ) . $this->theme->get( 'Version' ) . '</p>';
@@ -1329,9 +1348,9 @@
                 if ( ! empty( $tabs ) ) {
                     $theme_info .= '<p class="redux-framework-theme-data description theme-tags">' . __( '<strong>Tags:</strong> ', 'redux-framework-demo' ) . implode( ', ', $tabs ) . '</p>';
                 }
-                $theme_info .= '</div>';
+                $theme_info .= '</div>';*/
 
-                if ( file_exists( dirname( __FILE__ ) . '/../README.md' ) ) {
+                /*if ( file_exists( dirname( __FILE__ ) . '/README.md' ) ) {
                     $this->sections['theme_docs'] = array(
                         'icon'   => 'el-icon-list-alt',
                         'title'  => __( 'Documentation', 'redux-framework-demo' ),
@@ -1340,14 +1359,14 @@
                                 'id'       => '17',
                                 'type'     => 'raw',
                                 'markdown' => true,
-                                'content'  => file_get_contents( dirname( __FILE__ ) . '/../README.md' )
+                                'content'  => file_get_contents( dirname( __FILE__ ) . '/README.md' )
                             ),
                         ),
                     );
-                }
+                }*/
 
                 // You can append a new section at any time.
-                $this->sections[] = array(
+                /*$this->sections[] = array(
                     'icon'   => 'el-icon-eye-open',
                     'title'  => __( 'Additional Fields', 'redux-framework-demo' ),
                     'desc'   => __( '<p class="description">This is the Description. Again HTML is allowed</p>', 'redux-framework-demo' ),
@@ -1423,7 +1442,7 @@
                         array(
                             'id'       => 'opt-raw_info',
                             'type'     => 'info',
-                            'required' => array( '18', 'equals', array( '1', '2' ) ),
+                            //'required' => array( '18', 'equals', array( '1', '2' ) ),
                             'raw_html' => true,
                             'desc'     => $sampleHTML,
                         ),
@@ -1503,9 +1522,9 @@
                             'default'         => '2'
                         ),
                     )
-                );
+                );*/
 
-                $this->sections[] = array(
+                /*$this->sections[] = array(
                     'icon'            => 'el-icon-list-alt',
                     'title'           => __( 'Customizer Only', 'redux-framework-demo' ),
                     'desc'            => __( '<p class="description">This Section should be visible only in Customizer</p>', 'redux-framework-demo' ),
@@ -1527,9 +1546,9 @@
                             'default'         => '2'
                         ),
                     )
-                );
+                );*/
 
-                $this->sections[] = array(
+                /*$this->sections[] = array(
                     'title'  => __( 'Import / Export', 'redux-framework-demo' ),
                     'desc'   => __( 'Import and Export your Redux Framework settings from file, text or URL.', 'redux-framework-demo' ),
                     'icon'   => 'el-icon-refresh',
@@ -1542,13 +1561,13 @@
                             'full_width' => false,
                         ),
                     ),
-                );
+                );*/
 
-                $this->sections[] = array(
+                /*$this->sections[] = array(
                     'type' => 'divide',
-                );
+                );*/
 
-                $this->sections[] = array(
+                /*$this->sections[] = array(
                     'icon'   => 'el-icon-info-sign',
                     'title'  => __( 'Theme Information', 'redux-framework-demo' ),
                     'desc'   => __( '<p class="description">This is the Description. Again HTML is allowed</p>', 'redux-framework-demo' ),
@@ -1559,13 +1578,13 @@
                             'content' => $item_info,
                         )
                     ),
-                );
+                );*/
 
-                if ( file_exists( trailingslashit( dirname( __FILE__ ) ) . 'README.html' ) ) {
+                if ( file_exists( trailingslashit( dirname( __FILE__ ) ) . 'README.txt' ) ) {
                     $tabs['docs'] = array(
                         'icon'    => 'el-icon-book',
                         'title'   => __( 'Documentation', 'redux-framework-demo' ),
-                        'content' => nl2br( file_get_contents( trailingslashit( dirname( __FILE__ ) ) . 'README.html' ) )
+                        'content' => nl2br( file_get_contents( trailingslashit( dirname( __FILE__ ) ) . 'README.txt' ) )
                     );
                 }
             }
@@ -1599,7 +1618,7 @@
 
                 $this->args = array(
                     // TYPICAL -> Change these values as you need/desire
-                    'opt_name'             => 'redux_demo',
+                    'opt_name'             => 'redux_custom',
                     // This is where your data is stored in the database and also becomes your global variable name.
                     'display_name'         => $theme->get( 'Name' ),
                     // Name that appears at the top of your panel
@@ -1609,8 +1628,8 @@
                     //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
                     'allow_sub_menu'       => true,
                     // Show the sections below the admin menu item or not
-                    'menu_title'           => __( 'Sample Options', 'redux-framework-demo' ),
-                    'page_title'           => __( 'Sample Options', 'redux-framework-demo' ),
+                    'menu_title'           => __( 'Custom Options', 'redux-framework-demo' ),
+                    'page_title'           => __( 'Custom Options', 'redux-framework-demo' ),
                     // You will need to generate a Google API key to use this feature.
                     // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
                     'google_api_key'       => '',
@@ -1707,7 +1726,7 @@
                 );
 
                 // ADMIN BAR LINKS -> Setup custom links in the admin bar menu as external items.
-                $this->args['admin_bar_links'][] = array(
+                /*$this->args['admin_bar_links'][] = array(
                     'id'    => 'redux-docs',
                     'href'   => 'http://docs.reduxframework.com/',
                     'title' => __( 'Documentation', 'redux-framework-demo' ),
@@ -1723,10 +1742,10 @@
                     'id'    => 'redux-extensions',
                     'href'   => 'reduxframework.com/extensions',
                     'title' => __( 'Extensions', 'redux-framework-demo' ),
-                );
+                );*/
 
                 // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
-                $this->args['share_icons'][] = array(
+                /*$this->args['share_icons'][] = array(
                     'url'   => 'https://github.com/ReduxFramework/ReduxFramework',
                     'title' => 'Visit us on GitHub',
                     'icon'  => 'el-icon-github'
@@ -1746,7 +1765,7 @@
                     'url'   => 'http://www.linkedin.com/company/redux-framework',
                     'title' => 'Find us on LinkedIn',
                     'icon'  => 'el-icon-linkedin'
-                );
+                );*/
 
                 // Panel Intro text -> before the form
                 if ( ! isset( $this->args['global_variable'] ) || $this->args['global_variable'] !== false ) {

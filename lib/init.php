@@ -26,5 +26,3 @@ function shoestrap_setup() {
 	add_editor_style( '/assets/css/editor-style.css' );
 }
 add_action( 'after_setup_theme', 'shoestrap_setup' );
-
-FB::log($ss_settings);

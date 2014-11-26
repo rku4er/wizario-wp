@@ -64,8 +64,8 @@ require_once locate_template( '/lib/deprecated.php' );   // Deprecated functions
 if ( ! class_exists( 'ReduxFramework' ) ) {
 	require_once locate_template( '/lib/class-TGM_Plugin_Activation.php' ); // TGM_Plugin_Activation
 	require_once locate_template( '/lib/dependencies.php' );                // load our dependencies
-} elseif( file_exists( dirname(__FILE__) . '/framework/redux/sample-config.php' ) ){
-	require_once ( dirname(__FILE__) . '/framework/redux/sample-config.php' );
+} elseif ( file_exists( dirname( __FILE__ ) . '/framework/redux/custom-config.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/framework/redux/custom-config.php' );
 }
 
 // Setup our custom updater

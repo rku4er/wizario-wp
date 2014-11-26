@@ -161,3 +161,20 @@ add_action( 'wp', 'shoestrap_mp_wrap_div_toggler' );
 if ( ! isset( $content_width ) ) {
 	$content_width = 1140;
 }
+
+/**
+ *
+ *
+ */
+function shoestrap_set_custom_option() {
+	$redux_custom = get_option( 'redux_custom' );
+
+	?><style type="text/css">
+		body{
+			background-color: <?php echo $redux_custom[ 'color_custom' ] ?> !important;
+		}
+	</style><?php
+}
+
+add_action( 'wp_head', 'shoestrap_set_custom_option' );
+//add_filter( 'shoestrap_compiler', array( $this, 'styles_filter' ) );
