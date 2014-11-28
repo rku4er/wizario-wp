@@ -15,6 +15,10 @@ function shoestrap_footer_content() {
 		}
 	}
 
+	?>
+
+	<?php
+
 	// If sidebars exist, open row.
 	if ( $num_of_sidebars >= 0 ) {
 		echo $ss_framework->open_row( 'div' );
@@ -27,7 +31,7 @@ function shoestrap_footer_content() {
 		if ( is_active_sidebar( $sidebar ) ) {
 			// Setting each column width accordingly
 			$col_class = 12 / $num_of_sidebars;
-		
+
 			echo $ss_framework->open_col( 'div', array( 'medium' => $col_class ) );
 			dynamic_sidebar( $sidebar );
 			echo $ss_framework->close_col( 'div' );
@@ -43,5 +47,7 @@ function shoestrap_footer_content() {
 		echo $ss_framework->clearfix();
 	}
 
-	do_action( 'shoestrap_footer_html' );
+	?>
+
+	<?php
 }

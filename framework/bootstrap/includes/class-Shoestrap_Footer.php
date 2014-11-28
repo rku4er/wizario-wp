@@ -75,6 +75,16 @@ if( ! class_exists( 'Shoestrap_Footer' ) ) {
 				'before_title'  => $before_title,
 				'after_title'   => $after_title,
 			));
+
+			// Additional widget area for .widget-col-md class
+			register_sidebar( array(
+				'name'          => __( 'Footer Widget Area 5', 'shoestrap' ),
+				'id'            => 'sidebar-footer-5',
+				'before_widget' => '<section id="%1$s" class="' . $class . ' widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => $before_title,
+				'after_title'   => $after_title,
+			));
 		}
 
 		/**
