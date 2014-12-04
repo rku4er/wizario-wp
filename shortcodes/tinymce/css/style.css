@@ -1,0 +1,42 @@
+.clear { clear: both !important; display: block; margin:0; padding:0; }
+
+.shortcodes-dialog { font: normal 12px Arial; }
+.shortcodes-dialog .shortcode-attrs { clear: both; padding: 5px 15px; }
+
+.ui-dialog .shortcodes-dialog.ui-dialog-content { padding: 0; }
+
+
+.shortcodes-dialog .shortcodes-select,
+.shortcodes-dialog .shortcode-attrs .attrs_input .attrs_text { height: 26px; line-height: 26px; }
+
+.shortcodes-dialog .shortcodes-select,
+.shortcodes-dialog .shortcode-attrs > ul li { border-bottom:1px solid #aaa; padding:15px; margin: 0; overflow:hidden; }
+.shortcodes-dialog .shortcode-attrs > ul li:last-child { border-bottom:none; }
+.shortcodes-dialog .shortcode-attrs > ul { margin: 0; }
+
+.shortcodes-dialog ul.sub_attrs { border-bottom:3px solid #aaa; margin-bottom: 20px; padding: 0 15px; }
+.shortcodes-dialog .attrs_input .attrs_addbutton { float: right; margin-top: 10px;  }
+
+.shortcodes-dialog label { float: left; }
+.shortcodes-dialog .shortcodes-select label { font-weight: bold; }
+
+.shortcodes-dialog textarea { width: 100%; margin-top: 10px; }
+
+.shortcodes-dialog select { width: 300px; float:right; margin-left:0; }
+
+.shortcodes-dialog input.text { width: 300px; float: right; }
+.shortcodes-dialog input.text.color { width: 300px;  float: right; }
+
+.shortcodes-dialog .attrs_icons {  }
+.shortcodes-dialog .attrs_icons .icon-cat {  }
+.shortcodes-dialog .attrs_icons i { color: #c0c0c0; }
+.shortcodes-dialog .attrs_icons ul li:hover i { color: #000000; font-size: 15px; }
+.shortcodes-dialog .attrs_icons ul li.active i { color: #000000; }
+.shortcodes-dialog .attrs_icons ul { border-bottom:1px solid #aaa; margin-bottom: 10px; margin-top: 5px; padding: 10px; }
+.shortcodes-dialog .attrs_icons ul:last-child { border-bottom:none; }
+.shortcodes-dialog .attrs_icons ul li { width: 20px; height: 20px; border: none; padding: 1px; display: inline-block; cursor: pointer; text-align:center; }
+
+
+.shortcodes-dialog .img-uploader { float: right; text-align: right; width: 300px; line-height: 0px; }
+.shortcodes-dialog .img-uploader .image_delete { line-height: 10px; }
+.shortcodes-dialog .img-uploader img { margin: 10px 0; }

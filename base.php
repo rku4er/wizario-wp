@@ -1,5 +1,5 @@
 <?php ss_get_template_part( 'templates/head' ); ?>
-<body <?php body_class(); ?>>
+<body <?php body_class('noise'); ?> data-smooth-scrolling="1" data-responsive="1">
 <div class="main-holder">
 
 		<a href="#content" class="sr-only"><?php _e( 'Skip to main content', 'shoestrap' ); ?></a>
@@ -16,6 +16,12 @@
 		<?php ss_get_template_part( apply_filters( 'shoestrap_top_bar_template', 'templates/top-bar' ) ); ?>
 
 		<?php do_action( 'shoestrap_pre_wrap' ); ?>
+
+		<?php if(is_front_page()): ?>
+
+			<?php echo get_template_part( 'templates/content', 'front' ); ?>
+
+		<?php else: ?>
 
 		<?php echo $ss_framework->open_container( 'div', 'wrap-main-section', 'wrap main-section' ); ?>
 
@@ -54,6 +60,10 @@
 			</div><!-- /.content -->
 			<?php do_action( 'shoestrap_after_content' ); ?>
 		<?php echo $ss_framework->close_container( 'div' ); ?><!-- /.wrap -->
+
+		<?php endif; ?>
+
+
 		<?php
 
 		do_action( 'shoestrap_pre_footer' );

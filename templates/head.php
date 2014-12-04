@@ -5,6 +5,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><?php wp_title('|', true, 'right'); ?></title>
 	<?php wp_head(); ?>
+	<script type="text/javascript">
+        jQuery(window).load(function() {
+            jQuery('.flexslider').flexslider();
+        });
+    </script>
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/assets/js/vendor/html5shiv.js"></script>

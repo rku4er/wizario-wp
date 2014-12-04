@@ -185,7 +185,7 @@
 				handleAnimatedHeader();
 				handleChangeClass();
 				handleMegaHeader();
-				handlePreventEmptyLinks();
+				//handlePreventEmptyLinks();
 				handleRetina();
 			},
 

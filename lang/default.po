@@ -1,0 +1,2227 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Webuza\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-08 16:16+0300\n"
+"PO-Revision-Date: 2014-01-08 16:17+0300\n"
+"Last-Translator: Test <test@test.com>\n"
+"Language-Team:  <int21h@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../comments.php:33
+msgid "No Comments"
+msgstr ""
+
+#: ../comments.php:33
+msgid "One Comment "
+msgstr ""
+
+#: ../comments.php:33
+msgid "% Comments"
+msgstr ""
+
+#: ../comments.php:62
+msgid "Leave a Reply"
+msgstr ""
+
+#: ../comments.php:62
+msgid "Leave a comment to "
+msgstr ""
+
+#: ../comments.php:62
+msgid "Cancel reply"
+msgstr ""
+
+#: ../comments.php:65
+msgid "Your email address will not be published. Required fields are marked."
+msgstr ""
+
+#: ../comments.php:76
+msgid "Logged in as"
+msgstr ""
+
+#: ../comments.php:76
+msgid "Log out"
+msgstr ""
+
+#: ../comments.php:83
+msgid "Enter Your Name ..."
+msgstr ""
+
+#: ../comments.php:87
+msgid "Enter Your Mail ..."
+msgstr ""
+
+#: ../comments.php:91
+msgid "Your site ..."
+msgstr ""
+
+#: ../comments.php:98
+msgid "Comment ..."
+msgstr ""
+
+#: ../comments.php:101
+msgid "You may use these HTML tags and attributes: "
+msgstr ""
+
+#: ../page-portfolio.php:98
+msgid "All"
+msgstr ""
+
+#: ../page-single-portfolio.php:69
+msgid "Date:"
+msgstr ""
+
+#: ../page-single-portfolio.php:72
+msgid "Categories:"
+msgstr ""
+
+#: ../page-single-portfolio.php:76
+msgid "Client:"
+msgstr ""
+
+#: ../404.php:13
+msgid "Page not found."
+msgstr ""
+
+#: ../404.php:14
+msgid "Sorry, the post you are looking for is not available.<br />Maybe you want to perform a search?"
+msgstr ""
+
+#: ../404.php:15
+msgid "For best search results, mind the following suggestions:"
+msgstr ""
+
+#: ../404.php:16
+msgid "Always double check your spelling."
+msgstr ""
+
+#: ../404.php:17
+msgid "Try similar keywords, for example: tablet instead."
+msgstr ""
+
+#: ../404.php:18
+msgid "Try using more than one keyword."
+msgstr ""
+
+#: ../404.php:22
+msgid "Try search something"
+msgstr ""
+
+#: ../functions.php:17
+msgid "Header Menu"
+msgstr ""
+
+#: ../functions.php:18
+msgid "Extra Menu"
+msgstr ""
+
+#: ../functions.php:507
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../functions.php:513
+#, php-format
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr ""
+
+#: ../functions.php:513
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../functions.php:533
+#: ../functions.php:536
+msgid "Portfolio"
+msgstr ""
+
+#: ../functions.php:534
+msgid "Portfolio Item"
+msgstr ""
+
+#: ../functions.php:535
+msgid "Search Portfolio Items"
+msgstr ""
+
+#: ../functions.php:537
+msgid "Parent Portfolio Item"
+msgstr ""
+
+#: ../functions.php:538
+msgid "Edit Portfolio Item"
+msgstr ""
+
+#: ../functions.php:539
+msgid "Update Portfolio Item"
+msgstr ""
+
+#: ../functions.php:540
+msgid "Add New Portfolio Item"
+msgstr ""
+
+#: ../functions.php:551
+msgid "Project"
+msgstr ""
+
+#: ../functions.php:570
+#: ../functions.php:578
+msgid "Project Categories"
+msgstr ""
+
+#: ../functions.php:571
+msgid "Project Category"
+msgstr ""
+
+#: ../functions.php:572
+msgid "Search Project Categories"
+msgstr ""
+
+#: ../functions.php:573
+msgid "All Project Categories"
+msgstr ""
+
+#: ../functions.php:574
+msgid "Parent Project Category"
+msgstr ""
+
+#: ../functions.php:575
+msgid "Edit Project Category"
+msgstr ""
+
+#: ../functions.php:576
+msgid "Update Project Category"
+msgstr ""
+
+#: ../functions.php:577
+msgid "Add New Project Category"
+msgstr ""
+
+#: ../functions.php:592
+#: ../functions.php:601
+msgid "Project Attributes"
+msgstr ""
+
+#: ../functions.php:593
+msgid "Project Attribute"
+msgstr ""
+
+#: ../functions.php:594
+msgid "Search Project Attributes"
+msgstr ""
+
+#: ../functions.php:595
+msgid "All Project Attributes"
+msgstr ""
+
+#: ../functions.php:596
+msgid "Parent Project Attribute"
+msgstr ""
+
+#: ../functions.php:597
+msgid "Edit Project Attribute"
+msgstr ""
+
+#: ../functions.php:598
+msgid "Update Project Attribute"
+msgstr ""
+
+#: ../functions.php:599
+msgid "Add New Project Attribute"
+msgstr ""
+
+#: ../functions.php:600
+msgid "New Project Attribute"
+msgstr ""
+
+#: ../functions.php:774
+msgid "Slides"
+msgstr ""
+
+#: ../functions.php:775
+msgid "Slide"
+msgstr ""
+
+#: ../functions.php:776
+msgid "Search Slides"
+msgstr ""
+
+#: ../functions.php:777
+msgid "All Slides"
+msgstr ""
+
+#: ../functions.php:778
+msgid "Parent Slide"
+msgstr ""
+
+#: ../functions.php:779
+msgid "Edit Slide"
+msgstr ""
+
+#: ../functions.php:780
+msgid "Update Slide"
+msgstr ""
+
+#: ../functions.php:781
+msgid "Add New Slide"
+msgstr ""
+
+#: ../functions.php:782
+#: ../functions.php:787
+msgid "Home Slider"
+msgstr ""
+
+#: ../functions.php:1076
+msgid "Custom Sidebar"
+msgstr ""
+
+#: ../functions.php:1090
+msgid "Choose a sidebar to display"
+msgstr ""
+
+#: ../functions.php:1094
+msgid "default"
+msgstr ""
+
+#: ../functions.php:1155
+msgid "Password Protected"
+msgstr ""
+
+#: ../functions.php:1156
+msgid "Sorry content wath do you are wanted is protected. Input password, please."
+msgstr ""
+
+#: ../functions.php:1158
+msgid "Password..."
+msgstr ""
+
+#: ../functions.php:1175
+msgid "Wizard Full Width"
+msgstr ""
+
+#: ../functions.php:1175
+msgid "(Your prepared shortcode wizard to insert into this field.)"
+msgstr ""
+
+#: ../functions.php:1186
+msgid "Wizard ShortCode "
+msgstr ""
+
+#: ../footer.php:18
+msgid "Top"
+msgstr ""
+
+#: ../header.php:59
+msgid "Show Super Header"
+msgstr ""
+
+#: ../header.php:134
+msgid "Search.."
+msgstr ""
+
+#: ../search.php:17
+msgid "New Search Results visual"
+msgstr ""
+
+#: ../search.php:18
+msgid "If you are not happy with the results below please do another search"
+msgstr ""
+
+#: ../search.php:23
+#: ../searchform.php:2
+msgid "Search..."
+msgstr ""
+
+#: ../search.php:28
+msgid "search results for:"
+msgstr ""
+
+#: ../search.php:43
+msgid "by"
+msgstr ""
+
+#: ../search.php:53
+msgid "No results found"
+msgstr ""
+
+#: ../options/init.php:100
+msgid "Import Dummy Content: Posts, Pages, Categories"
+msgstr ""
+
+#: ../options/init.php:103
+msgid "Import Dummy Data"
+msgstr ""
+
+#: ../options/init.php:116
+msgid "Add sidebar"
+msgstr ""
+
+#: ../options/init.php:131
+msgid "Delete"
+msgstr ""
+
+#: ../options/init.php:132
+msgid "Loading"
+msgstr ""
+
+#: ../options/init.php:154
+#: ../options/init.php:177
+msgid "delete"
+msgstr ""
+
+#: ../options/init.php:163
+msgid "Add"
+msgstr ""
+
+#: ../options/templates/options.php:12
+#: ../shortcodes/tinymce/shortcodes.php:7
+msgid "Yes"
+msgstr ""
+
+#: ../options/templates/options.php:13
+#: ../shortcodes/tinymce/shortcodes.php:7
+msgid "No"
+msgstr ""
+
+#: ../options/templates/options.php:25
+msgid "General Settings"
+msgstr ""
+
+#: ../options/templates/options.php:27
+msgid "Welcome to the Webuza options panel! You can switch between option groups by using the left-hand tabs."
+msgstr ""
+
+#: ../options/templates/options.php:35
+msgid "Import dummy data"
+msgstr ""
+
+#: ../options/templates/options.php:37
+msgid "If you are new to wordpress or have problems creating posts or pages that look like the theme preview you can import dummy posts and pages here that will definitely help to understand how those tasks are done."
+msgstr ""
+
+#: ../options/templates/options.php:44
+msgid "Upload Logo"
+msgstr ""
+
+#: ../options/templates/options.php:52
+msgid "Upload Favicon"
+msgstr ""
+
+#: ../options/templates/options.php:55
+msgid "Specify a favicon for your site. Accepted formats: .ico, .png, .gif"
+msgstr ""
+
+#: ../options/templates/options.php:62
+msgid "Accent Color !!!!!!!!!"
+msgstr ""
+
+#: ../options/templates/options.php:63
+msgid "Change this color to alter the accent color globally for your site. If you're stuck, try one of the six pre-picked colors that are guaranteed to look awesome!"
+msgstr ""
+
+#: ../options/templates/options.php:71
+msgid "Back To Top Button"
+msgstr ""
+
+#: ../options/templates/options.php:72
+msgid "Toggle whether or not to enable a back to top button on your pages."
+msgstr ""
+
+#: ../options/templates/options.php:80
+msgid "Call to Action Text"
+msgstr ""
+
+#: ../options/templates/options.php:81
+msgid "Add the text that you would like to appear in the global call to action section."
+msgstr ""
+
+#: ../options/templates/options.php:91
+msgid "Your facebook page/group/account"
+msgstr ""
+
+#: ../options/templates/options.php:92
+msgid "Enter the url to your facebook page/group/account. If you leave this blank the facebook link in the head and footer of your site wont be displayed."
+msgstr ""
+
+#: ../options/templates/options.php:99
+msgid "Your twitter account"
+msgstr ""
+
+#: ../options/templates/options.php:100
+msgid "Enter your twitter account name. If you leave this blank the twitter link in the head and footer of your site wont be displayed."
+msgstr ""
+
+#: ../options/templates/options.php:107
+msgid "Your Google+ account"
+msgstr ""
+
+#: ../options/templates/options.php:108
+msgid "Enter your Google+ account name. If you leave this blank the Google+ link in the head and footer of your site wont be displayed."
+msgstr ""
+
+#: ../options/templates/options.php:115
+msgid "Your YouTube url"
+msgstr ""
+
+#: ../options/templates/options.php:116
+msgid "Enter the url to your YouTube account. If you leave this blank the YouTube link in the head and footer of your site wont be displayed."
+msgstr ""
+
+#: ../options/templates/options.php:123
+msgid "Your Vimeo url"
+msgstr ""
+
+#: ../options/templates/options.php:124
+msgid "Enter the url to your Vimeo account. If you leave this blank the Vimeo link in the head and footer of your site wont be displayed."
+msgstr ""
+
+#: ../options/templates/options.php:131
+msgid "Your LinkedIn url"
+msgstr ""
+
+#: ../options/templates/options.php:132
+msgid "Enter the url to your LinkedIn account. If you leave this blank the LinkedIn link in the head and footer of your site wont be displayed."
+msgstr ""
+
+#: ../options/templates/options.php:139
+msgid "Your Dribble url"
+msgstr ""
+
+#: ../options/templates/options.php:140
+msgid "Enter the url to your Vimeo account. If you leave this blank the Dribble link in the head and footer of your site wont be displayed."
+msgstr ""
+
+#: ../options/templates/options.php:147
+msgid "Your RSS url"
+msgstr ""
+
+#: ../options/templates/options.php:148
+msgid "Enter the RSS url. If you leave this blank the RSS link in the head and footer of your site wont be displayed."
+msgstr ""
+
+#: ../options/templates/options.php:157
+msgid "Google Analytics Tracking Code"
+msgstr ""
+
+#: ../options/templates/options.php:158
+msgid "Enter your Google analytics tracking Code here. It will automatically be added to the themes footer so google can track your visitors behaviour."
+msgstr ""
+
+#: ../options/templates/options.php:166
+msgid "Custom CSS"
+msgstr ""
+
+#: ../options/templates/options.php:167
+msgid "If you have any custom CSS you would like added to the site, please enter it here."
+msgstr ""
+
+#: ../options/templates/options.php:180
+msgid "Typography Options"
+msgstr ""
+
+#: ../options/templates/options.php:187
+msgid "Use Custom Fonts?"
+msgstr ""
+
+#: ../options/templates/options.php:188
+msgid "The Font heading utilizes google fonts and allows you to use a wide range of custom fonts for your headings."
+msgstr ""
+
+#: ../options/templates/options.php:197
+msgid "Body"
+msgstr ""
+
+#: ../options/templates/options.php:205
+msgid "Navigation & navigation Dropdown"
+msgstr ""
+
+#: ../options/templates/options.php:213
+msgid "Home Slider Caption"
+msgstr ""
+
+#: ../options/templates/options.php:221
+msgid "Standard Header"
+msgstr ""
+
+#: ../options/templates/options.php:229
+msgid "Sidebar, Carousel, Button & Footer Headers"
+msgstr ""
+
+#: ../options/templates/options.php:237
+msgid "Sub-headers & Team Member Names"
+msgstr ""
+
+#: ../options/templates/options.php:253
+msgid "Superheader options"
+msgstr ""
+
+#: ../options/templates/options.php:260
+msgid "Superheader"
+msgstr ""
+
+#: ../options/templates/options.php:261
+msgid "Check if you want to use superheader"
+msgstr ""
+
+#: ../options/templates/options.php:269
+msgid "Superheader Background Color"
+msgstr ""
+
+#: ../options/templates/options.php:270
+msgid "Change background color of superheader."
+msgstr ""
+
+#: ../options/templates/options.php:278
+msgid "Superheader Content"
+msgstr ""
+
+#: ../options/templates/options.php:279
+msgid "To use shortcodes you can create superheader that what you want. This can be advertising text, columns with contact information, etc."
+msgstr ""
+
+#: ../options/templates/options.php:287
+msgid "Hide Superheader"
+msgstr ""
+
+#: ../options/templates/options.php:288
+msgid "Option to hide superheader. If option is not checked then superheader will be shown above header."
+msgstr ""
+
+#: ../options/templates/options.php:302
+msgid "Portfolio Options"
+msgstr ""
+
+#: ../options/templates/options.php:309
+msgid "Main Layout"
+msgstr ""
+
+#: ../options/templates/options.php:310
+msgid "Please select the number of columns you would like for your portfolio."
+msgstr ""
+
+#: ../options/templates/options.php:313
+#: ../options/templates/options.php:542
+msgid "2 columns"
+msgstr ""
+
+#: ../options/templates/options.php:313
+#: ../options/templates/options.php:542
+msgid "3 columns"
+msgstr ""
+
+#: ../options/templates/options.php:313
+#: ../options/templates/options.php:542
+msgid "4 columns"
+msgstr ""
+
+#: ../options/templates/options.php:318
+msgid "Portfolio Page Layout"
+msgstr ""
+
+#: ../options/templates/options.php:319
+msgid "Choose the portfolio layout here. This will overwrite any individual page settings."
+msgstr ""
+
+#: ../options/templates/options.php:322
+msgid "No Sidebar"
+msgstr ""
+
+#: ../options/templates/options.php:322
+#: ../shortcodes/tinymce/shortcodes.php:244
+#: ../shortcodes/tinymce/shortcodes.php:290
+msgid "Right"
+msgstr ""
+
+#: ../options/templates/options.php:322
+msgid "left"
+msgstr ""
+
+#: ../options/templates/options.php:327
+msgid "Portfolio Posts Number"
+msgstr ""
+
+#: ../options/templates/options.php:328
+msgid "How many items should be displayed per page?"
+msgstr ""
+
+#: ../options/templates/options.php:331
+msgid "2 Posts"
+msgstr ""
+
+#: ../options/templates/options.php:331
+msgid "3 Posts"
+msgstr ""
+
+#: ../options/templates/options.php:331
+msgid "4 Posts"
+msgstr ""
+
+#: ../options/templates/options.php:331
+msgid "5 Posts"
+msgstr ""
+
+#: ../options/templates/options.php:331
+msgid "6 Posts"
+msgstr ""
+
+#: ../options/templates/options.php:331
+msgid "8 Posts"
+msgstr ""
+
+#: ../options/templates/options.php:331
+msgid "10 Posts"
+msgstr ""
+
+#: ../options/templates/options.php:331
+msgid "12 Posts"
+msgstr ""
+
+#: ../options/templates/options.php:331
+msgid "16 Posts"
+msgstr ""
+
+#: ../options/templates/options.php:338
+#: ../options/templates/options.php:455
+msgid "Facebook"
+msgstr ""
+
+#: ../options/templates/options.php:339
+#: ../options/templates/options.php:456
+msgid "Share it."
+msgstr ""
+
+#: ../options/templates/options.php:347
+#: ../options/templates/options.php:464
+msgid "Twitter"
+msgstr ""
+
+#: ../options/templates/options.php:348
+#: ../options/templates/options.php:465
+msgid "Tweet it."
+msgstr ""
+
+#: ../options/templates/options.php:356
+msgid "Google+"
+msgstr ""
+
+#: ../options/templates/options.php:357
+msgid "Google+ it."
+msgstr ""
+
+#: ../options/templates/options.php:367
+msgid "Portfolio Sortable?"
+msgstr ""
+
+#: ../options/templates/options.php:368
+msgid "Should the sorting options based on categories be displayed?"
+msgstr ""
+
+#: ../options/templates/options.php:376
+msgid "Portfolio Pagination"
+msgstr ""
+
+#: ../options/templates/options.php:377
+msgid "Should a portfolio pagination be displayed?"
+msgstr ""
+
+#: ../options/templates/options.php:385
+msgid "Display Dates on Projects?"
+msgstr ""
+
+#: ../options/templates/options.php:386
+msgid "Should a portfolio dates be displayed?"
+msgstr ""
+
+#: ../options/templates/options.php:396
+msgid "Custom Slug"
+msgstr ""
+
+#: ../options/templates/options.php:397
+msgid "If you want your portfolio post type to have a custom slug in the url, please enter it here."
+msgstr ""
+
+#: ../options/templates/options.php:404
+msgid "Custom Recent Projects Title"
+msgstr ""
+
+#: ../options/templates/options.php:405
+msgid "This is be used anywhere you place the recent work shortcode and on the \"Recent Work\" home layout. e.g. Recent Work."
+msgstr ""
+
+#: ../options/templates/options.php:412
+msgid "Custom Recent Projects Link Text"
+msgstr ""
+
+#: ../options/templates/options.php:413
+msgid "This is be used anywhere you place the recent work shortcode and on the \"Recent Work\" home layout. e.g. View All Work"
+msgstr ""
+
+#: ../options/templates/options.php:420
+msgid "Custom Portfolio Page Sortable Text"
+msgstr ""
+
+#: ../options/templates/options.php:421
+msgid "e.g. Sort Portfolio."
+msgstr ""
+
+#: ../options/templates/options.php:434
+msgid "Blog Settings"
+msgstr ""
+
+#: ../options/templates/options.php:436
+msgid "All blog related options are listed here."
+msgstr ""
+
+#: ../options/templates/options.php:444
+msgid "Author's Bio"
+msgstr ""
+
+#: ../options/templates/options.php:445
+msgid "Display the author's bio at the bottom of posts?"
+msgstr ""
+
+#: ../options/templates/options.php:473
+msgid "Pinterest"
+msgstr ""
+
+#: ../options/templates/options.php:474
+msgid "Pin it."
+msgstr ""
+
+#: ../options/templates/options.php:482
+msgid "Display Tags"
+msgstr ""
+
+#: ../options/templates/options.php:483
+msgid "Display tags at the bottom of posts?"
+msgstr ""
+
+#: ../options/templates/options.php:491
+msgid "Display Full Date"
+msgstr ""
+
+#: ../options/templates/options.php:492
+msgid "This will add the year to the date post meta on all blog pages."
+msgstr ""
+
+#: ../options/templates/options.php:500
+msgid "Display Pagination Numbers"
+msgstr ""
+
+#: ../options/templates/options.php:501
+msgid "Do you want the page numbers to be visible in your pagination?"
+msgstr ""
+
+#: ../options/templates/options.php:509
+msgid "Custom Recent Posts Title"
+msgstr ""
+
+#: ../options/templates/options.php:510
+msgid "This is be used anywhere you place the recent posts shortcode and on the \"Recent Posts\" home layout. e.g. Recent Posts"
+msgstr ""
+
+#: ../options/templates/options.php:517
+msgid "Custom Recent Posts Link Text"
+msgstr ""
+
+#: ../options/templates/options.php:518
+msgid "This is be used anywhere you place the recent posts shortcode and on the \"Recent Posts\" home layout. e.g. View All Posts"
+msgstr ""
+
+#: ../options/templates/options.php:531
+msgid "Footer Options"
+msgstr ""
+
+#: ../options/templates/options.php:538
+msgid "Footer Columns"
+msgstr ""
+
+#: ../options/templates/options.php:539
+msgid "How many colmns should be diplayed in your footer."
+msgstr ""
+
+#: ../options/templates/options.php:542
+msgid "5 columns"
+msgstr ""
+
+#: ../options/templates/options.php:547
+msgid "Subfooter Content"
+msgstr ""
+
+#: ../options/templates/options.php:548
+msgid "To use shortcodes you can create sufooter that what you want. This can be text of copyrights, selected menu items with links, social widgets and so on."
+msgstr ""
+
+#: ../options/templates/options.php:562
+msgid "Layout & Settings"
+msgstr ""
+
+#: ../options/templates/options.php:569
+msgid "Default Blog Layout"
+msgstr ""
+
+#: ../options/templates/options.php:570
+msgid "Choose the default blog layout here. You can create multiple blogs with different layouts by using the template builder if you want to."
+msgstr ""
+
+#: ../options/templates/options.php:582
+msgid "Default Page Layout"
+msgstr ""
+
+#: ../options/templates/options.php:583
+msgid "Choose the default page layout here. You can change the setting of each individual page when editing that page."
+msgstr ""
+
+#: ../options/templates/options.php:601
+msgid "Sidebars"
+msgstr ""
+
+#: ../options/templates/options.php:608
+msgid "Add Sidebar"
+msgstr ""
+
+#: ../options/templates/options.php:609
+#: ../options/templates/options.php:628
+msgid "Select which page should be used to display your contact form."
+msgstr ""
+
+#: ../options/templates/options.php:620
+msgid "Contacts"
+msgstr ""
+
+#: ../options/templates/options.php:627
+msgid "Contact Form Page"
+msgstr ""
+
+#: ../options/templates/options.php:635
+msgid "Your email address"
+msgstr ""
+
+#: ../options/templates/options.php:636
+msgid "Enter the Email adress where mails should be delivered to. (default is 'e-lab@i.ua')"
+msgstr ""
+
+#: ../options/templates/options.php:642
+msgid "Autoresponder"
+msgstr ""
+
+#: ../options/templates/options.php:643
+msgid "Enter a message that will be sent to the users email adress once he has submitted the form. If left empty no autoresponse will be sent.<br /> Please make sure to not delete the Email Field bellow, otherwise the script wont be able to send a mail"
+msgstr ""
+
+#: ../options/templates/view.php:3
+msgid "Font Family"
+msgstr ""
+
+#: ../options/templates/view.php:4
+msgid "Arial"
+msgstr ""
+
+#: ../options/templates/view.php:5
+msgid "Arvo"
+msgstr ""
+
+#: ../options/templates/view.php:6
+msgid "Cambria"
+msgstr ""
+
+#: ../options/templates/view.php:7
+msgid "Copse"
+msgstr ""
+
+#: ../options/templates/view.php:8
+msgid "Droid Sans"
+msgstr ""
+
+#: ../options/templates/view.php:9
+msgid "Droid Serif"
+msgstr ""
+
+#: ../options/templates/view.php:10
+msgid "Garamond"
+msgstr ""
+
+#: ../options/templates/view.php:11
+msgid "Georgia"
+msgstr ""
+
+#: ../options/templates/view.php:12
+msgid "Helvetica"
+msgstr ""
+
+#: ../options/templates/view.php:13
+msgid "Lobster"
+msgstr ""
+
+#: ../options/templates/view.php:14
+msgid "Nobile"
+msgstr ""
+
+#: ../options/templates/view.php:15
+msgid "Open Sans"
+msgstr ""
+
+#: ../options/templates/view.php:16
+msgid "Open Sans Condensed"
+msgstr ""
+
+#: ../options/templates/view.php:17
+msgid "Oswald"
+msgstr ""
+
+#: ../options/templates/view.php:18
+msgid "PT Sans"
+msgstr ""
+
+#: ../options/templates/view.php:19
+msgid "Pacifico"
+msgstr ""
+
+#: ../options/templates/view.php:20
+msgid "Quattrocento"
+msgstr ""
+
+#: ../options/templates/view.php:21
+msgid "Raleway"
+msgstr ""
+
+#: ../options/templates/view.php:22
+msgid "Rokkit"
+msgstr ""
+
+#: ../options/templates/view.php:23
+msgid "Tahoma"
+msgstr ""
+
+#: ../options/templates/view.php:24
+msgid "Ubuntu"
+msgstr ""
+
+#: ../options/templates/view.php:25
+msgid "Yanone Kaffeesatz"
+msgstr ""
+
+#: ../options/templates/view.php:28
+msgid "Font Size"
+msgstr ""
+
+#: ../options/templates/view.php:34
+msgid "Deviation to all"
+msgstr ""
+
+#: ../options/templates/view.php:55
+msgid "Font Style"
+msgstr ""
+
+#: ../options/templates/view.php:56
+msgid "Normal"
+msgstr ""
+
+#: ../options/templates/view.php:57
+msgid "Italic"
+msgstr ""
+
+#: ../options/templates/view.php:58
+msgid "Bold"
+msgstr ""
+
+#: ../options/templates/view.php:59
+msgid "Bolder"
+msgstr ""
+
+#: ../options/templates/view.php:68
+msgid "Webuza Theme Options"
+msgstr ""
+
+#: ../options/templates/view.php:71
+msgid "Reset All Options"
+msgstr ""
+
+#: ../options/templates/view.php:76
+msgid "Save All Changes"
+msgstr ""
+
+#: ../options/templates/view.php:314
+msgid "&mdash; Select Page &mdash;"
+msgstr ""
+
+#: ../assets/functions/multi-post-thumbnails/multi-post-thumbnails.php:75
+#, php-format
+msgid "The 'label' and 'id' values of the 'args' parameter of '%s::%s()' are required"
+msgstr ""
+
+#: ../assets/functions/multi-post-thumbnails/multi-post-thumbnails.php:154
+#, php-format
+msgid "Set as %3$s"
+msgstr ""
+
+#: ../shortcodes/front-init.php:12
+#: ../shortcodes/tinymce/shortcodes.php:26
+msgid "Html Tag (H1, H2, ..., H6)"
+msgstr ""
+
+#: ../shortcodes/front-init.php:22
+#: ../shortcodes/front-init.php:33
+#: ../shortcodes/front-init.php:44
+#: ../shortcodes/front-init.php:55
+#: ../shortcodes/front-init.php:66
+#: ../shortcodes/tinymce/shortcodes.php:49
+#: ../shortcodes/tinymce/shortcodes.php:64
+#: ../shortcodes/tinymce/shortcodes.php:79
+#: ../shortcodes/tinymce/shortcodes.php:94
+#: ../shortcodes/tinymce/shortcodes.php:109
+msgid "Is Last Column?"
+msgstr ""
+
+#: ../shortcodes/front-init.php:77
+msgid "Letter Color"
+msgstr ""
+
+#: ../shortcodes/front-init.php:87
+#: ../shortcodes/front-init.php:106
+#: ../shortcodes/front-init.php:119
+#: ../shortcodes/tinymce/shortcodes.php:193
+msgid "Text Color"
+msgstr ""
+
+#: ../shortcodes/front-init.php:88
+#: ../shortcodes/front-init.php:107
+#: ../shortcodes/front-init.php:120
+#: ../shortcodes/front-init.php:377
+#: ../shortcodes/tinymce/shortcodes.php:419
+#: ../shortcodes/tinymce/shortcodes.php:578
+#: ../shortcodes/tinymce/shortcodes.php:636
+msgid "Background Color"
+msgstr ""
+
+#: ../shortcodes/front-init.php:121
+#: ../shortcodes/tinymce/shortcodes.php:184
+#: ../shortcodes/tinymce/shortcodes.php:188
+msgid "Tooltip Text"
+msgstr ""
+
+#: ../shortcodes/front-init.php:122
+#: ../shortcodes/tinymce/shortcodes.php:199
+msgid "Tooltip Text Color"
+msgstr ""
+
+#: ../shortcodes/front-init.php:123
+msgid "Tooltip Background Text Color"
+msgstr ""
+
+#: ../shortcodes/front-init.php:160
+#: ../shortcodes/front-init.php:187
+#: ../shortcodes/tinymce/shortcodes.php:262
+#: ../shortcodes/tinymce/shortcodes.php:572
+#: ../shortcodes/tinymce/shortcodes.php:630
+msgid "Color"
+msgstr ""
+
+#: ../shortcodes/front-init.php:177
+msgid "Align"
+msgstr ""
+
+#: ../shortcodes/front-init.php:178
+#: ../shortcodes/front-init.php:381
+#: ../shortcodes/tinymce/shortcodes.php:249
+#: ../shortcodes/tinymce/shortcodes.php:599
+msgid "Margin Bottom"
+msgstr ""
+
+#: ../shortcodes/front-init.php:196
+#: ../shortcodes/tinymce/shortcodes.php:276
+msgid "Height"
+msgstr ""
+
+#: ../shortcodes/front-init.php:197
+#: ../shortcodes/tinymce/shortcodes.php:281
+msgid "Width"
+msgstr ""
+
+#: ../shortcodes/front-init.php:198
+#: ../shortcodes/tinymce/shortcodes.php:286
+msgid "Float"
+msgstr ""
+
+#: ../shortcodes/front-init.php:230
+#: ../shortcodes/front-init.php:231
+msgid "Tab Id"
+msgstr ""
+
+#: ../shortcodes/front-init.php:249
+msgid "Toggle Title"
+msgstr ""
+
+#: ../shortcodes/front-init.php:250
+msgid "Toggle Id"
+msgstr ""
+
+#: ../shortcodes/front-init.php:264
+#: ../shortcodes/tinymce/shortcodes.php:703
+msgid "Number of Columns"
+msgstr ""
+
+#: ../shortcodes/front-init.php:265
+msgid "Number of Rows"
+msgstr ""
+
+#: ../shortcodes/front-init.php:275
+msgid "Alert Message Style"
+msgstr ""
+
+#: ../shortcodes/front-init.php:284
+msgid "Style Button"
+msgstr ""
+
+#: ../shortcodes/front-init.php:285
+#: ../shortcodes/front-init.php:302
+#: ../shortcodes/front-init.php:436
+#: ../shortcodes/tinymce/shortcodes.php:320
+#: ../shortcodes/tinymce/shortcodes.php:343
+#: ../shortcodes/tinymce/shortcodes.php:469
+#: ../shortcodes/tinymce/shortcodes.php:496
+#: ../shortcodes/tinymce/shortcodes.php:620
+#: ../shortcodes/tinymce/shortcodes.php:682
+#: ../shortcodes/tinymce/shortcodes.php:725
+msgid "Title"
+msgstr ""
+
+#: ../shortcodes/front-init.php:286
+#: ../shortcodes/front-init.php:303
+msgid "URL"
+msgstr ""
+
+#: ../shortcodes/front-init.php:301
+#: ../shortcodes/tinymce/shortcodes.php:460
+#: ../shortcodes/tinymce/shortcodes.php:524
+#: ../shortcodes/tinymce/shortcodes.php:546
+#: ../shortcodes/tinymce/shortcodes.php:567
+#: ../shortcodes/tinymce/shortcodes.php:625
+msgid "Size"
+msgstr ""
+
+#: ../shortcodes/front-init.php:351
+#: ../shortcodes/front-init.php:362
+#: ../shortcodes/front-init.php:373
+msgid "Icon id"
+msgstr ""
+
+#: ../shortcodes/front-init.php:352
+#: ../shortcodes/front-init.php:363
+msgid "Icon size"
+msgstr ""
+
+#: ../shortcodes/front-init.php:374
+#: ../shortcodes/tinymce/shortcodes.php:604
+#: ../shortcodes/tinymce/shortcodes.php:657
+msgid "Custom Image"
+msgstr ""
+
+#: ../shortcodes/front-init.php:375
+msgid "Font size"
+msgstr ""
+
+#: ../shortcodes/front-init.php:376
+msgid "Icon color"
+msgstr ""
+
+#: ../shortcodes/front-init.php:378
+#: ../shortcodes/tinymce/shortcodes.php:584
+#: ../shortcodes/tinymce/shortcodes.php:642
+msgid "Border Width"
+msgstr ""
+
+#: ../shortcodes/front-init.php:379
+msgid "Border radius"
+msgstr ""
+
+#: ../shortcodes/front-init.php:380
+#: ../shortcodes/tinymce/shortcodes.php:594
+#: ../shortcodes/tinymce/shortcodes.php:652
+msgid "Padding"
+msgstr ""
+
+#: ../shortcodes/front-init.php:437
+#: ../shortcodes/tinymce/shortcodes.php:729
+msgid "Bar Percent"
+msgstr ""
+
+#: ../shortcodes/front-init.php:471
+#: ../shortcodes/front-init.php:525
+#: ../shortcodes/tinymce/shortcodes.php:833
+#: ../shortcodes/tinymce/shortcodes.php:852
+#: ../shortcodes/tinymce/shortcodes.php:879
+#: ../shortcodes/tinymce/shortcodes.php:922
+msgid "Columns"
+msgstr ""
+
+#: ../shortcodes/front-init.php:500
+msgid "Image Member"
+msgstr ""
+
+#: ../shortcodes/front-init.php:501
+msgid "Member Url"
+msgstr ""
+
+#: ../shortcodes/front-init.php:502
+#: ../shortcodes/tinymce/shortcodes.php:771
+msgid "Name"
+msgstr ""
+
+#: ../shortcodes/front-init.php:503
+msgid "Memebr job"
+msgstr ""
+
+#: ../shortcodes/front-init.php:504
+msgid "Team Member Id"
+msgstr ""
+
+#: ../shortcodes/front-init.php:551
+msgid "Column Title"
+msgstr ""
+
+#: ../shortcodes/front-init.php:552
+msgid "$100.95"
+msgstr ""
+
+#: ../shortcodes/front-init.php:553
+msgid "false"
+msgstr ""
+
+#: ../shortcodes/front-init.php:705
+msgid "Recent Posts /"
+msgstr ""
+
+#: ../shortcodes/front-init.php:707
+#: ../shortcodes/front-init.php:879
+msgid "view all"
+msgstr ""
+
+#: ../shortcodes/front-init.php:756
+msgid " Comments"
+msgstr ""
+
+#: ../shortcodes/front-init.php:879
+msgid "Recent Projects /"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:15
+msgid "Typography"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:22
+msgid "Headings"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:29
+msgid "Select heading..."
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:30
+msgid "H1 heading"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:31
+msgid "H2 heading"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:32
+msgid "H3 heading"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:33
+msgid "H4 heading"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:34
+msgid "H5 heading"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:35
+msgid "H6 heading"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:45
+msgid "One Half Column (1/2)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:60
+msgid "One Third Column (1/3)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:75
+msgid "One Fourth Column (1/4)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:90
+msgid "Two Thirds Column (2/3)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:105
+msgid "Three Fourth Column (3/4)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:120
+msgid "Drop Caps Letter"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:124
+msgid "Letter color"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:135
+msgid "Drop Caps Number"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:139
+msgid "Number color"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:145
+#: ../shortcodes/tinymce/shortcodes.php:174
+msgid "Background color"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:156
+msgid "Blockquote"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:164
+msgid "Hightlight Text"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:168
+msgid "Text color"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:205
+msgid "Background Tooltip Color"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:216
+msgid "Bullets List (ul & ol)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:219
+msgid "Bullets Color"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:230
+msgid "Numbers List (ul & ol)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:237
+msgid "Left/Right Aligned Item (Image)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:240
+msgid "Align by"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:243
+#: ../shortcodes/tinymce/shortcodes.php:289
+msgid "Left"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:259
+msgid "Divider (hr)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:273
+msgid "Vertical Separator"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:291
+msgid "None"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:305
+msgid "Elements"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:312
+msgid "Tabs"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:315
+msgid "Add Tab"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:324
+#: ../shortcodes/tinymce/shortcodes.php:347
+msgid "Content"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:335
+msgid "Toggles"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:338
+msgid "Add Toggle"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:358
+msgid "Table"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:361
+msgid "Number Of Columns"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:366
+msgid "Number Of Rows"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:371
+msgid "Add thead?"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:377
+msgid "Add tfoot?"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:388
+msgid "Alert Message"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:392
+msgid "Message Style"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:395
+#: ../shortcodes/tinymce/shortcodes.php:490
+msgid "Red"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:396
+msgid "Blue"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:397
+msgid "Green"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:398
+msgid "Orange"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:408
+msgid "Promo Box"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:416
+msgid "Full Width Section"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:425
+msgid "Border Top & Bottom Color"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:432
+msgid "Top Padding"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:433
+#: ../shortcodes/tinymce/shortcodes.php:438
+msgid "Don'nt include \"px\" in your string. e.g. 40"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:437
+msgid "Bottom Padding"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:450
+msgid "Buttons"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:457
+#: ../shortcodes/tinymce/shortcodes.php:471
+#: ../shortcodes/tinymce/shortcodes.php:498
+msgid "Button"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:463
+#: ../shortcodes/tinymce/shortcodes.php:528
+#: ../shortcodes/tinymce/shortcodes.php:550
+msgid "Medium"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:464
+#: ../shortcodes/tinymce/shortcodes.php:529
+#: ../shortcodes/tinymce/shortcodes.php:551
+msgid "Large"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:474
+#: ../shortcodes/tinymce/shortcodes.php:501
+msgid "Link"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:484
+msgid "Small Button"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:487
+msgid "Style"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:491
+msgid "Black"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:514
+msgid "Icons"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:521
+msgid "Social Icon"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:527
+#: ../shortcodes/tinymce/shortcodes.php:549
+msgid "Small"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:534
+msgid "Select Icon: "
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:543
+msgid "Standard Icon"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:564
+msgid "Set Your Style for Icon"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:589
+#: ../shortcodes/tinymce/shortcodes.php:647
+msgid "Border radius (50% - icon is in circle)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:616
+msgid "Main Services (Big Icon with text and button)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:672
+msgid "Others"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:679
+msgid "Custom Archives"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:687
+#: ../shortcodes/tinymce/shortcodes.php:743
+msgid "Number of Items"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:692
+msgid "Type"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:695
+msgid "yearly"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:696
+msgid "monthly"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:697
+msgid "daily"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:698
+msgid "weekly"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:706
+#: ../shortcodes/tinymce/shortcodes.php:836
+msgid "1 Column"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:707
+#: ../shortcodes/tinymce/shortcodes.php:792
+#: ../shortcodes/tinymce/shortcodes.php:837
+#: ../shortcodes/tinymce/shortcodes.php:855
+#: ../shortcodes/tinymce/shortcodes.php:882
+#: ../shortcodes/tinymce/shortcodes.php:926
+msgid "2 Columns"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:717
+msgid "Bar Graphs Section"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:720
+msgid "Add Bar Graph"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:740
+msgid "Carousel"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:748
+msgid "Number of Visible Items"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:758
+msgid "Testimonial Slider"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:761
+msgid "Autorotate"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:766
+msgid "Add Testimonial"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:775
+msgid "Quote"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:786
+msgid "Team Member Section"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:789
+msgid "Members in One Line"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:793
+#: ../shortcodes/tinymce/shortcodes.php:838
+#: ../shortcodes/tinymce/shortcodes.php:856
+#: ../shortcodes/tinymce/shortcodes.php:883
+#: ../shortcodes/tinymce/shortcodes.php:927
+msgid "3 Columns"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:794
+#: ../shortcodes/tinymce/shortcodes.php:839
+#: ../shortcodes/tinymce/shortcodes.php:884
+msgid "4 Columns"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:795
+msgid "5 Columns"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:796
+msgid "6 Columns"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:801
+msgid "Add Team Members"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:807
+msgid "Member Image"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:811
+msgid "Member URL"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:815
+msgid "Member Name"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:819
+msgid "Member job"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:830
+msgid "Prising Plan"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:849
+msgid "Promo Teasers"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:866
+msgid "Recent Posts"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:869
+msgid "Posts Ids (if Ids is not entered manually, it will be assigned automatically)"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:874
+#: ../shortcodes/tinymce/shortcodes.php:917
+msgid "View All Link"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:889
+msgid "Format"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:892
+msgid "full"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:893
+msgid "short"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:903
+msgid "Recent Projects"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:906
+msgid "The Number of Projects"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:909
+msgid "3 Projects"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:910
+msgid "6 Projects"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:911
+msgid "9 Projects"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:912
+msgid "12 Projects"
+msgstr ""
+
+#: ../shortcodes/tinymce/shortcodes.php:925
+msgid "1 Columns"
+msgstr ""
+
+#: ../shortcodes/tinymce/templates/dialog.php:9
+msgid "Webuza Short Codes:"
+msgstr ""
+
+#: ../shortcodes/tinymce/templates/dialog.php:11
+msgid "Select Short Code..."
+msgstr ""
+
+#: ../shortcodes/tinymce/templates/dialog.php:30
+msgid "Content: "
+msgstr ""
+
+#: ../shortcodes/tinymce/templates/dialog.php:103
+msgid "Remove"
+msgstr ""
+
+#: ../shortcodes/tinymce/templates/shortcode-attrs.php:47
+msgid "Remove Image"
+msgstr ""
+
+#: ../shortcodes/tinymce/templates/shortcode-attrs.php:50
+#: ../inc/meta/meta-config.php:51
+#: ../inc/meta/assets/js/field_upload.php:30
+msgid "Upload"
+msgstr ""
+
+#: ../inc/widgets/tabs-widget.php:53
+msgid "Popular"
+msgstr ""
+
+#: ../inc/widgets/tabs-widget.php:56
+msgid "Recent"
+msgstr ""
+
+#: ../inc/widgets/tabs-widget.php:59
+msgid "Comment"
+msgstr ""
+
+#: ../inc/widgets/tabs-widget.php:76
+#: ../inc/widgets/tabs-widget.php:99
+msgid "no comments"
+msgstr ""
+
+#: ../inc/widgets/tabs-widget.php:76
+#: ../inc/widgets/tabs-widget.php:99
+msgid "one comment "
+msgstr ""
+
+#: ../inc/widgets/tabs-widget.php:76
+#: ../inc/widgets/tabs-widget.php:99
+msgid " comments"
+msgstr ""
+
+#: ../inc/widgets/shortcode-sidebar-widget.php:12
+msgid "Display Short Code"
+msgstr ""
+
+#: ../inc/widgets/shortcode-sidebar-widget.php:31
+msgid "Content: Text & ShortCodes"
+msgstr ""
+
+#: ../inc/widgets/recent-comments-widget.php:11
+msgid "The most recent comments"
+msgstr ""
+
+#: ../inc/widgets/recent-comments-widget.php:12
+msgid "Webuza: Recent Comments"
+msgstr ""
+
+#: ../inc/widgets/recent-comments-widget.php:39
+msgid "Title:"
+msgstr ""
+
+#: ../inc/widgets/recent-comments-widget.php:42
+msgid "Number of comments to show:"
+msgstr ""
+
+#: ../inc/widgets/recent-comments-widget.php:45
+msgid "Number of characters for the preview comments:"
+msgstr ""
+
+#: ../inc/widgets/recent-comments-widget.php:82
+msgid "Recent Comments"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:15
+msgid "Project Thumbnail"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:16
+msgid "If you would like to have a separate thumbnail for your portfolio item, upload it here. <br/> If left blank, a cropped version of your featured image will be automatically used instead."
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:22
+msgid "Custom Thumbnail Image"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:23
+msgid "The recommended dimensions are 600px by 403px."
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:39
+msgid "Portfolio Client (for portfolio sidebar)"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:40
+msgid "If you need to input a few clients use <span style=\"color:#f7524a;\">;</span> to separate them. Also you can add links for clients, but you need to add them with the same sequence."
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:46
+msgid "Client Titles"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:52
+msgid "Client Links"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:66
+#: ../inc/meta/post-meta.php:72
+msgid "Video Settings"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:67
+msgid "If you have a video, please fill out the fields below."
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:73
+#: ../inc/meta/home-slider-meta.php:102
+#: ../inc/meta/post-meta.php:79
+msgid "M4V File URL"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:74
+#: ../inc/meta/home-slider-meta.php:103
+msgid "Enter in the URL to the .m4v video file"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:80
+#: ../inc/meta/home-slider-meta.php:109
+#: ../inc/meta/post-meta.php:86
+msgid "OGV File URL"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:81
+#: ../inc/meta/home-slider-meta.php:110
+msgid "Enter in the URL to the .ogv video file"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:87
+msgid "Video Height"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:88
+msgid "This only needs to be filled out if your self hosted video is not in a 16:9 aspect ratio. Enter your height based on an 845px width. This is used to calculate the iframe height for the \"Watch Video\" link. <br/> <strong>Don't include \"px\" in the string. e.g. 480</strong>"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:94
+#: ../inc/meta/home-slider-meta.php:116
+#: ../inc/meta/post-meta.php:93
+msgid "Preview Image"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:95
+#: ../inc/meta/home-slider-meta.php:117
+msgid "Image should be at least 680px wide. Click the \"Upload\" button to begin uploading your image, followed by \"Select File\" once you have made your selection. Only applies to self hosted videos."
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:101
+#: ../inc/meta/home-slider-meta.php:123
+#: ../inc/meta/post-meta.php:100
+msgid "Embedded Code"
+msgstr ""
+
+#: ../inc/meta/portfolio-meta.php:102
+msgid "If the video is an embed rather than self hosted, enter in a Youtube or Vimeo embed code here. The width should be a minimum of 670px with any height."
+msgstr ""
+
+#: ../inc/meta/meta-config.php:52
+#: ../inc/meta/assets/js/field_upload.php:31
+msgid "Remove Upload"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:11
+msgid "Slide Settings"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:12
+msgid "If you want a full width header with background image, please fill out the fields below."
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:18
+msgid "Slide Image"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:19
+msgid "The image should be between 1600px - 2000px in width and have a minimum height of 700px for best results. Click the \"Upload\" button to begin uploading your image, followed by \"Select File\" once you have made your selection."
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:25
+msgid "Caption"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:26
+msgid "Enter in the slide caption. (should be fairly short)"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:32
+msgid "Slide Text Paragraph"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:33
+msgid "Enter in the slide text paragraph. (should be fairly short)"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:39
+msgid "Button Text"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:40
+msgid "If you would like a button to appear below your caption, please enter the text for it here."
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:46
+msgid "Button Link"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:47
+msgid "Please enter the URL for the button here."
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:53
+msgid "Slide Alignment"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:54
+msgid "Select the alignment for your caption and button."
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:65
+#: ../inc/meta/home-slider-meta.php:66
+msgid "Slide Navigation Text"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:72
+msgid "Slide Navigation Image"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:73
+#: ../inc/meta/home-slider-meta.php:80
+msgid "The image should be min 48x48 px."
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:79
+msgid "Slide Navigation Image Hover"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:95
+msgid "Slide Video Settings"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:96
+msgid "If you want to feature a video in this slide, please fill out the fields below. <strong>Your video & image should be in a 16:9 aspect ratio.</strong>"
+msgstr ""
+
+#: ../inc/meta/home-slider-meta.php:124
+msgid "If the video is an embed rather than self hosted, enter in a Vimeo or Youtube embed code here. <strong> Embeds work worse with the parallax effect, but if you must use this, Vimeo is recommended. </strong> "
+msgstr ""
+
+#: ../inc/meta/post-meta.php:11
+msgid "Gallery Settings"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:12
+msgid "Please use the sections that have appeared under the Featured Image block labeled \"Second Slide, Third Slide...\" etc to add images to your gallery."
+msgstr ""
+
+#: ../inc/meta/post-meta.php:28
+msgid "Quote Settings"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:35
+msgid "Quote Content"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:36
+msgid "Please type the text for your quote here."
+msgstr ""
+
+#: ../inc/meta/post-meta.php:50
+msgid "Link Settings"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:57
+msgid "Link URL"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:58
+msgid "Please input the URL for your link. I.e. http://www.themewebuza.com"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:80
+msgid "Please enter in the URL to your .m4v video file"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:87
+msgid "Please enter in the URL to your .ogv video file"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:94
+msgid "This will be the image displayed when the video has not been played yet. The image should be at least 680px wide. Click the \"Upload\" button to begin uploading your image, followed by \"Select File\" once you have made your selection."
+msgstr ""
+
+#: ../inc/meta/post-meta.php:101
+msgid "If the video is an embed rather than self hosted, enter in a Youtube or Vimeo embed code here. The width should be a minimum of 670px."
+msgstr ""
+
+#: ../inc/meta/post-meta.php:115
+msgid "Audio Settings"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:122
+msgid "MP3 File URL"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:123
+msgid "Please enter in the URL to the .mp3 file"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:129
+msgid "OGA File URL"
+msgstr ""
+
+#: ../inc/meta/post-meta.php:130
+msgid "Please enter in the URL to the .ogg or .oga file"
+msgstr ""
+
+#: ../inc/meta/page-meta.php:16
+msgid "Page Header Settings"
+msgstr ""
+
+#: ../inc/meta/page-meta.php:17
+msgid "Here you can configure how your page header will appear. <br/> For a full width background image behind your header text, simply upload the image below. To have a standard header just fill out the fields below and don't upload an image."
+msgstr ""
+
+#: ../inc/meta/page-meta.php:23
+msgid "Page Header Image"
+msgstr ""
+
+#: ../inc/meta/page-meta.php:24
+msgid "The image should be between 1600px - 2000px wide and have a minimum height of 475px for best results. Click \"Browse\" to upload and then \"Insert into Post\"."
+msgstr ""
+
+#: ../inc/meta/page-meta.php:30
+msgid "Page Header Height"
+msgstr ""
+
+#: ../inc/meta/page-meta.php:31
+msgid "How tall do you want your header? <br/>Don't include \"px\" in the string. e.g. 350 <br/><strong>This only applies when you are using an image.</strong>"
+msgstr ""
+
+#: ../inc/meta/page-meta.php:37
+msgid "Page Header Align"
+msgstr ""
+
+#: ../inc/meta/page-meta.php:48
+msgid "Page Header Title"
+msgstr ""
+
+#: ../inc/meta/page-meta.php:49
+msgid "Enter in the page header title"
+msgstr ""
+
+#: ../inc/meta/page-meta.php:55
+msgid "Page Header Subtitle"
+msgstr ""
+
+#: ../inc/meta/page-meta.php:56
+msgid "Enter in the page header subtitle"
+msgstr ""
+
+#: ../inc/meta/love/webuza-love.php:63
+msgid "Love this"
+msgstr ""
+
+#: ../inc/meta/love/webuza-love.php:66
+msgid "You already love this!"
+msgstr ""
+
+#: ../inc/comment-template/wizard-comment.php:13
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr ""
+
+#: ../inc/comment-template/wizard-comment.php:20
+msgid "(Edit)"
+msgstr ""
+
+#: ../inc/page-templates/contact.php:6
+msgid "Please enter all required fields."
+msgstr ""
+
+#: ../inc/page-templates/contact.php:21
+msgid "Enter Your Name *..."
+msgstr ""
+
+#: ../inc/page-templates/contact.php:24
+msgid "Enter Your Email *..."
+msgstr ""
+
+#: ../inc/page-templates/contact.php:27
+msgid "Priority..."
+msgstr ""
+
+#: ../inc/page-templates/contact.php:32
+msgid "Subject..."
+msgstr ""
+
+#: ../inc/page-templates/contact.php:38
+msgid "Message *..."
+msgstr ""
+
+#: ../inc/page-templates/contact.php:44
+msgid "Send email"
+msgstr ""
+

@@ -12,7 +12,7 @@ while ( have_posts() ) : the_post();
 		the_content();
 		echo $ss_framework->clearfix();
 	echo '</div>';
-	
+
 	shoestrap_meta( 'cats' );
 	shoestrap_meta( 'tags' );
 	do_action( 'shoestrap_page_after_content' );
