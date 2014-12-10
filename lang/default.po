@@ -1052,12 +1052,12 @@ msgstr ""
 msgid "&mdash; Select Page &mdash;"
 msgstr ""
 
-#: ../assets/functions/multi-post-thumbnails/multi-post-thumbnails.php:75
+#: ../inc/multi-post-thumbnails/multi-post-thumbnails.php:75
 #, php-format
 msgid "The 'label' and 'id' values of the 'args' parameter of '%s::%s()' are required"
 msgstr ""
 
-#: ../assets/functions/multi-post-thumbnails/multi-post-thumbnails.php:154
+#: ../inc/multi-post-thumbnails/multi-post-thumbnails.php:154
 #, php-format
 msgid "Set as %3$s"
 msgstr ""

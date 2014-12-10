@@ -77,9 +77,9 @@ if ( class_exists( 'bbPress' ) ) {
 	require_once locate_template( '/lib/bbpress.php' );
 }
 
-require_once locate_template( '/override/actions.php' );   // custom actions
-require_once locate_template( '/override/nav.php' );       // Cleaner walker for wp_nav_menu
-require_once locate_template( '/override/shortcodes.php' );// Cleaner walker for wp_nav_menu
+// Custom Override
+require_once locate_template( '/override/actions.php' );
+require_once locate_template( '/override/shortcodes.php' );
 
 
 
@@ -87,6 +87,39 @@ require_once locate_template( '/override/shortcodes.php' );// Cleaner walker for
 
 
 
+
+
+
+
+
+
+// Multi Post Thumbnails support
+require_once locate_template('inc/multi-post-thumbnails/multi-post-thumbnails.php');
+// Post meta core functions
+require_once locate_template('inc/meta/meta-config.php');
+require_once locate_template('inc/meta/post-meta.php');
+require_once locate_template('inc/meta/page-meta.php');
+// Portfolio Meta
+require_once locate_template('inc/meta/portfolio-meta.php');
+// Home slider meta
+require_once locate_template('inc/meta/home-slider-meta.php');
+// Custom Widgets
+require_once locate_template('inc/widgets/shortcode-sidebar-widget.php');
+require_once locate_template('inc/widgets/recent-comments-widget.php');
+require_once locate_template('inc/widgets/tabs-widget.php');
+require_once locate_template('inc/widgets/tweets-widget.php');
+// Webuza love
+require_once locate_template('inc/meta/love/webuza-love.php');
+// Google fonts
+require_once locate_template('options/google-fonts.php');
+// Include options/shortcodes
+if (is_admin()) {
+    require_once locate_template('options/init.php');
+    require_once locate_template('shortcodes/tinymce/init.php');
+}else{
+    require_once locate_template('options/front-init.php');
+    require_once locate_template('shortcodes/front-init.php');
+}
 
 
 #-----------------------------------------------------------------#
@@ -100,6 +133,7 @@ define('WEBUZA_THEME_SHORT_NAME', 'wbz');
 #-----------------------------------------------------------------#
 # Registered Webuza Menus
 #-----------------------------------------------------------------#
+add_action( 'init', 'register_webuza_menus' );
 function register_webuza_menus() {
     register_nav_menus(
         array(
@@ -108,164 +142,23 @@ function register_webuza_menus() {
         )
     );
 }
-add_action( 'init', 'register_webuza_menus' );
 
-#-----------------------------------------------------------------#
-# Register/Enqueue JS
-#-----------------------------------------------------------------#
-/*function webuza_main_js() {
-
-    // Register
-    wp_register_script( 'live-query', get_template_directory_uri() . '/js/jquery.livequery.js', 'jquery', '6.2', TRUE);
-    wp_register_script( 'query-timer', get_template_directory_uri() . '/js/jquery.timers.js', 'jquery', '6.2', TRUE);
-    wp_register_script( 'main', get_template_directory_uri() . '/js/main.js', 'jquery', '1.8.3' );
-    wp_register_script( 'jquery-ui-tabs', get_template_directory_uri() . '/js/jquery/ui/jquery.ui.tabs.min.js', array('jquery'), '1.9.2' );
-    wp_register_script( 'jquery-ui-tooltip', get_template_directory_uri() . '/js/jquery/ui/jquery.ui.tooltip.min.js', array('jquery'), '1.9.2' );
-    wp_register_script( 'jquery-flexslider', get_template_directory_uri() . '/js/jquery.flexslider/jquery.flexslider-min.js', array('jquery'), '2.1' );
-    wp_register_script( 'jplayer', get_template_directory_uri() . '/js/jplayer.min.js', 'jquery', '2.1', TRUE );
-    wp_register_script( 'portfolio', get_template_directory_uri() . '/js/portfolio/filterable.js', 'jquery' );
-    wp_register_script( 'social', get_template_directory_uri() . '/js/social.js', '1.0', TRUE );
-    wp_register_script( 'isotope', get_template_directory_uri() . '/js/isotope.min.js', 'jquery', '1.5.25' ,TRUE );
-    wp_register_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', 'jquery' );
-    wp_register_script( 'light-box', get_template_directory_uri() . '/js/lightbox/lightbox-2.6.min.js', 'jquery' );
-    wp_register_script( 'orbit', get_template_directory_uri() . '/js/orbit.js', 'jquery', '1.2.3', TRUE);
-    wp_register_script( 'carouFredSel', get_template_directory_uri() . '/js/carouFredSel.min.js', 'jquery', '6.2', TRUE);
-
-
-    // Enqueue
-    wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'live-query' );
-    wp_enqueue_script( 'query-timer' );
-    wp_enqueue_script( 'main' );
-    wp_enqueue_script( 'jplayer' );
-    wp_enqueue_script( 'jquery-effects-core' );
-    wp_enqueue_script( 'jquery-effects-drop' );
-    wp_enqueue_script( 'jquery-effects-slide' );
-    wp_enqueue_script( 'jquery-ui-tabs' );
-    wp_enqueue_script( 'jquery-ui-tooltip' );
-    wp_enqueue_script( 'jquery-flexslider' );
-    wp_enqueue_script( 'jquery-ui-accordion' );
-    wp_enqueue_script( 'jquery-ui-progressbar' );
-    wp_enqueue_script( 'portfolio' );
-    wp_enqueue_script( 'carouFredSel' );
-    wp_enqueue_script( 'social' );
-    wp_enqueue_script( 'isotope' );
-    wp_enqueue_script( 'superfish' );
-    wp_enqueue_script( 'light-box' );
-
-}*/
-//add_action('wp_enqueue_scripts', 'webuza_main_js');
-
-#-----------------------------------------------------------------#
-# Google Fonts
-#-----------------------------------------------------------------#
-require_once("options/google-fonts.php");
 
 #-----------------------------------------------------------------#
 # Custom Avatar
 #-----------------------------------------------------------------#
 add_filter( 'avatar_defaults', 'custom_avatar' );
-
 function custom_avatar ($avatar_defaults) {
     $themeAvatar = get_bloginfo('template_directory') .'/images/custom-avatar.png';
     $avatar_defaults[$themeAvatar] = "Webuza Avatar";
     return $avatar_defaults;
 }
 
-#-----------------------------------------------------------------#
-# Excerpt related
-#-----------------------------------------------------------------#
-
-function excerpt_length( $length ) {
-    return 90;
-}
-
-add_filter( 'excerpt_length', 'excerpt_length', 999 );
 
 #-----------------------------------------------------------------#
-# Post formats
+# Page specific js
 #-----------------------------------------------------------------#
-
-add_theme_support( 'post-formats', array('quote','video','audio','gallery','link') );
-
-#-----------------------------------------------------------------#
-# Image sizes
-#-----------------------------------------------------------------#
-
-add_theme_support( 'post-thumbnails' );
-add_image_size( 'blog-widget', 50, 50, true );
-add_image_size( 'portfolio-4x', 252, 161, true );
-add_image_size( 'portfolio-3x', 346, 221, true );
-add_image_size( 'portfolio-2x', 533, 341, true );
-add_image_size( 'portfolio-thumb', 600, 403, true );
-add_image_size( 'portfolio-widget', 100, 100, true );
-add_image_size( 'recent-portfolio-thumb', 100, 100, true );
-add_image_size( 'recent-thumb', 346, 221, true );
-
-//thumb for Promo Teaser
-add_image_size( 'promo-teaser-2', 534, 281, true );
-add_image_size( 'promo-teaser-3', 342, 183, true );
-add_image_size( 'promo-teaser-22', 535, 281, true );
-add_image_size( 'promo-teaser-33', 348, 183, true );
-add_image_size( 'promo-teaser-77', 348, 228, true );
-
-#-----------------------------------------------------------------#
-# Load text domain
-#-----------------------------------------------------------------#
-
-add_action('after_setup_theme', 'lang_setup');
-function lang_setup(){
-
-    load_theme_textdomain( WEBUZA_THEME_NAME, get_template_directory() . '/lang' );
-
-}
-
-#-----------------------------------------------------------------#
-# Add multiple thumbnail support
-#-----------------------------------------------------------------#
-include("assets/functions/multi-post-thumbnails/multi-post-thumbnails.php");
-
-#-----------------------------------------------------------------#
-# Register/Enqueue CSS
-#-----------------------------------------------------------------#
-function webuza_main_styles() {
-
-    $template_dir = get_bloginfo('template_directory');
-
-    // Register
-    wp_register_style( 'main-styles', get_stylesheet_directory_uri() .'/style.css' );
-    wp_register_style( 'webuza', get_template_directory_uri() .'/css/webuza.css' );
-    wp_register_style( 'options-styles', get_stylesheet_directory_uri() .'/css/style.css.php', array('main-styles', 'webuza' ));
-    wp_register_style( 'jquery-flexslider-styles', get_stylesheet_directory_uri() .'/css/jquery.flexslider/flexslider.css', array('main-styles', 'webuza' ));
-    wp_register_style( 'webuza-font-awesome', get_template_directory_uri() .'/css/font-awesome.min.css', array('main-styles', 'webuza' ));
-    wp_register_style( 'light-box', get_template_directory_uri() .'/css/lightbox.css', array('main-styles', 'webuza' ));
-    wp_register_style( 'responsive', get_template_directory_uri() .'/css/responsive.css', array('main-styles', 'webuza' ));
-    wp_register_style( 'caroufredsel', get_template_directory_uri() .'/css/caroufredsel.css', array('main-styles', 'webuza' ));
-
-    // Enqueue
-    wp_enqueue_style( 'main-styles' );
-    wp_enqueue_style( 'webuza' );
-    wp_enqueue_style( 'options-styles' );
-    wp_enqueue_style( 'jquery-flexslider-styles' );
-    wp_enqueue_style( 'webuza-font-awesome' );
-    wp_enqueue_style( 'light-box' );
-    wp_enqueue_style( 'responsive' );
-    wp_enqueue_style( 'caroufredsel' );
-
-    $options = webuza_get_options();
-    if(!empty($options['wbz_typography_use']) && $options['wbz_typography_use'] == 'yes'){
-        wp_register_style('dynamic-fonts', get_stylesheet_directory_uri() . '/css/fonts.css.php', 'style');
-        wp_enqueue_style('dynamic-fonts');
-    }
-    //IE
-    global $wp_styles;
-    $wp_styles->add_data("ie8", 'conditional', 'lt IE 9');
-}
-
-add_action('wp_print_styles', 'webuza_main_styles');
-
-
-
+add_action('wp_enqueue_scripts', 'webuza_page_specific_js');
 function webuza_page_specific_js() {
     //home
     if ( is_page_template('page-template-home-slider.php') || is_page_template('template-home-5.php') ) {
@@ -302,75 +195,11 @@ function webuza_page_specific_js() {
         }
     }
 }
-add_action('wp_enqueue_scripts', 'webuza_page_specific_js');
-
-#-----------------------------------------------------------------#
-#  Include options;
-#  Include ShortCodes;
-#-----------------------------------------------------------------#
-
-/* Include admin */
-if (is_admin()) {
-    include('options/init.php');
-    include('shortcodes/tinymce/init.php');
-}
-
-/* Include front-end */
-if(!is_admin()){
-    include ('options/front-init.php');
-    include ('shortcodes/front-init.php');
-}
-
-#-----------------------------------------------------------------#
-# Custom page header
-#-----------------------------------------------------------------#
-
-if ( !function_exists( 'webuza_page_header' ) ) {
-    function webuza_page_header( $postid ) {
-
-        global $options;
-        global $post;
-
-        $bg = get_post_meta( $postid, '_webuza_header_bg', true );
-        $title = get_post_meta( $postid, '_webuza_header_title', true );
-        $subtitle = get_post_meta( $postid, '_webuza_header_subtitle', true );
-        $height = get_post_meta( $postid, '_webuza_header_bg_height', true );
-        $align = get_post_meta( $postid, '_webuza_header_align', true );
-
-?>
-        <?php if( !empty( $bg ) ){ ?>
-            <div id="page-header-bg" data-height="<?php echo (!empty( $height )) ? $height : '350'; ?>" style="background-image: url(<?php echo $bg; ?>); height: <?php echo $height;?>px; text-align: <?php echo $align; ?>;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col span_6">
-                            <h1><?php echo $title; ?></h1>
-                            <span class="subheader"><?php echo $subtitle; ?></span>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-        <?php } elseif( !empty( $title ) ){ ?>
-            <div class="page-header-no-bg">
-                <div class="container">
-                    <div class="section-title">
-                        <h1><?php echo $title; ?><?php if(!empty($subtitle)) echo '<span>' . $subtitle . '</span>'; ?></h1>
-                    </div>
-                </div>
-            </div>
-        <?php } ?>
-
-<?php
-    }
-}
 
 
 #-----------------------------------------------------------------#
 # Post gallery
 #-----------------------------------------------------------------#
-
 if ( !function_exists( 'webuza_gallery' ) ) {
     function webuza_gallery( $postid ) {
 
@@ -393,12 +222,10 @@ if ( !function_exists( 'webuza_gallery' ) ) {
         <?php }
 
     }
-
 }
 #-----------------------------------------------------------------#
 # Post audio
 #-----------------------------------------------------------------#
-
 if ( !function_exists( 'webuza_audio' ) ) {
     function webuza_audio($postid) {
 
@@ -541,59 +368,10 @@ if ( !function_exists( 'webuza_video' ) ) {
     <?php }
 }
 
-//default video size
-$content_width = 1080;
-
-
-#-----------------------------------------------------------------#
-# Except Analog
-#-----------------------------------------------------------------#
-function kama_excerpt($args=''){
-    global $post;
-    parse_str($args, $i);
-    $maxchar     = isset($i['maxchar']) ?  (int)trim($i['maxchar'])     : 350;
-    $text        = isset($i['text']) ?          trim($i['text'])        : '';
-    $save_format = isset($i['save_format']) ?   trim($i['save_format'])         : false;
-    $echo        = isset($i['echo']) ?          false                   : true;
-
-    if (!$text){
-        $out = $post->post_excerpt ? $post->post_excerpt : $post->post_content;
-        $out = preg_replace ("!\[/?.*\]!U", '', $out );
-        // for more tag <!--more-->
-        if( !$post->post_excerpt && strpos($post->post_content, '<!--more-->') ){
-            preg_match ('/(.*)<!--more-->/s', $out, $match);
-            $out = str_replace("\r", '', trim($match[1], "\n"));
-            $out = preg_replace( "!\n\n+!s", "</p><p>", $out );
-            $out = "<p>". str_replace( "\n", "<br />", $out ) ."</p>";
-            if ($echo)
-                return print $out;
-            return $out;
-        }
-    }
-
-    $out = $text.$out;
-    if (!$post->post_excerpt)
-        $out = strip_tags($out, $save_format);
-
-    if ( iconv_strlen($out, 'utf-8') > $maxchar ){
-        $out = iconv_substr( $out, 0, $maxchar, 'utf-8' );
-        $out = preg_replace('@(.*)\s[^\s]*$@s', '\\1 ...', $out);
-    }
-
-    if($save_format){
-        $out = str_replace( "\r", '', $out );
-        $out = preg_replace( "!\n\n+!", "</p><p>", $out );
-        $out = "<p>". str_replace ( "\n", "<br />", trim($out) ) ."</p>";
-    }
-
-    if($echo) return print $out;
-    return $out;
-}
 
 #-----------------------------------------------------------------#
 # Post Comment
 #-----------------------------------------------------------------#
-
 if ( !function_exists( 'webuza_comment' ) ) {
     function webuza_comment( $comment, $args, $depth, $post ) {
         global $post;
@@ -633,6 +411,55 @@ if ( !function_exists( 'webuza_comment' ) ) {
     }
 }
 
+
+#-----------------------------------------------------------------#
+# Except Analog
+#-----------------------------------------------------------------#
+if ( !function_exists( 'kama_excerpt' ) ){
+    function kama_excerpt($args=''){
+        global $post;
+        parse_str($args, $i);
+        $maxchar     = isset($i['maxchar']) ?  (int)trim($i['maxchar'])     : 350;
+        $text        = isset($i['text']) ?          trim($i['text'])        : '';
+        $save_format = isset($i['save_format']) ?   trim($i['save_format'])         : false;
+        $echo        = isset($i['echo']) ?          false                   : true;
+
+        if (!$text){
+            $out = $post->post_excerpt ? $post->post_excerpt : $post->post_content;
+            $out = preg_replace ("!\[/?.*\]!U", '', $out );
+            // for more tag <!--more-->
+            if( !$post->post_excerpt && strpos($post->post_content, '<!--more-->') ){
+                preg_match ('/(.*)<!--more-->/s', $out, $match);
+                $out = str_replace("\r", '', trim($match[1], "\n"));
+                $out = preg_replace( "!\n\n+!s", "</p><p>", $out );
+                $out = "<p>". str_replace( "\n", "<br />", $out ) ."</p>";
+                if ($echo)
+                    return print $out;
+                return $out;
+            }
+        }
+
+        $out = $text.$out;
+        if (!$post->post_excerpt)
+            $out = strip_tags($out, $save_format);
+
+        if ( iconv_strlen($out, 'utf-8') > $maxchar ){
+            $out = iconv_substr( $out, 0, $maxchar, 'utf-8' );
+            $out = preg_replace('@(.*)\s[^\s]*$@s', '\\1 ...', $out);
+        }
+
+        if($save_format){
+            $out = str_replace( "\r", '', $out );
+            $out = preg_replace( "!\n\n+!", "</p><p>", $out );
+            $out = "<p>". str_replace ( "\n", "<br />", trim($out) ) ."</p>";
+        }
+
+        if($echo) return print $out;
+        return $out;
+    }
+}
+
+
 #-----------------------------------------------------------------#
 # Create admin portfolio section
 #-----------------------------------------------------------------#
@@ -671,10 +498,10 @@ function portfolio_register() {
 }
 add_action('init', 'portfolio_register');
 
+
 #-----------------------------------------------------------------#
 # Add taxonomys attached to portfolio
 #-----------------------------------------------------------------#
-
 $category_labels = array(
     'name' => __( 'Project Categories', WEBUZA_THEME_NAME ),
     'singular_name' => __( 'Project Category', WEBUZA_THEME_NAME ),
@@ -720,10 +547,10 @@ register_taxonomy( 'project-attributes',
     )
 );
 
+
 #-----------------------------------------------------------------#
 # get Portfolio categories
 #-----------------------------------------------------------------#
-
 function webuza_get_portfolio_categories( $post = null ){
     $categories = array();
     if ( $post ){
@@ -742,7 +569,6 @@ function webuza_get_portfolio_categories( $post = null ){
 #-----------------------------------------------------------------#
 # Add Multiple Post thumbnails Post/Portfolio
 #-----------------------------------------------------------------#
-
 if ( class_exists('MultiPostThumbnails') ) {
 
     //Portfolio
@@ -808,12 +634,13 @@ if ( class_exists('MultiPostThumbnails') ) {
             'id' => 'sixth-slide',
             'post_type' => 'post'
         ));
-
 }
+
+
 #-----------------------------------------------------------------#
 # Post meta
 #-----------------------------------------------------------------#
-
+add_action('admin_print_styles', 'enqueue_media');
 function enqueue_media(){
 
     /* Enqueue the correct media scripts for the media library */
@@ -838,16 +665,22 @@ function enqueue_media(){
         );
         wp_enqueue_media();
     }
-
 }
 
 
-/* Post meta styling */
+#-----------------------------------------------------------------#
+# Post meta styling
+#-----------------------------------------------------------------#
+add_action('admin_print_styles', 'webuza_metabox_styles');
 function webuza_metabox_styles() {
     wp_enqueue_style('webuza_meta_css', get_template_directory_uri() .'/inc/meta/assets/css/webuza-meta.css');
 }
 
-/* Post meta scripts */
+
+#-----------------------------------------------------------------#
+# Post meta scripts
+#-----------------------------------------------------------------#
+add_action('admin_enqueue_scripts', 'webuza_metabox_scripts');
 function webuza_metabox_scripts() {
     wp_register_script('webuza-upload', get_template_directory_uri() .'/inc/meta/assets/js/webuza-meta.js', array('jquery','media-upload','thickbox'));
     wp_enqueue_script('webuza-upload');
@@ -858,25 +691,11 @@ function webuza_metabox_scripts() {
     wp_localize_script('redux-opts-field-upload-js', 'redux_upload', array('url' => get_template_directory_uri() .'inc/meta/assets/js/blank.png'));
 }
 
-add_action('admin_enqueue_scripts', 'webuza_metabox_scripts');
-add_action('admin_print_styles', 'webuza_metabox_styles');
-add_action('admin_print_styles', 'enqueue_media');
-
-/* Post meta core functions */
-include("inc/meta/meta-config.php");
-include("inc/meta/post-meta.php");
-include("inc/meta/page-meta.php");
-
-#-----------------------------------------------------------------#
-# Portfolio Meta
-#-----------------------------------------------------------------#
-
-include("inc/meta/portfolio-meta.php");
-
 
 #-----------------------------------------------------------------#
 # Create admin slider section
 #-----------------------------------------------------------------#
+add_action( 'init', 'slider_register' );
 function slider_register() {
 
     $labels = array(
@@ -906,15 +725,11 @@ function slider_register() {
     register_post_type( 'home_slider' , $args );
 }
 
-add_action( 'init', 'slider_register' );
-
 
 #-----------------------------------------------------------------#
 # Custom slider columns
 #-----------------------------------------------------------------#
-
 add_filter( 'manage_edit-home_slider_columns', 'edit_columns_home_slider' );
-
 function edit_columns_home_slider( $columns ){
     $column_thumbnail = array( 'thumbnail' => 'Thumbnail' );
     $column_caption = array( 'caption' => 'Caption' );
@@ -923,12 +738,11 @@ function edit_columns_home_slider( $columns ){
     return $columns;
 }
 
-#-----------------------------------------------------------------#
-# Home Slider
-#-----------------------------------------------------------------#
 
+#-----------------------------------------------------------------#
+# Home Slider custom columns
+#-----------------------------------------------------------------#
 add_action( 'manage_posts_custom_column',  'home_slider_custom_columns', 10, 2 );
-
 function home_slider_custom_columns($portfolio_columns, $post_id){
 
     switch ($portfolio_columns) {
@@ -955,20 +769,12 @@ function home_slider_custom_columns($portfolio_columns, $post_id){
 }
 
 
-add_action( 'admin_menu', 'webuza_home_slider_ordering' );
+#-----------------------------------------------------------------#
+# Home Slider ordering
+#-----------------------------------------------------------------#
+function webuza_home_slider_order_page(){
 
-function webuza_home_slider_ordering() {
-    add_submenu_page(
-        'edit.php?post_type=home_slider',
-        'Order Slides',
-        'Order',
-        'edit_pages', 'slide-order',
-        'webuza_home_slider_order_page'
-    );
-}
-
-function webuza_home_slider_order_page(){ ?>
-
+    ?>
     <div class="wrap">
         <h2>Sort Slides</h2>
         <p>Simply drag the slide up or down and they will be saved in that order.</p>
@@ -1029,19 +835,35 @@ function webuza_home_slider_order_page(){ ?>
         <?php wp_reset_postdata(); ?>
 
     </div>
+    <?php
+}
 
-<?php }
+add_action( 'admin_menu', 'webuza_home_slider_ordering' );
+function webuza_home_slider_ordering() {
+    add_submenu_page(
+        'edit.php?post_type=home_slider',
+        'Order Slides',
+        'Order',
+        'edit_pages', 'slide-order',
+        'webuza_home_slider_order_page'
+    );
+}
 
 
+#-----------------------------------------------------------------#
+# webuza_slider_enqueue_scripts
+#-----------------------------------------------------------------#
 add_action( 'admin_enqueue_scripts', 'webuza_slider_enqueue_scripts' );
-
 function webuza_slider_enqueue_scripts() {
     wp_enqueue_script( 'jquery-ui-sortable' );
     wp_enqueue_script( 'webuza-reorder', get_template_directory_uri() . '/js/webuza-reorder.js' );
 }
 
-add_action( 'wp_ajax_webuza_update_slide_order', 'webuza_update_slide_order' );
 
+#-----------------------------------------------------------------#
+# webuza_update_slide_order
+#-----------------------------------------------------------------#
+add_action( 'wp_ajax_webuza_update_slide_order', 'webuza_update_slide_order' );
 function webuza_update_slide_order() {
     global $wpdb;
     $post_type = $_POST['postType'];
@@ -1057,6 +879,11 @@ function webuza_update_slide_order() {
     die( '1' );
 }
 
+
+#-----------------------------------------------------------------#
+# set_home_slider_admin_order
+#-----------------------------------------------------------------#
+add_filter('pre_get_posts', 'set_home_slider_admin_order');
 function set_home_slider_admin_order($wp_query) {
     if (is_admin()) {
         $post_type = $wp_query->query['post_type'];
@@ -1067,18 +894,10 @@ function set_home_slider_admin_order($wp_query) {
     }
 }
 
-add_filter('pre_get_posts', 'set_home_slider_admin_order');
-
-#-----------------------------------------------------------------#
-# Home slider meta
-#-----------------------------------------------------------------#
-
-include("inc/meta/home-slider-meta.php");
 
 #-----------------------------------------------------------------#
 # New category walker for portfolio filter
 #-----------------------------------------------------------------#
-
 class Walker_Portfolio_Filter extends Walker_Category {
     function start_el(&$output, $category, $depth, $args) {
 
@@ -1101,7 +920,6 @@ class Walker_Portfolio_Filter extends Walker_Category {
 #-----------------------------------------------------------------#
 # Function to get the page link back to all portfolio items
 #-----------------------------------------------------------------#
-
 function get_portfolio_page_link($post_id) {
     global $wpdb;
 
@@ -1111,6 +929,7 @@ function get_portfolio_page_link($post_id) {
     }
     return get_page_link($page_id);
 }
+
 
 #-----------------------------------------------------------------#
 # Widget areas
@@ -1125,6 +944,8 @@ function generateSlug($phrase, $maxLength) {
 
     return $result;
 }
+
+add_action( 'widgets_init', 'webuza_widgets_init' );
 function webuza_widgets_init() {
     if( function_exists( 'register_sidebar' ) ) {
         register_sidebar( array(
@@ -1171,24 +992,11 @@ function webuza_widgets_init() {
         }
     }
 }
-add_action( 'widgets_init', 'webuza_widgets_init' );
 
 
 #-----------------------------------------------------------------#
 # Custom Sidebars
 #-----------------------------------------------------------------#
-
-add_action( 'add_meta_boxes', 'add_sidebar_metabox' );
-function add_sidebar_metabox() {
-    add_meta_box(
-        'custom_sidebar',
-        __( 'Custom Sidebar', WEBUZA_THEME_NAME ),
-        'custom_sidebar_callback',
-        'page',
-        'side'
-    );
-}
-
 function custom_sidebar_callback( $post ) {
     global $wp_registered_sidebars;
     $custom = get_post_custom($post->ID);
@@ -1211,10 +1019,19 @@ function custom_sidebar_callback( $post ) {
     echo $output;
 }
 
+add_action( 'add_meta_boxes', 'add_sidebar_metabox' );
+function add_sidebar_metabox() {
+    add_meta_box(
+        'custom_sidebar',
+        __( 'Custom Sidebar', WEBUZA_THEME_NAME ),
+        'custom_sidebar_callback',
+        'page',
+        'side'
+    );
+}
 
 add_action( 'save_post', 'save_sidebar_postdata' );
-function save_sidebar_postdata( $post_id )
-{
+function save_sidebar_postdata( $post_id ){
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
     if ( !wp_verify_nonce( $_POST['custom_sidebar_nonce'], plugin_basename( __FILE__ ) ) ) return;
     if ( !current_user_can( 'edit_page', $post_id ) ) return;
@@ -1222,19 +1039,6 @@ function save_sidebar_postdata( $post_id )
     update_post_meta($post_id, "custom_sidebar", $data);
 }
 
-
-#-----------------------------------------------------------------#
-# Custom Widgets
-#-----------------------------------------------------------------#
-require_once("inc/widgets/shortcode-sidebar-widget.php");
-require_once("inc/widgets/recent-comments-widget.php");
-require_once("inc/widgets/tabs-widget.php");
-require_once("inc/widgets/tweets-widget.php");
-
-#-----------------------------------------------------------------#
-# Webuza love
-#-----------------------------------------------------------------#
-require_once("inc/meta/love/webuza-love.php");
 
 #-----------------------------------------------------------------#
 # Webuza PlusOne
@@ -1272,10 +1076,18 @@ function custom_password_form() {
     return $html;
 }
 
+
 #-----------------------------------------------------------------#
 # Page Wizard Meta
 #-----------------------------------------------------------------#
+function wizard_field_inner_custom_box( $post ) {
+    wp_nonce_field( 'wizard_field_inner_custom_box', 'wizard_field_inner_custom_box_nonce' );
+    $value = get_post_meta( $post->ID, '_wizard_field', true );
+    echo '<label for="_wizard_field">'. __( "Wizard ShortCode ", WEBUZA_THEME_NAME ) .'</label> ';
+    echo '<input type="text" id="_wizard_field" name="_wizard_field" value="' . esc_attr( $value ) . '" size="40" />';
+}
 
+add_action( 'add_meta_boxes', 'wizard_field_add_custom_box' );
 function wizard_field_add_custom_box() {
     $screens = array( 'page' );
     foreach ( $screens as $screen ) {
@@ -1287,17 +1099,8 @@ function wizard_field_add_custom_box() {
         );
     }
 }
-add_action( 'add_meta_boxes', 'wizard_field_add_custom_box' );
-
-function wizard_field_inner_custom_box( $post ) {
-    wp_nonce_field( 'wizard_field_inner_custom_box', 'wizard_field_inner_custom_box_nonce' );
-    $value = get_post_meta( $post->ID, '_wizard_field', true );
-    echo '<label for="_wizard_field">'. __( "Wizard ShortCode ", WEBUZA_THEME_NAME ) .'</label> ';
-    echo '<input type="text" id="_wizard_field" name="_wizard_field" value="' . esc_attr( $value ) . '" size="40" />';
-}
 
 add_action( 'save_post', 'wizard_field_save_postdata' );
-
 function wizard_field_save_postdata( $post_id ) {
     if ( ! isset( $_POST['wizard_field_inner_custom_box_nonce'] ) ) return $post_id;
     $nonce = $_POST['wizard_field_inner_custom_box_nonce'];
@@ -1310,7 +1113,6 @@ function wizard_field_save_postdata( $post_id ) {
 }
 
 add_action( 'wp_ajax_repair', 'repair_callback' );
-
 function repair_callback() {
     global $post, $wpdb;
 

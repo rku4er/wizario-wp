@@ -33,7 +33,9 @@
                     $('.shortcodes-dialog').html(response);
                 });
             }
-        });
+        })
+        // z-index for modal dialog
+        .parent('.ui-dialog').css('z-index', 1001);
 
     };
 

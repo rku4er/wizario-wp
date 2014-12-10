@@ -126,6 +126,7 @@
 		function handleMegaHeader() {
 			var visible = false;
 			var elemTrigger = '#js-sh-line';
+
 			$('body').click(function(e) {
 				if ($(e.target).parents().filter(".super-header").length != 0 && !visible) {
 					$('.super-header').addClass('in');
@@ -134,7 +135,8 @@
 					$('.super-header').removeClass('in');
 					checkValue();
 				}
-				e.preventDefault();
+				// Commented out by Roman (December 5, 2014)
+				//e.preventDefault();
 			});
 
 			// set header on position
@@ -182,8 +184,8 @@
 
 		return {
 			init: function() {
-				handleAnimatedHeader();
-				handleChangeClass();
+				//handleAnimatedHeader();
+				//handleChangeClass();
 				handleMegaHeader();
 				//handlePreventEmptyLinks();
 				handleRetina();

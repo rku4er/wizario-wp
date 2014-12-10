@@ -129,6 +129,7 @@ include_once TEMPLATEPATH . '/shortcodes/tinymce/shortcodes.php';
                 });
             }
         });
+
         if ($('.shortcode-attrs').find('.img-uploader')){
 
             //Add Image Event

@@ -336,7 +336,7 @@ function webuza_full_width_section( $atts, $content = null ) {
     $style .= 'padding-bottom: '. $bottom_padding .'px; ';
     $style .= 'background-color: #'. $background_color .'; ';
     $style .= 'border-color: #' . $border_color .'; ';
-    return '<div id="'.uniqid( "wbz_" ).'" class="full-width-section ' . $parallax_class . ' " style="'. $style .'">' . do_shortcode( $content ) . '</div>';
+    return '<div id="'.uniqid( "wbz_" ).'" class="full-width-section ' . $parallax_class . ' " style="'. $style .'">' . do_shortcode( $content ) . '<div class="clearfix"></div></div>';
 }
 add_shortcode( 'full_width_section', 'webuza_full_width_section' );
 
@@ -859,85 +859,56 @@ function webuza_recent_projects( $attr, $content = null ){
             'view_all' => '#'
         ), $attr )
     );
-    $_iconPlusSrc = get_template_directory_uri() .'/images/icons/ico-plus-64.png';
-    $_iconLinkSrc = get_template_directory_uri() .'/images/icons/ico-link-64.png';
     ?>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function($){
+    <section class="carousel-slider-block">
+        <div class="container">
+            <div class="row">
 
-            $('li.recent-post .triangle').css({ opacity: '0'});
-            $('ul.portfolio-items li.recent-post .image-hovered').css('opacity', '0').parents('.recent-post.col-hover.col_4').hover(
-                function(){
-                    $(this).find(' .triangle').stop(1, 1).animate({bottom: '+=20', opacity: '1'}, 'fast');
-                    $(this).find(' .image-hovered .ico-plus').stop(1, 1).animate({left: '+=30%'}, 'fast');
-                    $(this).find(' .image-hovered .ico-link').stop(1, 1).animate({right: '+=30%'}, 'fast');
-                    $(this).find(' .image-hovered').stop(1, 1).animate({opacity: '0.9'}, 'fast');
-                    $(this).find(' .recent-meta h4, .recent-meta span').stop(1, 1).animate({opacity: '0', display: 'none'}, 100);
+                <div class="flexslider carousel-slider">
 
-                    $(this).find(' .recent-meta p').stop(1, 1).animate({opacity: '0.9', "margin-top": '-48px' }, 'fast');
-                },
-                function(){
-                    $(this).find(' .triangle').stop(1, 1).animate({bottom: '-=20', opacity: '0'}, 'fast');
-                    $(this).find(' .image-hovered .ico-plus').stop(1, 1).animate({left: '-=30%'}, 'fast');
-                    $(this).find(' .image-hovered .ico-link').stop(1, 1).animate({right: '-=30%'}, 'fast');
-                    $(this).find(' .image-hovered').stop(1, 1).animate({opacity: '0'}, 'fast');
-                    $(this).find(' .recent-meta h4, .recent-meta span' ).stop(1, 1).animate({opacity: '0.9', display: 'block'}, 100);
-                    $(this).find(' .recent-meta p').stop(1, 1).animate({opacity: '0', "margin-top": '-24px' }, 'fast');
-                }
-            );
-            $(".carou-fred-sel").carouFredSel({ circular: false, infinite: false, auto: false, prev: { button: ".caroufredsel_prew", key: "left" }, next: { button: ".caroufredsel_next", key: "right" } });
-        });
-    </script>
+                    <h3 class="caption-gallery"><?php echo __('Recent Projects /', WEBUZA_THEME_NAME );  ?> <a href="<?php echo $view_all ?>"><?php echo __( 'view all', WEBUZA_THEME_NAME ) ?></a></h3>
 
-    <div class="carousel-heading" style="width: 100%">
-        <div class="block-title" style="float: left;">
-            <h3><?php echo __('Recent Projects /', WEBUZA_THEME_NAME );  ?> <a href="<?php echo $view_all ?>"><?php echo __( 'view all', WEBUZA_THEME_NAME ) ?></a></h3>
+                    <ul class="slides">
+
+                        <?php $r = new WP_Query( array( 'post_type' => 'portfolio', 'posts_per_page' => $number )); ?>
+                        <?php if ($r->have_posts()) : ?>
+                            <?php  while ($r->have_posts()) : $r->the_post(); ?>
+                                <li>
+                                    <?php
+                                        $thumbnail = get_the_post_thumbnail( $post->ID, array( 346, 221 ) );
+                                        $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+                                        $post_title = ($post->post_title == '') ? 'No Title' : $post->post_title;
+                                        $date = date_create( $post->post_date );
+                                        $_content = strip_shortcodes( $post->post_content );
+                                        $_maxchar = 150;
+                                    ?>
+                                    <figure>
+                                        <a href="<?php echo $large_image_url[0]; ?>" data-lightbox="<?php echo $post->ID .'-large'; ?>">
+                                            <div class="gallery-thumb">
+                                                <?php if( $thumbnail ) { echo $thumbnail; } else { echo '<img src="'. get_template_directory_uri(). '/images/no-portfolio-item-3.jpg" alt="no image" />'; } ?>
+                                                <b class="ico-zoom"></b>
+                                            </div>
+                                        </a>
+                                        <figcaption class="gallery-caption">
+                                            <h4 class="xmd-h"><?php echo $post_title; ?></h4>
+                                            <time datetime="2014-12-12" class="pub-date"><?php echo date_format( $date, 'd F Y'); ?></time>
+                                            <div class="lorem-caption">
+                                                <?php kama_excerpt( "maxchar=$_maxchar&text=$_content"); ?>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+
+                                </li>
+
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </ul>
+
+                </div>
+            </div>
         </div>
-        <div class="caroufredsel_nav recent-work-nav">
-            <a class="caroufredsel_prew" href="#"></a>
-            <a class="caroufredsel_next" href="#"></a>
-        </div>
-    </div>
-
-    <div class="carousel-wrap recent-work-carousel" style="clear: both; width: 100%;">
-        <ul class="portfolio-items carou-fred-sel">
-            <?php $r = new WP_Query( array( 'post_type' => 'portfolio', 'posts_per_page' => $number )); ?>
-            <?php if ($r->have_posts()) : ?>
-                <?php  while ($r->have_posts()) : $r->the_post(); ?>
-                    <li class="recent-post col-hover col_4">
-                        <div class="recent-image">
-                            <?php $thumbnail = get_the_post_thumbnail( $post->ID, array( 346, 221 ) ); ?>
-
-                            <?php if( $thumbnail ) { echo $thumbnail; } else { echo '<img src="'. get_template_directory_uri(). '/images/no-portfolio-item-3.jpg" alt="no image" />'; } ?>
-
-                            <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); ?>
-
-                            <div class="image-hovered">
-                                <a href="<?php echo $large_image_url[0]; ?>" data-lightbox="<?php echo $post->ID .'-large'; ?>" ><img class="ico-plus" src="<?php echo $_iconPlusSrc; ?>" alt="" /></a>
-                                <a href="<?php echo $post->guid; ?>"><img class="ico-link" src="<?php echo $_iconLinkSrc; ?>" alt="" /></a>
-                            </div>
-                            <div class="triangle"></div>
-                        </div>
-                        <div class="recent-meta">
-                            <?php if( $post->post_title == '' ) { $post_title = 'No Title'; } else { $post_title = $post->post_title; } ?>
-                            <h4><?php echo $post_title; ?></h4>
-
-                            <span class="port_the_time"><?php $date = date_create( $post->post_date ); ?><?php echo date_format( $date, 'd F Y'); ?></span>
-                            <p style="opacity: 0;">
-                                <?php $_content = strip_shortcodes( $post->post_content ); ?>
-                                <?php $_maxchar = 150;?>
-                                <?php kama_excerpt( "maxchar=$_maxchar&text=$_content"); ?>
-                            </p>
-
-                        </div>
-                    </li>
-
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </ul>
-    </div>
-    <div class="clear"></div>
+    </section>
 <?php
 }
 add_shortcode( 'recent_projects', 'webuza_recent_projects' );

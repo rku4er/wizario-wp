@@ -71,28 +71,25 @@ function footer_html(){
 
     do_action( 'shoestrap_footer_before_copyright' );
 
-    echo '<div id="footer-copyright">';
-        echo $ss_framework->open_row( 'div' );
-            echo $ss_framework->open_col( 'div', array( 'large' => $width ), 'copyright-bar' ) . $ftext . '</div>';
+    echo $ss_framework->open_row( 'div' );
+        echo $ss_framework->open_col( 'div', array( 'large' => $width ), 'copyright-bar' ) . $ftext . '</div>';
 
-                if ( $social && ! is_null( $networks ) && count( $networks ) > 0 ) {
-                    echo $ss_framework->open_col( 'div', array( 'large' => $social_width ), 'footer_social_bar' );
+            if ( $social && ! is_null( $networks ) && count( $networks ) > 0 ) {
+                echo $ss_framework->open_col( 'div', array( 'large' => $social_width ), 'footer_social_bar' );
 
-                        foreach ( $networks as $network ) {
-                            // Check if the social network URL has been defined
-                            if ( isset( $network['url'] ) && ! empty( $network['url'] ) && strlen( $network['url'] ) > 7 ) {
-                                echo '<a href="' . $network['url'] . '"' . $blank . ' title="' . $network['icon'] . '"><span class="el-icon-' . $network['icon'] . '"></span></a>';
-                            }
+                    foreach ( $networks as $network ) {
+                        // Check if the social network URL has been defined
+                        if ( isset( $network['url'] ) && ! empty( $network['url'] ) && strlen( $network['url'] ) > 7 ) {
+                            echo '<a href="' . $network['url'] . '"' . $blank . ' title="' . $network['icon'] . '"><span class="el-icon-' . $network['icon'] . '"></span></a>';
                         }
+                    }
 
-                    echo $ss_framework->close_col( 'div' );
-                }
+                echo $ss_framework->close_col( 'div' );
+            }
 
-            echo $ss_framework->close_col( 'div' );
+        echo $ss_framework->close_col( 'div' );
 
-            echo $ss_framework->clearfix();
-        echo $ss_framework->close_row( 'div' );
-    echo '</div>';
+    echo $ss_framework->close_row( 'div' );
 }
 
 
@@ -102,7 +99,6 @@ function custom_navbar_search(){
 
     $show_searchbox = $ss_settings['navbar_search'];
     if ( $show_searchbox == '1' ) : ?>
-    ?>
     <form role="search" method="get" id="searchform" class="site-search" action="<?php echo home_url('/'); ?>">
         <input type="search" value="<?php if (is_search()) { echo get_search_query(); } ?>" name="s" id="s" class="form-control-search" placeholder="<?php _e('Search', 'shoestrap'); ?> <?php bloginfo('name'); ?>">
         <button type="sumbit" class="visible-xs visible-sm sumbit-search"><i class="fa fa-search"></i></button>

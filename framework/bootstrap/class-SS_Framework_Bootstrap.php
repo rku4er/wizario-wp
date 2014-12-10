@@ -991,7 +991,7 @@ if ( ! class_exists( 'SS_Framework_Bootstrap' ) ) {
                                 $parser->ModifyVars(array(
                                    'assets-url' =>  '"' . SHOESTRAP_ASSETS_URL . '"'
                                 ));
-                                
+
 				// The main app.less file
 				$parser->parseFile( $bootstrap_location . 'app.less', $bootstrap_uri );
 
@@ -1019,9 +1019,9 @@ if ( ! class_exists( 'SS_Framework_Bootstrap' ) ) {
 
 				// Add a filter to the compiler
 				$parser->parse( apply_filters( 'shoestrap_compiler', '' ) );
-                                
+
 				$css = $parser->getCss();
-                                
+
 			} catch( Exception $e ) {
 				$error_message = $e->getMessage();
                                 die($error_message);
