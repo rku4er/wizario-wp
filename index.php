@@ -1,7 +1,3 @@
-<header>
-	<h1 class="entry-title"><?php echo shoestrap_title(); ?></h1>
-</header>
-
 <?php
 
 do_action( 'shoestrap_index_begin' );

@@ -20,7 +20,7 @@ class Shoestrap_Nav_Walker extends Walker_Nav_Menu {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+		$output .= "\n$indent<ul role=\"menu\" class=\" \">\n";
 	}
 
 	/**
@@ -63,7 +63,7 @@ class Shoestrap_Nav_Walker extends Walker_Nav_Menu {
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
 			if ( $args->has_children ) {
-				$class_names .= ' dropdown';
+				$class_names .= ' has-ul-child';
 			}
 
 			if ( in_array( 'current-menu-item', $classes ) ) {
@@ -120,7 +120,7 @@ class Shoestrap_Nav_Walker extends Walker_Nav_Menu {
 			 */
 			if ( ! empty( $item->attr_title ) && $ss_settings['menu_title_attribute'] != 1 ) {
 				$item_output .= '<a'. $attributes .'><span class="el-icon-' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
-			} 
+			}
 			elseif ( ! empty( $item->description ) && $ss_settings['menu_title_attribute'] == 1 ) {
 				$item_output .= '<a'. $attributes .'><span class="el-icon-' . esc_attr( $item->description ) . '"></span>&nbsp;';
 			}

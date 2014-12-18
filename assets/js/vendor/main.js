@@ -23,18 +23,11 @@
 						header.removeClass('shrink fixed');
 					}
 					newScroll = scroll;
+				}
 
-				};
 
-
-				// $(window).load(function () { refresh(); });
-				$(window).scroll(function () { refresh(); });
-
-				// $(window).on('touchstart',function(){ refresh(); });
-				// $(window).on('scrollstart',function(){ refresh(); });
-				// $(window).on('scrollstop',function(){ refresh(); });
-				// $(window).on('touchmove',function(){ refresh(); });
-
+			$(window).load(function () { refresh(); });
+			$(window).scroll(function () { refresh(); });
 		}
 
 		// prevent empty links
@@ -92,9 +85,8 @@
 					e.preventDefault();
 				}
 			});
-
-
 		}
+
 
 		// Check of Retina
 		// ---------------------------------------------------------------------------------------
@@ -115,18 +107,68 @@
 			}
 		}
 
+
 		// Page Onload
 		// ---------------------------------------------------------------------------------------
-		// jQuery(window).load(function() {
-		// 	// $('.header, .super-header').fadeTo(300, 1);
-		// });
+		function handleAnimations() {
+
+
+			function thegravity_fade_texts() {
+		    setTimeout(function() {
+			    $(".fadeFromTop").smooth({
+			    		transform: "translate3d(0,0,0)",
+			    		opacity: 1
+			    	},{
+			    	 duration: 1000,
+			    	 easing: "swing",
+			    });
+		    }, 1000);
+
+		    setTimeout(function() {
+			    $(".fadeFromBottom").smooth({
+			    		transform: "translate3d(0,0,0)",
+			    		opacity: 1
+			    	},{
+			    	 duration: 1000,
+			    	 easing: "swing",
+			    });
+		    }, 1000);
+
+		    setTimeout(function() {
+			    $(".fastFadeFromTop").smooth({
+			    		transform: "translate3d(0,0,0)",
+			    		opacity: 1
+			    	},{
+			    	 duration: 1000,
+			    	 easing: "swing",
+			    });
+		    }, 300);
+
+			}
+
+	    var pagetitle = jQuery('.blog-header');
+      if (pagetitle.length) {
+          var images = jQuery('img, .blog-header');
+          jQuery.each(images, function() {
+              var el = jQuery(this),
+              image = el.css('background-image').replace(/"/g, '').replace(/url\(|\)$/ig, '');
+              if(image && image !== '' && image !== 'none')
+                  images = images.add(jQuery('<img>').attr('src', image));
+              if(el.is('img'))
+                  images = images.add(el);
+          });
+          images.imagesLoaded(thegravity_fade_texts);
+      } else {
+          thegravity_fade_texts();
+      }
+		}
+
 
 		// MegaHeader
 		// ---------------------------------------------------------------------------------------
 		function handleMegaHeader() {
 			var visible = false;
 			var elemTrigger = '#js-sh-line';
-
 			$('body').click(function(e) {
 				if ($(e.target).parents().filter(".super-header").length != 0 && !visible) {
 					$('.super-header').addClass('in');
@@ -135,8 +177,7 @@
 					$('.super-header').removeClass('in');
 					checkValue();
 				}
-				// Commented out by Roman (December 5, 2014)
-				//e.preventDefault();
+				e.preventDefault();
 			});
 
 			// set header on position
@@ -179,16 +220,149 @@
 					}
 				});
 			}
+		}
+
+
+		// FilterIzotope
+		// ---------------------------------------------------------------------------------------
+		function handleFilter() {
+			var $container = $("#portfolio");
+
+
+			$container.isotope({
+				itemSelector: '.item',
+				resizable: true,
+			});
+
+			if($('#portfolio').attr('data-fade') == 1) {
+				$('#portfolio.portfolio-items .item').css('opacity',0);
+				$('#portfolio.portfolio-items .item').each(function(i){
+					$(this).delay(i * 150).animate({'opacity':1},350);
+				});
+			}
+
+			$('#portfolio-filters li a').click(function(){
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector });
+				$('#portfolio-filters li a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+			});
+		}
+
+
+		// Smart Sidebar Stack
+		// ---------------------------------------------------------------------------------------
+		function handleStack() {
+
+			$(window).scroll(function (a,b) {
+				if ($('div').is('.js-smart-stack')) {
+			  var obj = $('.js-trigger-smart-stack'),
+			      objPull = $('.header').height(),
+			      rblock = obj.find('.js-smart-stack'),
+			      offset = obj.offset(),
+			      scrollTop = $(window).scrollTop(),
+			  		objWidth = rblock.width(),
+			  		objHeight = obj.outerHeight(),
+			  		rblockHeight = rblock.outerHeight(),
+			  		posTop = rblock.position();
+
+				  if(scrollTop - offset.top > 0 && scrollTop-offset.top < objHeight - rblockHeight) {
+				  	rblock.css({
+				  		'width': objWidth,
+				  		'position': 'fixed',
+				  		'bottom': 'auto',
+				  		'top': 63,
+				  	});
+				  } else if (scrollTop > offset.top) {
+				  	rblock.css({
+				  		'width': 'auto',
+				  		'position': 'absolute',
+				  		'bottom': 'auto',
+				  		'top': objHeight-rblockHeight,
+				  	});
+				  } else {
+				  	rblock.css({
+				  		'width': 'auto',
+				  		'position': 'static',
+				  		'bottom': 'auto',
+				  		'top': 'auto',
+				  	});
+				  }
+			  }
+			});
 
 		}
 
+		function handleTogglePanel() {
+			$("#accordion-toggle .panel-collapse").collapse({
+			  toggle: true
+			});
+		}
+
+		function handleProgressbar() {
+			$('.js-progressbar').each(function(){
+          var $this = $(this);
+          var value = parseInt($this.attr('data-graph-percent'));
+
+          var $graph = $this.progressbar({
+              value: 1,
+               create: function(event, ui){
+
+                  var $r3 = $('<div>').addClass('graph-percent').append($('<i class="icon-caret-right"></i>'));
+
+                  $r3.find('i').after(
+                      $('<span>').append(
+                          $('<span>').text(
+                              $this.progressbar('option', 'value') + '%'
+                          )
+                      )
+                  );
+
+                  $(this).find('.ui-progressbar-value').append($r3);
+
+              },
+              change: function(event, ui){
+                  $(this).find('.ui-progressbar-value .graph-percent span span').text(
+                      $this.progressbar('option', 'value') + '%'
+                  )
+              }
+          });
+          var graph_progress = setInterval(function() {
+              var cur_value = $graph.progressbar('option', 'value');
+
+
+              var percent = !isNaN(cur_value) ? (cur_value + 1) : 1;
+              if (percent > value) {
+                  clearInterval(graph_progress);
+                  $graph.progressbar({
+                      value : value
+                  });
+              } else {
+                  $graph.progressbar({
+                      value : percent
+                  });
+              }
+          }, 1 - Math.sin(Math.acos(value)));
+      });
+		}
+
+
+
+
+
 		return {
 			init: function() {
-				//handleAnimatedHeader();
-				//handleChangeClass();
+				handleAnimatedHeader();
+				handleChangeClass();
 				handleMegaHeader();
-				//handlePreventEmptyLinks();
+				handlePreventEmptyLinks();
 				handleRetina();
+				handleFilter();
+				handleAnimations();
+				handleStack();
+				handleTogglePanel();
+				handleProgressbar();
 			},
 
 
@@ -198,6 +372,64 @@
 				$('ul li:first-child, ol li:first-child').addClass('firstItem');
 				$('ul li:last-child, ol li:last-child').addClass('lastItem');
 			},
+
+			initPieChart: function() {
+				var doughnutData = [
+						{
+							value: 60,
+							color:"#ff9900",
+							highlight: "#d78203",
+							label: "Red"
+						},
+						{
+							value: 300,
+							color: "#34d5b6",
+							highlight: "#20c1a2",
+							label: "Grey"
+						},
+						{
+							value: 120,
+							color: "#96d534",
+							highlight: "#77b21c",
+							label: "Dark Grey"
+						}
+
+					];
+
+					function hasClassName(classname,id) {
+					  return  String ( ( document.getElementById(id)||{} ) .className )
+					         .split(/\s/)
+					         .indexOf(classname) >= 0;
+					}
+
+
+					if (hasClassName('','chart-area')) {
+						window.onload = function() {
+							var ctx = document.getElementById("chart-area").getContext("2d");
+							var myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
+								responsive : true,
+								animationEasing : "ease",
+								segmentShowStroke : false,
+								animationSteps: 40,
+							});
+						}
+					}
+
+
+					$('.chart').easyPieChart({
+							lineWidth: 30,
+							barColor: "#34d5b6",
+							trackColor: "#f3f3f3",
+							scaleLength: 0,
+							size: 210,
+							lineCap: "square",
+							onStep: function(from, to, currentValue) {
+								$(this.el).find('.percent').text(Math.round(currentValue));
+							}
+					});
+
+			},
+
 
 
 			// RevSlider
@@ -269,7 +501,7 @@
 					$('#js-mobile-pagination').fadeIn();
 					$('.shadow-preloader').addClass("goAwayCircles");
 					setTimeout(function() {
-						$('.live-prealoder').fadeOut();
+						$('#rev-loader').fadeOut();
 					}, 200);
 				});
 
@@ -309,52 +541,40 @@
 			// InitCarousel
 			// ---------------------------------------------------------------------------------------
 			initCarousel: function() {
+				var $window = $(window),
+				    flexslider;
+
+				// tiny helper function to add breakpoints
+				function getGridSize() {
+				  return (window.innerWidth < 500) ? 1 :
+				         (window.innerWidth < 1179) ? 2 : 3;
+				}
+
 				$('.carousel-slider').flexslider({
 					animation: "slide",
 					animationLoop: false,
-					itemWidth: 378,
-					maxItems: 3,
-					minItems: 1,
-					move: 2,
+					itemWidth: 377,
+					minItems: getGridSize(),
+					maxItems: getGridSize(),
+					move: 1,
 					controlNav: false,
-					prevText: "", //String: Set the text for the "previous" directionNav item
+					prevText: "",
 					nextText: "",
-					slideshow: false
+					slideshow: false,
 				});
 
+				$window.resize(function() {
+				  var gridSize = getGridSize();
+
+				  flexslider.vars.minItems = gridSize;
+				  flexslider.vars.maxItems = gridSize;
+				});
 			},
 
 
 			// InitParallax
 			// ---------------------------------------------------------------------------------------
 			initParallax: function() {
-				// $('#js-parallax-back').parallax("50%", -0.1, true);
-
-				// init slider bg parallax
-				// var duration = $("#has-ctxParallax .defaultimg").height() + $(window).height();
-				// var bgPosMovement = "0 " + (-duration*0.3) + "px";
-				// var controller2 = new ScrollMagic({globalSceneOptions: {triggerHook: "onEnter", duration: duration}});
-				// new ScrollScene({triggerElement: "#trigger-parallax_1"})
-				// 				.setTween(TweenMax.to("#has-ctxParallax .defaultimg", 1, {backgroundPosition: bgPosMovement + '!important', ease: Linear.easeNone}))
-				// 				.addTo(controller2)
-				// 				.addIndicators({zindex: 1});
-
-
-				// init slider content parallax
-				// var controller = new ScrollMagic();
-
-				// // build tween
-				// var tween = TweenMax.from("#has-ctxParallax .tp-parallax-container", 0.5, {autoAlpha: 0, transform: "translateY(0)"});
-				// var tween = TweenMax.to("#has-ctxParallax .tp-parallax-container", 0.5, {autoAlpha: 0, transform: "translateY(0)"});
-
-				// // build scene
-				// var scene = new ScrollScene({triggerElement: "#trigger-parallax_1", duration: 1200, triggerHook: "onLeave"})
-				// 				.setTween(tween)
-				// 				.addTo(controller);
-
-				// // show indicators (requires debug extension)
-				// scene.addIndicators();
-
 				// parallax in slider
 				var controller = new ScrollMagic({
 				    globalSceneOptions: {
@@ -367,6 +587,8 @@
 			    // panel wipe uno
 			    .add([
 			    		TweenMax.to("#has-ctxParallax .defaultimg", 0.5, {transform: "translate3d(0,250px,0)"}),
+			    		TweenMax.to("#has-ctxParallax .blog-bg", 0.5, {transform: "translate3d(0,250px,0)"}),
+			    		TweenMax.to("#has-ctxParallax .fadeInTop", 0.3, {transform: "translate3d(0,100px,0)"}),
 			    		TweenMax.to("#has-ctxParallax .tp-parallax-container", 0.5, {autoAlpha: 0, transform: "translate3d(0,350px,0)"}),
 			    	])
 
@@ -376,7 +598,6 @@
 				        duration: 900
 				    })
 				    .setTween(pinani)
-				    // .setPin("#lalala")
 				    .addTo(controller);
 
 				scene.addIndicators();
@@ -390,9 +611,6 @@
 								.setTween(TweenMax.to("#js-parallax-back", 1, {backgroundPosition: bgPosMovement, ease: Linear.easeNone}))
 								.addTo(controller2)
 								.addIndicators({zindex: 1});
-
-
-
 			},
 
 
@@ -441,11 +659,18 @@
 						deleteMenuFun = false;
 					}
 				}
+			},
 
 
+			// Init Single Slider
+			// ---------------------------------------------------------------------------------------
+			initSingleSlider: function() {
+				$('.single-slider').flexslider({
+				  animation: "slide",
+				  directionNav: false,
+				  slideshow: false
+				});
 			}
-
-
 
 
 		};
@@ -459,13 +684,12 @@
 		fn.initWaves();
 		fn.initSuperFish();
 		fn.initParallax();
+		fn.initSingleSlider();
+		fn.initPieChart();
 
 		// $( "#draggable" ).draggable();
 	});
 
-	// jQuery(document).load(function(){ fn.onResize(); });
-	// jQuery(window).resize(function(){ theme.onResize(); });
-	// jQuery(window).load(function(){ theme.onResize(); });
 
 
 

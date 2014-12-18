@@ -450,7 +450,7 @@ if ( ! class_exists( 'Shoestrap_Menus' ) ) {
 				$pre   = ( $navbar_mode != 'left' ) ? '<ul class="nav navbar-nav"><li>' : '';
 				$post  = ( $navbar_mode != 'left' ) ? '</li></ul>' : '';
 
-				echo $pre . '<a class="toggle-nav' . $class . '" href="#"><i class="el-icon-chevron-down"></i></a>' . $post;
+				echo $pre . '<a class="toggle-nav' . $class . '" href="#"><i class="icon el-icon-chevron-down"></i></a>' . $post;
 
 			}
 		}

@@ -1077,7 +1077,7 @@ if ( ! class_exists( 'SS_Framework_Bootstrap' ) ) {
 			$networks = $ss_social->get_social_links();
 
 			// The base class for icons that will be used
-			$baseclass  = 'el-icon-';
+			$baseclass  = 'icon el-icon-';
 
 			// Build the content
 			$content = '';

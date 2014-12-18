@@ -19,55 +19,55 @@ add_shortcode('heading', 'webuza_heading');
 
 /*** One Half ***/
 function webuza_one_half( $attr, $content = null ){
-    extract( shortcode_atts( array( 'is_last' => __( 'Is Last Column?', WEBUZA_THEME_NAME ) ), $attr ) );
-    $class = 'col col_6';
-    if ( $is_last  == '1' ){
+    extract( shortcode_atts( array(), $attr ) );
+    $class = 'col-md-6 col-sm-6';
+    /*if ( $is_last  == '1' ){
         $class .= ' col_last';
-    }
+    }*/
     return '<div class="' . $class. '">'. do_shortcode( $content ) . '</div>';
 }
 add_shortcode('one_half', 'webuza_one_half');
 
 /*** One Third ***/
 function webuza_one_third( $attr, $content = null ){
-    extract( shortcode_atts( array( 'is_last' => __( 'Is Last Column?', WEBUZA_THEME_NAME ) ), $attr ) );
-    $class = 'col col_4';
-    if ( $is_last == '1' ){
+    extract( shortcode_atts( array(), $attr ) );
+    $class = 'col-md-4 col-sm-4';
+    /*if ( $is_last == '1' ){
         $class .= ' col_last';
-    }
+    }*/
     return '<div class="' . $class. '">'. do_shortcode( $content ) . '</div>';
 }
 add_shortcode( 'one_third', 'webuza_one_third' );
 
 /*** One Fourth ***/
 function webuza_one_fourth( $attr, $content = null ){
-    extract( shortcode_atts( array( 'is_last' => __( 'Is Last Column?', WEBUZA_THEME_NAME ) ), $attr ) );
-    $class = 'col col_3';
-    if ( $is_last == '1' ){
+    extract( shortcode_atts( array(), $attr ) );
+    $class = 'col-md-3 col-sm-3';
+    /*if ( $is_last == '1' ){
         $class .= ' col_last';
-    }
+    }*/
     return '<div class="' . $class. '">'. do_shortcode( $content ) . '</div>';
 }
 add_shortcode( 'one_fourth', 'webuza_one_fourth' );
 
 /*** Two Thirds ***/
 function webuza_two_thirds( $attr, $content = null ){
-    extract( shortcode_atts( array( 'is_last' => __( 'Is Last Column?', WEBUZA_THEME_NAME ) ), $attr ) );
-    $class = 'col col_8';
-    if ( $is_last == '1' ){
+    extract( shortcode_atts( array(), $attr ) );
+    $class = 'col-md-8 col-sm-8';
+    /*if ( $is_last == '1' ){
         $class .= ' col_last';
-    }
+    }*/
     return '<div class="' . $class. '">'. do_shortcode( $content ) . '</div>';
 }
 add_shortcode('two_thirds', 'webuza_two_thirds');
 
 /*** Tree Fourth ***/
 function webuza_three_fourth( $attr, $content = null ){
-    extract( shortcode_atts( array( 'is_last' => __( 'Is Last Column?', WEBUZA_THEME_NAME ) ), $attr ) );
-    $class = 'col col_9';
-    if ( $is_last == '1' ){
+    extract( shortcode_atts( array(), $attr ) );
+    $class = 'col-md-9 col-sm-9';
+    /*if ( $is_last == '1' ){
         $class .= ' col_last';
-    }
+    }*/
     return '<div class="' . $class. '">'. do_shortcode( $content ) . '</div>';
 }
 add_shortcode ( 'three_fourth', 'webuza_three_fourth' );
@@ -352,7 +352,7 @@ function webuza_icon( $attr ){
             'size'  => __( 'Icon size', WEBUZA_THEME_NAME )
         ), $attr )
     );
-    return '<span class="icon"><i class="' . $image . ' ' . $size . '"></i></span>';
+    return '<span class="icon"><i class="fa ' . $image . ' ' . $size . '"></i></span>';
 }
 add_shortcode( 'icon', 'webuza_icon' );
 
@@ -363,7 +363,7 @@ function webuza_social_icon( $attr ){
             'size'  => __( 'Icon size', WEBUZA_THEME_NAME )
         ), $attr )
     );
-    return '<span class="icon"><i class="' . $image . ' ' . $size . '"></i></span>';
+    return '<span class="icon"><i class="fa ' . $image . ' ' . $size . '"></i></span>';
 }
 add_shortcode( 'social_icon', 'webuza_social_icon' );
 
@@ -411,7 +411,7 @@ function webuza_custom_icon( $attr ){
         }
         $_item = '<span style="'. $_span_size .'px; height: '. $_span_size .'px; display: block; '. $_span_padding .' "><img src="' . $custom_image . '" style="display: table-cell;" /></span>';
     } else {
-        $_item = '<i class="' . $image . '" ' . $style_icon . ' ></i>';
+        $_item = '<i class="fa ' . $image . '" ' . $style_icon . ' ></i>';
     }
 
     $output = '<span class="icon custom';
@@ -883,7 +883,7 @@ function webuza_recent_projects( $attr, $content = null ){
                                         $_content = strip_shortcodes( $post->post_content );
                                         $_maxchar = 150;
                                     ?>
-                                    <figure>
+                                    <figure class="widget-item">
                                         <a href="<?php echo $large_image_url[0]; ?>" data-lightbox="<?php echo $post->ID .'-large'; ?>">
                                             <div class="gallery-thumb">
                                                 <?php if( $thumbnail ) { echo $thumbnail; } else { echo '<img src="'. get_template_directory_uri(). '/images/no-portfolio-item-3.jpg" alt="no image" />'; } ?>

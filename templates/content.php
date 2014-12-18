@@ -9,7 +9,7 @@ echo '<article '; post_class(); echo '>';
 	if ( has_action( 'shoestrap_entry_meta_override' ) ) {
 		do_action( 'shoestrap_entry_meta_override' );
 	} else {
-		do_action( 'shoestrap_entry_meta' );	
+		do_action( 'shoestrap_entry_meta' );
 	}
 
 	echo '<div class="entry-summary">';
