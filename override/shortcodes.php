@@ -32,7 +32,7 @@ function shoestrap_socials( $attr, $content = null ){
     $items = explode ( ',' , $items );
 
     foreach( $items as $item ){
-        $content .= '<li><a target="_blank" href="#'. $item .'"><i class="icon el-icon-'. $item .'"></i></a></li>';
+        $content .= '<li><a class="fa fa-'. $item .'" target="_blank" href="#'. $item .'"><i class="fa fa-'. $item .'"></i></a></li>';
     }
 
 
@@ -74,7 +74,7 @@ function shoestrap_icon( $attr ){
         ), $attr )
     );
 
-    return '<i class="icon el-icon-'. $slug .'"></i>';
+    return '<i class="fa fa-'. $slug .'"></i>';
 }
 
 // lorem-block

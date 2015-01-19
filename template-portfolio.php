@@ -1,15 +1,35 @@
 <?php
-
-/* Template Name: Portfolio 4 Columns */
+/*-----------------------------------------------------------------*
+* Template Name: Portfolio
+*-----------------------------------------------------------------*/
 
 $options = webuza_get_options();
 
-$cols = 4;
-$cols_word = 'four';
-$_iconPlusSrc = get_template_directory_uri() .'/images/icons/ico-plus.png';
-$_iconLinkSrc = get_template_directory_uri() .'/images/icons/ico-link.png';
-$register = 0;
+$cols = $options['wbz_portfolio_main_layout'];
 
+switch( $cols ) {
+    case 2:
+        $_iconPlusSrc = get_template_directory_uri() .'/images/icons/ico-plus-90.png';
+        $_iconLinkSrc = get_template_directory_uri() .'/images/icons/ico-link-90.png';
+        $cols_word = 'two';
+        break;
+    case 3:
+        $_iconPlusSrc = get_template_directory_uri() .'/images/icons/ico-plus-64.png';
+        $_iconLinkSrc = get_template_directory_uri() .'/images/icons/ico-link-64.png';
+        $cols_word = 'three';
+        break;
+    case 4:
+        $_iconPlusSrc = get_template_directory_uri() .'/images/icons/ico-plus.png';
+        $_iconLinkSrc = get_template_directory_uri() .'/images/icons/ico-link.png';
+        $cols_word = 'four';
+        break;
+    default:
+        $_iconPlusSrc = '';
+        $_iconLinkSrc = '';
+        $cols_word = 'three';
+}
+
+$register = 0;
 ?>
 
 <?php

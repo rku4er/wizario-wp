@@ -14,22 +14,10 @@ function shoestrap_setup() {
 
 	// Add post thumbnails ( http://codex.wordpress.org/Post_Thumbnails )
 	add_theme_support( 'post-thumbnails' );
-
-	add_image_size( 'blog-widget', 50, 50, true );
 	add_image_size( 'portfolio-4x', 252, 161, true );
 	add_image_size( 'portfolio-3x', 346, 221, true );
 	add_image_size( 'portfolio-2x', 533, 341, true );
-	add_image_size( 'portfolio-thumb', 600, 403, true );
-	add_image_size( 'portfolio-widget', 100, 100, true );
-	add_image_size( 'recent-portfolio-thumb', 100, 100, true );
-	add_image_size( 'recent-thumb', 346, 221, true );
-
-	//thumb for Promo Teaser
-	add_image_size( 'promo-teaser-2', 534, 281, true );
-	add_image_size( 'promo-teaser-3', 342, 183, true );
-	add_image_size( 'promo-teaser-22', 535, 281, true );
-	add_image_size( 'promo-teaser-33', 348, 183, true );
-	add_image_size( 'promo-teaser-77', 348, 228, true );
+	//add_image_size( 'custom', 50, 50, true );
 
 	// Add post formats ( http://codex.wordpress.org/Post_Formats )
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );

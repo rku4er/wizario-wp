@@ -6995,7 +6995,7 @@ fieldset[disabled] .contact-form .pushbutton-wide.active {
   background-color: #ffffff;
 }
 .page-header {
-  padding-top: 9px;
+  /* padding-top: 9px; */
 }
 @font-face {
   font-family: 'Elusive-Icons';

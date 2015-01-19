@@ -113,7 +113,7 @@ function footer_html(){
                     foreach ( $networks as $network ) {
                         // Check if the social network URL has been defined
                         if ( isset( $network['url'] ) && ! empty( $network['url'] ) && strlen( $network['url'] ) > 7 ) {
-                            echo '<a href="' . $network['url'] . '"' . $blank . ' title="' . $network['icon'] . '"><span class="el-icon-' . $network['icon'] . '"></span></a>';
+                            echo '<a href="' . $network['url'] . '"' . $blank . ' title="' . $network['icon'] . '"><span class="fa-' . $network['icon'] . '"></span></a>';
                         }
                     }
 
@@ -134,10 +134,10 @@ function custom_navbar_search(){
     if ( $show_searchbox == '1' ) : ?>
     <form role="search" method="get" id="searchform" class="site-search" action="<?php echo home_url('/'); ?>">
         <input type="search" value="<?php if (is_search()) { echo get_search_query(); } ?>" name="s" id="s" class="form-control-search" placeholder="<?php _e('Search', 'shoestrap'); ?> <?php bloginfo('name'); ?>">
-        <button type="sumbit" class="visible-xs visible-sm sumbit-search"><i class="icon el-icon-search"></i></button>
+        <button type="sumbit" class="visible-xs visible-sm sumbit-search"><i class="fa fa-search"></i></button>
         <a href="#" class="js-trigger-search visible-md visible-lg">
-            <i class="icon el-icon-search"></i>
-            <i class="icon el-icon-close hide"></i>
+            <i class="fa fa-search"></i>
+            <i class="fa fa-close hide"></i>
         </a>
     </form>
     <?php endif;
@@ -145,8 +145,9 @@ function custom_navbar_search(){
 
 add_action('shoestrap_header_top_navbar_override', 'custom_header_template');
 function custom_header_template(){
+    $dark_style = (is_page_template('template-home.php') || is_page_template('template-portfolio.php') || is_page_template('template-portfolio-2x.php') || is_page_template('template-portfolio-3x.php') || is_page_template('template-portfolio-4x.php')) ? 'dark-style' : '';
     ?>
-    <header class='header'>
+    <header class='header <?php echo $dark_style; ?>'>
         <div class="container-fluid">
             <div class="header-container clearfix">
 

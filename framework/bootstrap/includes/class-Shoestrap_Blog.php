@@ -118,37 +118,37 @@ if ( ! class_exists( 'Shoestrap_Blog' ) ) {
 				foreach ( $metas as $meta => $value ) {
 					// output sticky element
 					if ( $meta == 'sticky' && ! empty( $value ) && is_sticky() ) {
-						$content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'featured-post' ) . '<i class="el-icon-flag icon"></i> ' . __( 'Sticky', 'shoestrap' ) . $ss_framework->close_col( 'span' );
+						$content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'featured-post' ) . '<i class="el-icon-flag icon"></i> ' . __( 'Sticky', 'shoestrap' ) . $ss_framework->close_col( 'li' );
 					}
 
 					// output post format element
 					if ( $meta == 'post-format' && ! empty( $value ) ) {
 						if ( get_post_format( $post->ID ) === 'gallery' ) {
-						  $content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-picture"></i> <a href="' . esc_url( get_post_format_link( 'gallery' ) ) . '">' . __('Gallery','shoestrap') . '</a>' . $ss_framework->close_col( 'span' );
+						  $content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-picture"></i> <a href="' . esc_url( get_post_format_link( 'gallery' ) ) . '">' . __('Gallery','shoestrap') . '</a>' . $ss_framework->close_col( 'li' );
 						}
 						if ( get_post_format( $post->ID ) === 'aside' ) {
-						  $content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-chevron-right"></i> <a href="' . esc_url( get_post_format_link( 'aside' ) ) . '">' . __('Aside','shoestrap') . '</a>' . $ss_framework->close_col( 'span' );
+						  $content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-chevron-right"></i> <a href="' . esc_url( get_post_format_link( 'aside' ) ) . '">' . __('Aside','shoestrap') . '</a>' . $ss_framework->close_col( 'li' );
 						}
 						if ( get_post_format( $post->ID ) === 'link' ) {
-						  $content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-link"></i> <a href="' . esc_url( get_post_format_link( 'link' ) ) . '">' . __('Link','shoestrap') . '</a>' . $ss_framework->close_col( 'span' );
+						  $content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-link"></i> <a href="' . esc_url( get_post_format_link( 'link' ) ) . '">' . __('Link','shoestrap') . '</a>' . $ss_framework->close_col( 'li' );
 						}
 						if ( get_post_format( $post->ID ) === 'image' ) {
-						  $content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-picture"></i> <a href="' . esc_url( get_post_format_link( 'image' ) ) . '">' . __('Image','shoestrap') . '</a>' . $ss_framework->close_col( 'span' );
+						  $content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-picture"></i> <a href="' . esc_url( get_post_format_link( 'image' ) ) . '">' . __('Image','shoestrap') . '</a>' . $ss_framework->close_col( 'li' );
 						}
 						if ( get_post_format( $post->ID ) === 'quote' ) {
-						  $content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-quotes-alt"></i> <a href="' . esc_url( get_post_format_link( 'quote' ) ) . '">' . __('Quote','shoestrap') . '</a>' . $ss_framework->close_col( 'span' );
+						  $content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-quotes-alt"></i> <a href="' . esc_url( get_post_format_link( 'quote' ) ) . '">' . __('Quote','shoestrap') . '</a>' . $ss_framework->close_col( 'li' );
 						}
 						if ( get_post_format( $post->ID ) === 'status' ) {
-						  $content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-comment"></i> <a href="' . esc_url( get_post_format_link( 'status' ) ) . '">' . __('Status','shoestrap') . '</a>' . $ss_framework->close_col( 'span' );
+						  $content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-comment"></i> <a href="' . esc_url( get_post_format_link( 'status' ) ) . '">' . __('Status','shoestrap') . '</a>' . $ss_framework->close_col( 'li' );
 						}
 						if ( get_post_format( $post->ID ) === 'video' ) {
-						  $content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-video"></i> <a href="' . esc_url( get_post_format_link( 'video' ) ) . '">' . __('Video','shoestrap') . '</a>' . $ss_framework->close_col( 'span' );
+						  $content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-video"></i> <a href="' . esc_url( get_post_format_link( 'video' ) ) . '">' . __('Video','shoestrap') . '</a>' . $ss_framework->close_col( 'li' );
 						}
 						if ( get_post_format( $post->ID ) === 'audio' ) {
-						  $content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-volume-up"></i> <a href="' . esc_url( get_post_format_link( 'audio' ) ) . '">' . __('Audio','shoestrap') . '</a>' . $ss_framework->close_col( 'span' );
+						  $content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-volume-up"></i> <a href="' . esc_url( get_post_format_link( 'audio' ) ) . '">' . __('Audio','shoestrap') . '</a>' . $ss_framework->close_col( 'li' );
 						}
 						if ( get_post_format( $post->ID ) === 'chat' ) {
-						  $content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-comment-alt"></i> <a href="' . esc_url( get_post_format_link( 'chat' ) ) . '">' . __('Chat','shoestrap') . '</a>' . $ss_framework->close_col( 'span' );
+						  $content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'post-format' ) . '<i class="el-icon-comment-alt"></i> <a href="' . esc_url( get_post_format_link( 'chat' ) ) . '">' . __('Chat','shoestrap') . '</a>' . $ss_framework->close_col( 'li' );
 						}
 					}
 
@@ -166,7 +166,7 @@ if ( ! class_exists( 'Shoestrap_Blog' ) ) {
 								$icon = "el-icon-time icon";
 							}
 
-							$content .= sprintf( $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'date' ) . '<i class="' . $icon . '"></i> <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>' . $ss_framework->close_col( 'span' ),
+							$content .= sprintf( $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'date' ) . '<i class="' . $icon . '"></i> <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>' . $ss_framework->close_col( 'li' ),
 								esc_url( get_permalink() ),
 								esc_attr( sprintf( __( 'Permalink to %s', 'shoestrap' ), the_title_attribute( 'echo=0' ) ) ),
 								esc_attr( get_the_date( 'c' ) ),
@@ -178,20 +178,20 @@ if ( ! class_exists( 'Shoestrap_Blog' ) ) {
 					// output category element
 					if ( $meta == 'category' && ! empty( $value ) ) {
 						if ( $categories_list ) {
-							$content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'categories-links' ) . '<i class="el-icon-folder-open icon"></i> ' . $categories_list . $ss_framework->close_col( 'span' );
+							$content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'categories-links' ) . '<i class="el-icon-folder-open icon"></i> ' . $categories_list . $ss_framework->close_col( 'li' );
 						}
 					}
 
 					// output tag element
 					if ( $meta == 'tags' && ! empty( $value ) ) {
 						if ( $tag_list ) {
-							$content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'tags-links' ) . '<i class="el-icon-tags icon"></i> ' . $tag_list . $ss_framework->close_col( 'span' );
+							$content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'tags-links' ) . '<i class="el-icon-tags icon"></i> ' . $tag_list . $ss_framework->close_col( 'li' );
 						}
 					}
 
 					// output author element
 					if ( $meta == 'author' && ! empty( $value ) ) {
-						$content .= sprintf( $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'author vcard' ) . '<i class="el-icon-user icon"></i> <a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a>' . $ss_framework->close_col( 'span' ),
+						$content .= sprintf( $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'author vcard' ) . '<i class="el-icon-user icon"></i> <a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a>' . $ss_framework->close_col( 'li' ),
 							esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 							esc_attr( sprintf( __( 'View all posts by %s', 'shoestrap' ), get_the_author() ) ),
 							get_the_author()
@@ -201,13 +201,13 @@ if ( ! class_exists( 'Shoestrap_Blog' ) ) {
 					// output comment count element
 					if ( $meta == 'comment-count' && ! empty( $value ) ) {
 						if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-							$content .= $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'comments-link' ) . '<i class="el-icon-comment icon"></i> <a href="' . get_comments_link( $post->ID ) . '">' . get_comments_number( $post->ID ) . ' ' . __( 'Comments', 'shoestrap' ) . '</a>' . $ss_framework->close_col( 'span' );
+							$content .= $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'comments-link' ) . '<i class="el-icon-comment icon"></i> <a href="' . get_comments_link( $post->ID ) . '">' . get_comments_number( $post->ID ) . ' ' . __( 'Comments', 'shoestrap' ) . '</a>' . $ss_framework->close_col( 'li' );
 						}
 					}
 
 					// Output author meta but do not display it if user has selected not to show it.
 					if ( $meta == 'author' && empty( $value ) ) {
-						$content .= sprintf( $ss_framework->open_col( 'span', array( 'medium' => $col ), null, 'author vcard' ) . '<a class="url fn n" href="%1$s" title="%2$s" rel="author" style="display:none;">%3$s</a>' . $ss_framework->close_col( 'span' ),
+						$content .= sprintf( $ss_framework->open_col( 'li', array( 'medium' => $col ), null, 'author vcard' ) . '<a class="url fn n" href="%1$s" title="%2$s" rel="author" style="display:none;">%3$s</a>' . $ss_framework->close_col( 'li' ),
 							esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 							esc_attr( sprintf( __( 'View all posts by %s', 'shoestrap' ), get_the_author() ) ),
 							get_the_author()
@@ -217,7 +217,7 @@ if ( ! class_exists( 'Shoestrap_Blog' ) ) {
 			}
 
 			if ( ! empty( $content ) ) {
-				echo $ss_framework->open_row( 'div', null, 'row-meta' ) . $content . $ss_framework->close_row( 'div' );
+				echo $ss_framework->open_row( 'ul', null, 'meta-post' ) . $content . $ss_framework->close_row( 'ul' );
 			}
 		}
 
@@ -268,7 +268,7 @@ if ( ! class_exists( 'Shoestrap_Blog' ) ) {
 				}
 
 				$data['height'] = $ss_settings['feat_img_post_height'];
-				
+
 			} else {
 				// Do not process if we don't want images on post archives
 				if ( $ss_settings['feat_img_archive'] != 1 ) {

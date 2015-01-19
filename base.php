@@ -22,7 +22,7 @@
 			<?php do_action( 'shoestrap_pre_content' ); ?>
 
 
-			<?php if(is_page_template('template-home.php')): ?>
+			<?php if(is_page_template('template-home.php') || is_page_template('template-portfolio.php') || is_page_template('template-portfolio-2x.php') || is_page_template('template-portfolio-3x.php') || is_page_template('template-portfolio-4x.php')): ?>
 
 				<?php include shoestrap_template_path(); ?>
 

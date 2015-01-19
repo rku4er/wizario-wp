@@ -33,9 +33,9 @@
 		// prevent empty links
 		// ---------------------------------------------------------------------------------------
 		function handlePreventEmptyLinks() {
-				$('a[href=#]').click(function (event) {
-						event.preventDefault();
-				});
+			$('a[href=#]').click(function (event) {
+					event.preventDefault();
+			});
 		}
 
 
@@ -71,7 +71,7 @@
 					visibleMobMenu = false;
 				}
 
-				e.preventDefault();
+				//e.preventDefault();
 			});
 
 
@@ -177,7 +177,7 @@
 					$('.super-header').removeClass('in');
 					checkValue();
 				}
-				e.preventDefault();
+				//e.preventDefault();
 			});
 
 			// set header on position
@@ -356,7 +356,7 @@
 				handleAnimatedHeader();
 				handleChangeClass();
 				handleMegaHeader();
-				handlePreventEmptyLinks();
+				//handlePreventEmptyLinks();
 				handleRetina();
 				handleFilter();
 				handleAnimations();
@@ -566,8 +566,11 @@
 				$window.resize(function() {
 				  var gridSize = getGridSize();
 
-				  flexslider.vars.minItems = gridSize;
-				  flexslider.vars.maxItems = gridSize;
+				  if(typeof flexslider !== 'undefined'){
+					flexslider.vars.minItems = gridSize;
+				  	flexslider.vars.maxItems = gridSize;
+				  }
+
 				});
 			},
 

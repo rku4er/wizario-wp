@@ -850,7 +850,7 @@ function webuza_custom_archive( $attr, $content = null ){
 add_shortcode( 'custom_archives', 'webuza_custom_archive' );
 
 /*** Recent Projects ***/
-function webuza_recent_projects( $attr, $content = null ){
+function webuza_recent_projects( $attr ){
     global $post, $wpdb;
     extract(
         shortcode_atts( array(

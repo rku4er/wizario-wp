@@ -154,49 +154,6 @@ function custom_avatar ($avatar_defaults) {
     return $avatar_defaults;
 }
 
-
-#-----------------------------------------------------------------#
-# Page specific js
-#-----------------------------------------------------------------#
-add_action('wp_enqueue_scripts', 'webuza_page_specific_js');
-function webuza_page_specific_js() {
-    //home
-    if ( is_page_template('page-template-home-slider.php') || is_page_template('template-home-5.php') ) {
-        wp_enqueue_script( 'orbit' );
-        wp_register_style( 'orbit-css', get_template_directory_uri() .'/css/orbit.css' );
-        wp_enqueue_style( 'orbit-css' );
-    }
-    //comments
-    if ( is_singular() && comments_open() && get_option('thread_comments') ) wp_enqueue_script('comment-reply');
-
-    //contacts
-    if ( is_page_template( 'template-contact.php') ) {
-        wp_register_script('googleMaps', 'https://maps.google.com/maps/api/js?sensor=false', NULL, NULL, TRUE);
-        wp_register_script('webuzaLocationMap', get_template_directory_uri() . '/js/map.js', array('jquery', 'googleMaps'), '1.0', TRUE);
-
-        wp_enqueue_script('googleMaps');
-        wp_enqueue_script('webuzaLocationMap');
-    }
-
-    //home slider mediaElement
-    if ( is_page_template( 'page-template-home-slider.php') ) {
-
-        if ( floatval( get_bloginfo('version') ) >= "3.6" ) {
-            wp_enqueue_script('wp-mediaelement');
-            wp_enqueue_style('wp-mediaelement');
-        } else {
-
-            //register media element for WordPress 3.5
-            wp_register_script('wp-mediaelement', get_template_directory_uri() . '/js/mediaelement-and-player.min.js', array('jquery'), '1.0', TRUE);
-            wp_register_style('wp-mediaelement', get_template_directory_uri() . '/css/mediaelementplayer.min.css');
-
-            wp_enqueue_script('wp-mediaelement');
-            wp_enqueue_style('wp-mediaelement');
-        }
-    }
-}
-
-
 #-----------------------------------------------------------------#
 # Post gallery
 #-----------------------------------------------------------------#
@@ -483,7 +440,7 @@ function portfolio_register() {
 
     $args = array(
         'labels' => $portfolio_labels,
-        'rewrite' => array( 'slug' => $custom_slug,'with_front' => false ),
+        'rewrite' => array( 'slug' => 'archive-portfolio' ),
         'singular_label' => __( 'Project', WEBUZA_THEME_NAME ),
         'public' => true,
         'publicly_queryable' => true,
@@ -856,7 +813,7 @@ function webuza_home_slider_ordering() {
 add_action( 'admin_enqueue_scripts', 'webuza_slider_enqueue_scripts' );
 function webuza_slider_enqueue_scripts() {
     wp_enqueue_script( 'jquery-ui-sortable' );
-    wp_enqueue_script( 'webuza-reorder', get_template_directory_uri() . '/js/webuza-reorder.js' );
+    wp_enqueue_script( 'webuza-reorder', SHOESTRAP_ASSETS_URL . '/js/vendor/webuza-reorder.js' );
 }
 
 

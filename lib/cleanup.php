@@ -21,7 +21,7 @@ function shoestrap_head_cleanup() {
         if(array_key_exists('WP_Widget_Recent_Comments', $wp_widget_factory->widgets)) {
             remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
         }
-	
+
 	if ( ! class_exists( 'WPSEO_Frontend' ) ) {
 		remove_action( 'wp_head', 'rel_canonical' );
 		add_action( 'wp_head', 'shoestrap_rel_canonical' );
@@ -347,3 +347,13 @@ function shoestrap_pagination_toggler() {
 
 	return $nav;
 }
+
+
+/**
+ * Return normal admin-bar behavior
+ */
+function remove_default_admin_bar_filter() {
+	global $ss_advanced;
+	remove_filter( 'show_admin_bar', array( $ss_advanced, 'admin_bar' ) );
+}
+add_action( 'wp', 'remove_default_admin_bar_filter' );

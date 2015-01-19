@@ -81,7 +81,7 @@ function webuza_options_add_init()
     wp_enqueue_style('webuzaCss', get_template_directory_uri() . '/options/css/options.css', false, '1.0', 'all');
     wp_enqueue_script('jquery-ui-tabs');
     wp_enqueue_script('webuzaScript', get_template_directory_uri() . '/options/js/options.js', false, '1.0');
-    wp_enqueue_script('jcolor-picker', get_template_directory_uri() . '/js/jscolor/jscolor.js', false, '1.4.1');
+    wp_enqueue_script('jcolor-picker', SHOESTRAP_ASSETS_URL . '/js/vendor/jscolor/jscolor.js', false, '1.4.1');
 }
 
 $option_page_name = 'webuza_options';

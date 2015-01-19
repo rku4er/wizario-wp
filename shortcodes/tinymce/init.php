@@ -16,9 +16,9 @@ function webuza_tinymce_init(){
     }
     wp_enqueue_style( 'webuza_shortcodes_dialog', get_template_directory_uri() . '/shortcodes/tinymce/css/style.css', false );
     wp_enqueue_style( 'webuza_shortcodes_css', get_template_directory_uri() . '/shortcodes/tinymce/css/jquery.ui.dialog.min.css', false );
-    wp_enqueue_style( 'webuza_font_awesome', get_template_directory_uri() . '/css/font-awesome.min.css', false );
+    wp_enqueue_style( 'webuza_font_awesome', SHOESTRAP_ASSETS_URL . '/css/font-awesome.css', false );
 
-    wp_enqueue_script( 'jcolor-picker', get_template_directory_uri() . '/js/jscolor/jscolor.js' );
+    wp_enqueue_script('jcolor-picker', SHOESTRAP_ASSETS_URL . '/js/vendor/jscolor/jscolor.js', false, '1.4.1');
 }
 add_action('init', 'webuza_tinymce_init');
 
@@ -26,7 +26,7 @@ add_action('init', 'webuza_tinymce_init');
 # Add Webuza TinyMce js file
 #-----------------------------------------------------------------#
 function webuza_add_js_plugin( $plugin_array ) {
-    $plugin_array['jquery-ui-dialog'] = get_template_directory_uri() . '/js/jquery-ui-dialog.min.js';
+    $plugin_array['jquery-ui-dialog'] = SHOESTRAP_ASSETS_URL . '/js/vendor/jquery-ui-dialog.min.js';
     $plugin_array['webuza_buttons'] = get_template_directory_uri() . '/shortcodes/tinymce/js/tinymce.js';
     return $plugin_array;
 }
