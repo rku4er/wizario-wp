@@ -27,13 +27,7 @@
 				<?php include shoestrap_template_path(); ?>
 
 			<?php else:?>
-
-				<div class="page-header">
-					<div class="container">
-						<small>Be in Focus</small>
-						  <h1>Quick News</h1>
-					</div>
-				</div>
+				<?php shoestrap_title_section( true, 'h1', false, 'page-header', $wp_query->queried_object->ID); ?>
 
 				<section class="content-page">
 

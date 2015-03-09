@@ -32,7 +32,7 @@ function shoestrap_socials( $attr, $content = null ){
     $items = explode ( ',' , $items );
 
     foreach( $items as $item ){
-        $content .= '<li><a class="fa fa-'. $item .'" target="_blank" href="#'. $item .'"><i class="fa fa-'. $item .'"></i></a></li>';
+        $content .= '<li><a class="fa fa-'. $item .'" target="_blank" href="#'. $item .'"></a></li>';
     }
 
 

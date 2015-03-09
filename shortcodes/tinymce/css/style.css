@@ -40,3 +40,8 @@
 .shortcodes-dialog .img-uploader { float: right; text-align: right; width: 300px; line-height: 0px; }
 .shortcodes-dialog .img-uploader .image_delete { line-height: 10px; }
 .shortcodes-dialog .img-uploader img { margin: 10px 0; }
+
+
+html.wp-toolbar{
+    font-size: 10px;
+}

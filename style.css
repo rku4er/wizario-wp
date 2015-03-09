@@ -4,7 +4,7 @@
     Author: Webuza
     Author URI: http://themeforest.net/user/Webuza/portfolio
     Description: An Ultra Responsive Multi-Purpose Theme.
-    Version: 1.0
+    Version: 3.3.0
     License: GNU General Public License version 3.0
     License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -367,7 +367,7 @@ abbr[title], abbr[data-original-title] {
   background: #fff; }
 
 /****************************
-    PRELOADER
+  PRELOADER
 *****************************/
 .spinner {
   position: absolute;
@@ -461,9 +461,9 @@ abbr[title], abbr[data-original-title] {
   margin-right: 1.2rem;
   position: absolute;
   top: 0;
-  left: 32px;
+  left: 20px;
   line-height: 43px;
-  line-height: 4.3rem; }
+  line-height: 3.4rem; }
 
 .boxedcontainer {
   margin: auto;
@@ -867,6 +867,7 @@ abbr[title], abbr[data-original-title] {
   color: #000;
   line-height: 21px;
   line-height: 2.1rem;
+  height: 4.2rem;
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
@@ -1283,12 +1284,12 @@ abbr[title], abbr[data-original-title] {
   min-height: 0; }
 
 .two-col .lorem-caption {
-  margin-top: -53px; }
+  margin-top: -78px; }
 .two-col .item {
   margin-bottom: 20px; }
 
 /*------------------------------------*\
-        #PORTFOLIO TYPE ONE
+    #PORTFOLIO TYPE ONE
 \*------------------------------------*/
 .blog-header {
   height: 582px;
@@ -1561,7 +1562,7 @@ abbr[title], abbr[data-original-title] {
   color: #666; }
 
 /*------------------------------------*\
-        #ARTICLE
+    #ARTICLE
 \*------------------------------------*/
 .light-text-page .title-logo {
   color: #fff; }
@@ -1605,7 +1606,7 @@ abbr[title], abbr[data-original-title] {
   display: block;
   background: url("assets/img/type-post-ico.png"); }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-    .type-post:not(.post) {
+    .type-post {
       background: url("assets/img/retina/type-post-ico.png");
       background-size: 16px 17px; } }
 
@@ -1867,7 +1868,7 @@ abbr[title], abbr[data-original-title] {
   margin-top: 13px; }
 
 /*------------------------------------*\
-        #ARTICLE 2 type
+    #ARTICLE 2 type
 \*------------------------------------*/
 .ba-control {
   padding-right: 88px; }
@@ -2297,8 +2298,8 @@ abbr[title], abbr[data-original-title] {
   font-weight: bold; }
 
 .number-count-block {
-  padding-top: 95px;
-}
+  padding-top: 95px; }
+
 
 
 
@@ -2364,6 +2365,8 @@ a:focus{
 .widget ul > li{
     border: 0 none;
     float: none;
+    font-size: 1.5rem;
+    line-height: 2.6rem;
 }
 .widget ul > li + li{
     margin-top: 5px;
@@ -2407,6 +2410,12 @@ a:focus{
 .widget.widget_recent_entries ul > li + li{
     margin-top: 18px;
 }
+.widget.widget_recent_entries ul > li > .post-date{
+  color: #333;
+  display: block;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+}
 .widget.widget_recent_entries ul > li > a{
     display: inline-block;
     font-size: 1.3rem;
@@ -2436,8 +2445,24 @@ a:focus{
 body[class*="portfolio-"] .content-holder{
   padding-top: 146px;
 }
-.p-list .item{
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+
+.wz-bullet{
+    color: rgba(255, 255, 255, 0.4);
+    display: table-cell;
+    font-family: "Montserrat",Arial,sans-serif;
+    font-size: 11px;
+    height: inherit;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    text-align: center;
+    transition: color 250ms ease 0s;
+    vertical-align: middle;
+    width: inherit;
 }
+.wz-bullet span{
+  font-weight: normal !important;
+  font-family: inherit !important;
+  padding: 0 20px 0 35px !important;
+}
+#copyright-bar { line-height: inherit; }

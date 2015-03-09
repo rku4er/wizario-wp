@@ -43,13 +43,15 @@ function shoestrap_title() {
  * The title secion.
  * Includes a <head> element and link.
  */
-function shoestrap_title_section( $header = true, $element = 'h1', $link = false, $class = 'entry-title' ) {
-	$content  = $header ? '<header>' : '';
-	$content .= '<' . $element . ' class="' . $class . '">';
+function shoestrap_title_section( $header = true, $element = 'h1', $link = false, $class = 'entry-title', $postID = NULL ) {
+	$content  = $header ? '<header class="' . $class . '">' : '';
+	$content .= '<div class="container">';
+	$content .= '<' . $element . '>';
 	$content .= $link ? '<a href="' . get_permalink() . '">' : '';
-	$content .= is_singular() ? shoestrap_title() : apply_filters( 'shoestrap_title', get_the_title() );
+	$content .= is_singular() ? shoestrap_title() : apply_filters( 'shoestrap_title', get_the_title($postID) );
 	$content .= $link ? '</a>' : '';
 	$content .= '</' . $element . '>';
+	$content .= '</div>';
 	$content .= $header ? '</header>' : '';
 
 	echo apply_filters( 'shoestrap_title_section', $content );

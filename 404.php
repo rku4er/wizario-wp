@@ -2,8 +2,6 @@
 
 global $ss_framework;
 
-ss_get_template_part('templates/page', 'header');
-
 $alert_message = __( 'Sorry, but the page you were trying to view does not exist.', 'shoestrap' );
 echo $ss_framework->alert( $type = 'warning', $alert_message );
 ?>

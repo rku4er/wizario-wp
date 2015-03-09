@@ -145,7 +145,7 @@ function custom_navbar_search(){
 
 add_action('shoestrap_header_top_navbar_override', 'custom_header_template');
 function custom_header_template(){
-    $dark_style = (is_page_template('template-home.php') || is_page_template('template-portfolio.php') || is_page_template('template-portfolio-2x.php') || is_page_template('template-portfolio-3x.php') || is_page_template('template-portfolio-4x.php')) ? 'dark-style' : '';
+    $dark_style = (is_page_template('template-portfolio.php') || is_page_template('template-portfolio-2x.php') || is_page_template('template-portfolio-3x.php') || is_page_template('template-portfolio-4x.php')) ? 'dark-style' : '';
     ?>
     <header class='header <?php echo $dark_style; ?>'>
         <div class="container-fluid">
@@ -153,7 +153,7 @@ function custom_header_template(){
 
                 <div class="h-left-bar">
                     <div class="h-logo">
-                        <a href="#">
+                        <a href="<?php bloginfo('siteurl'); ?>">
                             <span class="logo-b">
                                 <span class="logo-back"></span>
                                 <span class="logo-back"></span>

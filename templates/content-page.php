@@ -3,7 +3,6 @@
 global $ss_framework;
 
 while ( have_posts() ) : the_post();
-	shoestrap_title_section();
 	do_action( 'shoestrap_entry_meta' );
 	do_action( 'shoestrap_page_pre_content' );
 

@@ -5,8 +5,11 @@
   height: 500px !important;
   min-height: 500px !important; }
 
+
 .revo-pag .revo-pag-control {
-  display: none; }
+  display: none;
+}
+
 .revo-pag .current-slide {
   display: block; }
 
@@ -19,6 +22,10 @@
 
 .slideCaption {
   font-size: 13px; }
+
+.slideCaption {
+  font-size: 11px; }
+
 
 .btn-link-block .btn {
   padding: 15px 20px; }
@@ -283,7 +290,7 @@ html {
       left: 0;
       margin-left: -5px;
       position: absolute;
-      top: -36px;
+      top: -39px;
       left: 0; }
     .mobile-pagination li + li {
       margin-left: 85px; }
@@ -404,15 +411,6 @@ html {
   padding-left: 4rem; }
   .btn-link-block .btn-icon .icon-btn {
     left: 26px; }
-
-.ico-has-thmb {
-  vertical-align: bottom;
-  background-size: 100% 200%;
-  width: 33px;
-  height: 35px; }
-
-.slideCaption {
-  font-size: 11px; }
 
 @media (max-width: 768px) {
   .btn-left-group-slide, .exerpt-slide, .md-title-slide, .wh-mark-sm-title {

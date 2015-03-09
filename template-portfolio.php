@@ -50,7 +50,7 @@ $categories = get_categories(array(
                 <li>
                     <a class="active" href="#" data-filter="*" rel="">
                         <?php echo __( 'All', WEBUZA_THEME_NAME ); ?>
-                        <span class="portfolio-selectrd">&nbsp;</span>
+                        <i class="ico-default-bullet"></i>
                     </a>
                 </li>
 
@@ -58,7 +58,7 @@ $categories = get_categories(array(
                     <li class="<?php echo strtolower( $category->name ); ?>">
                         <a href="#<?php echo strtolower( $category->name ); ?>" data-filter="<?php echo '.' .strtolower($category->name); ?>" rel="<?php echo strtolower($category->name); ?>">
                             <?php echo $category->name; ?>
-                            <span class="portfolio-selectrd">&nbsp;</span>
+                            <i class="ico-default-bullet"></i>
                         </a>
                     </li>
                 <?php endforeach; ?>
@@ -125,7 +125,7 @@ $categories = get_categories(array(
                             <div class="lorem-caption">
                                 <?php $_content = strip_shortcodes( $post->post_content ); ?>
                                 <?php $_maxchar = ( $cols == 2 ) ? 250 : 150; ?>
-                                <?php kama_excerpt( "maxchar=$_maxchar&text=$_content"); ?>
+                                <p><?php kama_excerpt( "maxchar=$_maxchar&text=$_content"); ?></p>
                             </div>
                         </figcaption>
                     <?php endif; ?>

@@ -894,7 +894,7 @@ function webuza_recent_projects( $attr ){
                                             <h4 class="xmd-h"><?php echo $post_title; ?></h4>
                                             <time datetime="2014-12-12" class="pub-date"><?php echo date_format( $date, 'd F Y'); ?></time>
                                             <div class="lorem-caption">
-                                                <?php kama_excerpt( "maxchar=$_maxchar&text=$_content"); ?>
+                                                <p><?php kama_excerpt( "maxchar=$_maxchar&text=$_content"); ?></p>
                                             </div>
                                         </figcaption>
                                     </figure>

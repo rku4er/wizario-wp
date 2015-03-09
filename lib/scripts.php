@@ -10,15 +10,15 @@ function shoestrap_scripts() {
 	wp_register_style( 'shoestrap_css', $stylesheet_url, false, $stylesheet_ver );
 
     // new stylesheets
-	wp_register_style( 'font_awesome_css', SHOESTRAP_ASSETS_URL . '/css/font-awesome.css', false, '1.0.0' );
-    wp_register_style( 'bootstrap_css', SHOESTRAP_ASSETS_URL . '/css/bootstrap.css', false, '1.0.0' );
+	wp_register_style( 'font_awesome_css', SHOESTRAP_ASSETS_URL . '/css/font-awesome.css', false, '1.0.0', 'screen' );
+    wp_register_style( 'bootstrap_css', SHOESTRAP_ASSETS_URL . '/css/bootstrap.css', false, '1.0.0', 'screen' );
     wp_register_style( 'revslider_css', SHOESTRAP_ASSETS_URL . '/css/revslider.css', false, '1.0.0', 'screen' );
-    wp_register_style( 'flexslider_css', SHOESTRAP_ASSETS_URL . '/css/flexslider.css', false, '1.0.0' );
+    wp_register_style( 'flexslider_css', SHOESTRAP_ASSETS_URL . '/css/flexslider.css', false, '1.0.0', 'screen' );
 	wp_register_style( 'waves_css', SHOESTRAP_ASSETS_URL . '/css/waves.css', false, '1.0.0' );
 
-    wp_register_style( 'mobile_css', SHOESTRAP_ASSETS_URL . '/css/mobile.css', false, '1.0.0', '(max-width: 1179px)' );
-    wp_register_style( 'tablet_css', SHOESTRAP_ASSETS_URL . '/css/tablet.css', false, '1.0.0', '(min-width: 1180px) and (max-width: 1350px)' );
-    wp_register_style( 'desktop_css', SHOESTRAP_ASSETS_URL . '/css/desktop.css', false, '1.0.0', '(min-width: 1350px)' );
+    wp_register_style( 'mobile_css', SHOESTRAP_ASSETS_URL . '/css/mobile.css', false, '1.0.0', 'screen and (max-width: 1179px)' );
+    wp_register_style( 'tablet_css', SHOESTRAP_ASSETS_URL . '/css/tablet.css', false, '1.0.0', 'screen and (min-width: 1180px) and (max-width: 1350px)' );
+    wp_register_style( 'desktop_css', SHOESTRAP_ASSETS_URL . '/css/desktop.css', false, '1.0.0', 'screen and (min-width: 1350px)' );
     wp_register_style( 'main_css', get_stylesheet_directory_uri() .'/style.css', false, '1.0.0' );
 
     // Enqueue main stylesheets
@@ -30,11 +30,10 @@ function shoestrap_scripts() {
     wp_enqueue_style( 'flexslider_css' );
     wp_enqueue_style( 'font_awesome_css' );
     wp_enqueue_style( 'waves_css' );
+    wp_enqueue_style( 'main_css' );
     wp_enqueue_style( 'mobile_css' );
     wp_enqueue_style( 'tablet_css' );
     wp_enqueue_style( 'desktop_css' );
-    wp_enqueue_style( 'main_css' );
-    wp_enqueue_style( 'main-styles' );
 
 	// register default scripts
 	wp_register_script( 'modernizr', SHOESTRAP_ASSETS_URL . '/js/vendor/modernizr-2.7.0.min.js', false, null, false );
