@@ -54,6 +54,7 @@ function shoestrap_scripts() {
     wp_register_script( 'piechart', SHOESTRAP_ASSETS_URL . '/js/vendor/jquery.easypiechart.min.js', array('jquery'), '1.0.0', true  );
 	wp_register_script( 'isotope', SHOESTRAP_ASSETS_URL . '/js/vendor/isotope.min.js', array('jquery'), '1.0.0', true  );
     wp_register_script( 'main', SHOESTRAP_ASSETS_URL . '/js/vendor/main.js', array('jquery'), '1.0.0', true  );
+    wp_register_script( 'main_js', SHOESTRAP_ASSETS_URL . '/js/_main.js', array('main'), '1.0.0', true  );
 
 	// enqueue default scripts
 	wp_enqueue_script( 'jquery' );
@@ -74,7 +75,8 @@ function shoestrap_scripts() {
     wp_enqueue_script( 'flexslider' );
 	wp_enqueue_script( 'piechart' );
     wp_enqueue_script( 'isotope' );
-	wp_enqueue_script( 'main' );
+    wp_enqueue_script( 'main' );
+	wp_enqueue_script( 'main_js' );
 
 
 	if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {

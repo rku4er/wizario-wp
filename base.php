@@ -17,21 +17,28 @@
 
 		<?php do_action( 'shoestrap_pre_wrap' ); ?>
 
-		<?php echo $ss_framework->open_container( 'div', '', 'content-holder' ); ?>
+		<?php
+			$options = get_post_custom(get_the_ID());
+    		$top_offset = $options['_webuza_header_style'][0] == 'style1' ? 'top-offset' : '';
+    		$header_class = $options['_webuza_header_style'][0] == 'style1' ? 'page-title' : 'page-header';
+		?>
+
+		<?php echo $ss_framework->open_container( 'div', false, sprintf('content-holder %s', $top_offset)); ?>
 
 			<?php do_action( 'shoestrap_pre_content' ); ?>
 
+			<?php if($options['_webuza_header_show'][0] == 'on') shoestrap_title_section( true, 'h1', false, $header_class, $wp_query->queried_object->ID); ?>
 
 			<?php if(is_page_template('template-home.php') || is_page_template('template-portfolio.php') || is_page_template('template-portfolio-2x.php') || is_page_template('template-portfolio-3x.php') || is_page_template('template-portfolio-4x.php')): ?>
 
 				<?php include shoestrap_template_path(); ?>
-
 			<?php else:?>
-				<?php shoestrap_title_section( true, 'h1', false, 'page-header', $wp_query->queried_object->ID); ?>
 
 				<section class="content-page">
 
-					<div class="container">
+					<?php if(!is_page_template('template-full.php')): ?>
+						<div class="container">
+					<?php endif; ?>
 
 						<?php echo $ss_framework->open_row( 'div', null, 'bg' ); ?>
 
@@ -63,7 +70,9 @@
 							<?php echo $ss_framework->clearfix(); ?>
 						<?php echo $ss_framework->close_row( 'div' ); ?>
 
-					</div>
+					<?php if(!is_page_template('template-full.php')): ?>
+						</div><!-- /.container -->
+					<?php endif; ?>
 
 				</section><!-- /.content-page -->
 

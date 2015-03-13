@@ -1,6 +1,19 @@
 <?php
 
 /**
+ * Redux Custom Options
+ */
+$redux_custom = get_option( 'redux_custom' );
+
+/**
+ * Disable autop
+ */
+if($redux_custom['autop_toggle'] == 1 ){
+    remove_filter( 'the_content', 'wpautop' );
+	remove_filter( 'the_excerpt', 'wpautop' );
+}
+
+/**
  * Define which pages shouldn't have the primary sidebar
  *
  * See lib/sidebar.php for more details
@@ -9,10 +22,12 @@ function shoestrap_display_primary_sidebar() {
 	$sidebar_config = new Shoestrap_Sidebar(
 		array(
 			'is_404',
-			'is_front_page'
+			'is_front_page',
 		),
 		array(
-			'template-0.php'
+			'template-0.php',
+			'template-demo.php',
+			'template-full.php',
 		)
 	);
 
@@ -33,7 +48,9 @@ function shoestrap_display_secondary_sidebar() {
 		array(
 			'template-0.php',
 			'template-1.php',
-			'template-2.php'
+			'template-2.php',
+			'template-demo.php',
+			'template-full.php',
 		)
 	);
 

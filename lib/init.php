@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Shoestrap initial setup and constants
  */

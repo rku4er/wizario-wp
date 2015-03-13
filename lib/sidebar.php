@@ -24,6 +24,7 @@ class Shoestrap_Sidebar {
 
 		if ( in_array( true, $conditionals ) || in_array( true, $templates ) ) {
 			$this->display = false;
+		}else{
 		}
 	}
 

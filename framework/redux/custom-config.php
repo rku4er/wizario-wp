@@ -254,12 +254,21 @@
                         ),
 
                         array(
+                            'title'       => __( 'Disable autop', 'shoestrap' ),
+                            'desc'        => __( 'Disable WordPress\' automatic formatting.Default: OFF.', 'shoestrap' ),
+                            'id'          => 'autop_toggle',
+                            'default'     => 0,
+                            'compiler'    => true,
+                            'type'        => 'switch',
+                        ),
+
+                        /*array(
                             'id'       => 'opt-raw_info',
                             'type'     => 'info',
                             //'required' => array( '18', 'equals', array( '1', '2' ) ),
                             'raw_html' => true,
                             'desc'     => $sampleHTML,
-                        ),
+                        ),*/
 
                         /*array(
                             'id'       => 'opt-web-fonts',

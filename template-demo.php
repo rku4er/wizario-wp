@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Grid
+Template Name: Demo
 */
 ?>
 

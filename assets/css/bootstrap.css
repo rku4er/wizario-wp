@@ -451,7 +451,9 @@ a.bg-danger:hover {
 .page-header {
   padding: 195px 0 88px;
   padding: 19.5rem 0 8.8rem;
-  background: #1e1e1e url(../img/bg8.jpg) center top fixed;
+  background-image: url(../img/bg8.jpg);
+  background-position: center top;
+  background-size: cover;
   color: #fff; }
   .page-header small {
     font-family: Georgia;
@@ -473,6 +475,14 @@ a.bg-danger:hover {
     letter-spacing: -0.1px;
     text-transform: uppercase;
     position: relative; }
+  .page-header .supertitle{
+    font-family: Georgia, serif;
+    font-style: italic;
+  }
+  .page-header .subtitle{
+    font-family: Georgia, serif;
+    font-style: italic;
+  }
 
 ul, ol {
   margin-top: 0;
@@ -540,17 +550,23 @@ abbr[title], abbr[data-original-title] {
   text-transform: uppercase; }
 
 blockquote {
-  padding: 31px 7px 28px 47px;
-  padding: 3.1rem 0.7rem 2.8rem 4.7rem;
-  margin: 0 90px;
-  margin: 0 9rem;
+  margin: 13px 0 30px;
+  max-width: 566px;
+  padding: 16px 40px;
+  font-style: italic;
   letter-spacing: -0.1px;
   color: #000;
-  border-left: 4px solid #1dd2af; }
+  border-left: 2px solid #1dd2af;
+  }
   blockquote p, blockquote ul, blockquote ol {
-    font: 36px/42rem "Montserrat", Arial, sans-serif;
-    font: 3.6rem/4.2rem "Montserrat", Arial, sans-serif;
-    font-weight: 700;
+    font-family: Georgia;
+    font-style: italic;
+    color: #666;
+    font-weight: 500;
+    line-height: 26px;
+    line-height: 2.6rem;
+    font-size: 15px;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     margin-bottom: 1rem; }
     blockquote p:last-child, blockquote ul:last-child, blockquote ol:last-child {
@@ -2354,42 +2370,42 @@ tbody.collapse.in {
       border-bottom-color: transparent;
       cursor: default; }
 
-.nav-tabs-width-line {
+.nav-tabs-bordered {
   border-bottom: 1px solid #ccc; }
-  .nav-tabs-width-line > li {
+  .nav-tabs-bordered > li {
     float: left;
     margin-bottom: -1px; }
-    .nav-tabs-width-line > li:first-child a {
+    .nav-tabs-bordered > li:first-child a {
       border-left-width: 0; }
-    .nav-tabs-width-line > li + li > a {
+    .nav-tabs-bordered > li + li > a {
       border-left-width: 0; }
-    .nav-tabs-width-line > li > a {
+    .nav-tabs-bordered > li > a {
       line-height: 1.428571429;
       border: solid #dbdbdb;
       border-width: 0 1px 0;
       font-weight: 600;
       color: #666; }
-      .nav-tabs-width-line > li > a:hover {
+      .nav-tabs-bordered > li > a:hover {
         color: #000; }
-    .nav-tabs-width-line > li.active > a, .nav-tabs-width-line > li.active > a:hover, .nav-tabs-width-line > li.active > a:focus {
+    .nav-tabs-bordered > li.active > a, .nav-tabs-bordered > li.active > a:hover, .nav-tabs-bordered > li.active > a:focus {
       color: #000;
       border-bottom-color: transparent;
       cursor: default;
       box-shadow: 0 -3px 0 #1dd2af inset; }
 
-.nav-vertical-tabs > li {
+.nav-tabs-bordered-vertical > li {
   float: left; }
-  .nav-vertical-tabs > li + li {
+  .nav-tabs-bordered-vertical > li + li {
     border-top: 1px solid #ccc; }
-  .nav-vertical-tabs > li > a {
+  .nav-tabs-bordered-vertical > li > a {
     font-weight: 600;
     color: #666;
     padding: 13px 38px;
     padding: 1.3rem 3.8rem;
     position: relative; }
-    .nav-vertical-tabs > li > a:hover {
+    .nav-tabs-bordered-vertical > li > a:hover {
       color: #000; }
-  .nav-vertical-tabs > li.active > a:after {
+  .nav-tabs-bordered-vertical > li.active > a:after {
     content: '';
     position: absolute;
     z-index: 1;
@@ -2399,28 +2415,28 @@ tbody.collapse.in {
     right: -1px;
     width: 5px;
     background: #1dd2af; }
-  .nav-vertical-tabs > li.active > a, .nav-vertical-tabs > li.active > a:hover, .nav-vertical-tabs > li.active > a:focus {
+  .nav-tabs-bordered-vertical > li.active > a, .nav-tabs-bordered-vertical > li.active > a:hover, .nav-tabs-bordered-vertical > li.active > a:focus {
     color: #000; }
 
-.nav-vertical-tabs-arr {
+.nav-tabs-vertical {
   border: 1px solid #ccc; }
-  .nav-vertical-tabs-arr > li {
+  .nav-tabs-vertical > li {
     float: left; }
-    .nav-vertical-tabs-arr > li + li {
+    .nav-tabs-vertical > li + li {
       border-top: 1px solid #ccc; }
-    .nav-vertical-tabs-arr > li > a {
+    .nav-tabs-vertical > li > a {
       font-weight: 600;
       color: #666;
       padding: 13px 38px;
       padding: 1.3rem 3.8rem;
       position: relative; }
-      .nav-vertical-tabs-arr > li > a:hover {
+      .nav-tabs-vertical > li > a:hover {
         color: #000;
         background: #f3f3f3; }
-    .nav-vertical-tabs-arr > li.active > a {
+    .nav-tabs-vertical > li.active > a {
       background: #1dd2af;
       color: #fff; }
-      .nav-vertical-tabs-arr > li.active > a:after {
+      .nav-tabs-vertical > li.active > a:after {
         content: '';
         position: absolute;
         top: 0;
@@ -2432,12 +2448,12 @@ tbody.collapse.in {
         border: solid transparent;
         border-width: 24px 16px;
         border-left-color: #1dd2af; }
-      .nav-vertical-tabs-arr > li.active > a, .nav-vertical-tabs-arr > li.active > a:hover, .nav-vertical-tabs-arr > li.active > a:focus {
+      .nav-tabs-vertical > li.active > a, .nav-tabs-vertical > li.active > a:hover, .nav-tabs-vertical > li.active > a:focus {
         color: #fff; }
-  .nav-vertical-tabs-arr.arr-visible-hover > li:not(.active) > a:hover {
+  .nav-tabs-vertical.arr-visible-hover > li:not(.active) > a:hover {
     background: #f3f3f3;
     position: relative; }
-    .nav-vertical-tabs-arr.arr-visible-hover > li:not(.active) > a:hover:after {
+    .nav-tabs-vertical.arr-visible-hover > li:not(.active) > a:hover:after {
       content: '';
       position: absolute;
       top: 0;
@@ -2449,7 +2465,7 @@ tbody.collapse.in {
       border: solid transparent;
       border-width: 26px 16px;
       border-left-color: #f3f3f3; }
-    .nav-vertical-tabs-arr.arr-visible-hover > li:not(.active) > a:hover:before {
+    .nav-tabs-vertical.arr-visible-hover > li:not(.active) > a:hover:before {
       content: '';
       position: absolute;
       top: 0;
@@ -2477,37 +2493,37 @@ tbody.collapse.in {
   .nav-stacked > li + li {
     margin-left: 0; }
 
-.nav-justified, .nav-tabs.nav-justified, .nav-tabs-width-line.nav-justified, .nav-vertical-tabs.nav-justified, .nav-vertical-tabs-arr.nav-justified {
+.nav-justified, .nav-tabs.nav-justified, .nav-tabs-light.nav-justified, .nav-vertical-tabs.nav-justified, .nav-vertical-tabs-arr.nav-justified {
   width: 100%; }
-  .nav-justified > li, .nav-tabs.nav-justified > li, .nav-tabs-width-line.nav-justified > li, .nav-vertical-tabs.nav-justified > li, .nav-vertical-tabs-arr.nav-justified > li {
+  .nav-justified > li, .nav-tabs.nav-justified > li, .nav-tabs-light.nav-justified > li, .nav-vertical-tabs.nav-justified > li, .nav-vertical-tabs-arr.nav-justified > li {
     float: none; }
-    .nav-justified > li > a, .nav-tabs.nav-justified > li > a, .nav-tabs-width-line.nav-justified > li > a, .nav-vertical-tabs.nav-justified > li > a, .nav-vertical-tabs-arr.nav-justified > li > a {
+    .nav-justified > li > a, .nav-tabs.nav-justified > li > a, .nav-tabs-light.nav-justified > li > a, .nav-vertical-tabs.nav-justified > li > a, .nav-vertical-tabs-arr.nav-justified > li > a {
       text-align: center;
       margin-bottom: 5px; }
   .nav-justified > .dropdown .dropdown-menu {
     top: auto;
     left: auto; }
   @media (min-width: 768px) {
-    .nav-justified > li, .nav-tabs.nav-justified > li, .nav-tabs-width-line.nav-justified > li, .nav-vertical-tabs.nav-justified > li, .nav-vertical-tabs-arr.nav-justified > li {
+    .nav-justified > li, .nav-tabs.nav-justified > li, .nav-tabs-light.nav-justified > li, .nav-vertical-tabs.nav-justified > li, .nav-vertical-tabs-arr.nav-justified > li {
       display: table-cell;
       width: 1%; }
-      .nav-justified > li > a, .nav-tabs.nav-justified > li > a, .nav-tabs-width-line.nav-justified > li > a, .nav-vertical-tabs.nav-justified > li > a, .nav-vertical-tabs-arr.nav-justified > li > a {
+      .nav-justified > li > a, .nav-tabs.nav-justified > li > a, .nav-tabs-light.nav-justified > li > a, .nav-vertical-tabs.nav-justified > li > a, .nav-vertical-tabs-arr.nav-justified > li > a {
         margin-bottom: 0; }
  }
 
-.nav-tabs-justified, .nav-tabs.nav-justified, .nav-tabs-width-line.nav-justified, .nav-vertical-tabs.nav-justified, .nav-vertical-tabs-arr.nav-justified {
+.nav-tabs-justified, .nav-tabs.nav-justified, .nav-tabs-light.nav-justified, .nav-vertical-tabs.nav-justified, .nav-vertical-tabs-arr.nav-justified {
   border-bottom: 0; }
-  .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a, .nav-tabs-width-line.nav-justified > li > a, .nav-vertical-tabs.nav-justified > li > a, .nav-vertical-tabs-arr.nav-justified > li > a {
+  .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a, .nav-tabs-light.nav-justified > li > a, .nav-vertical-tabs.nav-justified > li > a, .nav-vertical-tabs-arr.nav-justified > li > a {
     margin-right: 0;
     border-radius: 4px; }
-  .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-width-line.nav-justified > .active > a, .nav-vertical-tabs.nav-justified > .active > a, .nav-vertical-tabs-arr.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-width-line.nav-justified > .active > a:hover, .nav-vertical-tabs.nav-justified > .active > a:hover, .nav-vertical-tabs-arr.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus, .nav-tabs-width-line.nav-justified > .active > a:focus, .nav-vertical-tabs.nav-justified > .active > a:focus, .nav-vertical-tabs-arr.nav-justified > .active > a:focus {
+  .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-light.nav-justified > .active > a, .nav-vertical-tabs.nav-justified > .active > a, .nav-vertical-tabs-arr.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-light.nav-justified > .active > a:hover, .nav-vertical-tabs.nav-justified > .active > a:hover, .nav-vertical-tabs-arr.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus, .nav-tabs-light.nav-justified > .active > a:focus, .nav-vertical-tabs.nav-justified > .active > a:focus, .nav-vertical-tabs-arr.nav-justified > .active > a:focus {
     border: 1px solid #ddd; }
   @media (min-width: 768px) {
-    .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a, .nav-tabs-width-line.nav-justified > li > a, .nav-vertical-tabs.nav-justified > li > a, .nav-vertical-tabs-arr.nav-justified > li > a {
+    .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a, .nav-tabs-light.nav-justified > li > a, .nav-vertical-tabs.nav-justified > li > a, .nav-vertical-tabs-arr.nav-justified > li > a {
       border-bottom: 1px solid #ddd;
       border-radius: 4px 4px 0 0; }
 
-    .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-width-line.nav-justified > .active > a, .nav-vertical-tabs.nav-justified > .active > a, .nav-vertical-tabs-arr.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-width-line.nav-justified > .active > a:hover, .nav-vertical-tabs.nav-justified > .active > a:hover, .nav-vertical-tabs-arr.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus, .nav-tabs-width-line.nav-justified > .active > a:focus, .nav-vertical-tabs.nav-justified > .active > a:focus, .nav-vertical-tabs-arr.nav-justified > .active > a:focus {
+    .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-light.nav-justified > .active > a, .nav-vertical-tabs.nav-justified > .active > a, .nav-vertical-tabs-arr.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-light.nav-justified > .active > a:hover, .nav-vertical-tabs.nav-justified > .active > a:hover, .nav-vertical-tabs-arr.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus, .nav-tabs-light.nav-justified > .active > a:focus, .nav-vertical-tabs.nav-justified > .active > a:focus, .nav-vertical-tabs-arr.nav-justified > .active > a:focus {
       border-bottom-color: #fff; }
  }
 
@@ -3455,7 +3471,7 @@ a.list-group-item-danger {
   line-height: 2rem;
   font-size: 18px;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 400;
   color: inherit; }
   .panel-title > a {
     color: inherit;

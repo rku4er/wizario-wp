@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Full-Width
+Template Name: Full-Screen
 */
 
 ss_get_template_part( 'page' );

@@ -20,6 +20,24 @@ function webuza_metabox_page(){
         'priority' => 'high',
         'fields' => array(
             array(
+                'name' => __( 'Page Header Show', WEBUZA_THEME_NAME ),
+                'desc' => __( 'Show header on page', WEBUZA_THEME_NAME ),
+                'id' => '_webuza_header_show',
+                'type' => 'checkbox',
+                'std' => 'on'
+            ),
+            array(
+                'name' => __( 'Page Header Style', WEBUZA_THEME_NAME ),
+                'desc' => __( 'Header will have selected style.', WEBUZA_THEME_NAME ),
+                'id' => '_webuza_header_style',
+                'type' => 'select',
+                'options' => array(
+                    'style1' => 'Style 1',
+                    'style2' => 'Style 2'
+                ),
+                'std' => 'style1'
+            ),
+            array(
                 'name' => __( 'Page Header Image', WEBUZA_THEME_NAME ),
                 'desc' => __( 'The image should be between 1600px - 2000px wide and have a minimum height of 475px for best results. Click "Browse" to upload and then "Insert into Post".', WEBUZA_THEME_NAME ),
                 'id' => '_webuza_header_bg',
@@ -45,15 +63,22 @@ function webuza_metabox_page(){
                 'std' => 'left'
             ),
             array(
+                'name' => __( 'Page Header Super Title', WEBUZA_THEME_NAME ),
+                'desc' => __( 'Super Title will be shown above the Title.', WEBUZA_THEME_NAME ),
+                'id' => '_webuza_header_supertitle',
+                'type' => 'text',
+                'std' => ''
+            ),
+            array(
                 'name' => __( 'Page Header Title', WEBUZA_THEME_NAME ),
-                'desc' => __( 'Enter in the page header title', WEBUZA_THEME_NAME ),
+                'desc' => __( 'This title will shown instead of default page title.', WEBUZA_THEME_NAME ),
                 'id' => '_webuza_header_title',
                 'type' => 'text',
                 'std' => ''
             ),
             array(
                 'name' => __( 'Page Header Subtitle', WEBUZA_THEME_NAME ),
-                'desc' => __( 'Enter in the page header subtitle', WEBUZA_THEME_NAME ),
+                'desc' => __( 'Super Title will be shown below the Title', WEBUZA_THEME_NAME ),
                 'id' => '_webuza_header_subtitle',
                 'type' => 'text',
                 'std' => ''

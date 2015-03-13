@@ -44,13 +44,20 @@ function shoestrap_title() {
  * Includes a <head> element and link.
  */
 function shoestrap_title_section( $header = true, $element = 'h1', $link = false, $class = 'entry-title', $postID = NULL ) {
-	$content  = $header ? '<header class="' . $class . '">' : '';
+	$options = get_post_custom($postID);
+	$title = count($options['_webuza_header_title']) ? $options['_webuza_header_title'][0] : get_the_title($postID);
+	$supertitle = $options['_webuza_header_supertitle'][0];
+	$subtitle = $options['_webuza_header_subtitle'][0];
+	$header_bg = $options['_webuza_header_bg'][0] ? 'background-image: url('.$options['_webuza_header_bg'][0].')' : '';
+	$content  = $header ? '<header class="' . $class . '" style="'. $header_bg .'">' : '';
 	$content .= '<div class="container">';
+	$content .= $supertitle ? '<p class="supertitle">'.$supertitle.'</p>' : '';
 	$content .= '<' . $element . '>';
 	$content .= $link ? '<a href="' . get_permalink() . '">' : '';
-	$content .= is_singular() ? shoestrap_title() : apply_filters( 'shoestrap_title', get_the_title($postID) );
+	$content .= is_singular() ? shoestrap_title() : apply_filters( 'shoestrap_title', $title );
 	$content .= $link ? '</a>' : '';
 	$content .= '</' . $element . '>';
+	$content .= $subtitle ? '<p class="subtitle">'.$subtitle.'</p>' : '';
 	$content .= '</div>';
 	$content .= $header ? '</header>' : '';
 

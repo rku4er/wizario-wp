@@ -58,7 +58,7 @@ if ( ! class_exists( 'Shoestrap_Layout' ) ) {
 
 				// Looking for a per-page template ?
 				if ( is_page() && is_page_template() ) {
-					if ( is_page_template( 'template-0.php' ) ) {
+					if ( is_page_template( 'template-0.php' ) || is_page_template( 'template-full.php' ) || is_page_template( 'template-demo.php' ) ) {
 						$shoestrap_layout = 0;
 					} elseif ( is_page_template( 'template-1.php' ) ) {
 						$shoestrap_layout = 1;
@@ -150,13 +150,13 @@ if ( ! class_exists( 'Shoestrap_Layout' ) ) {
 			}
 
 			if ( $target == 'primary' ) {
-				$class = $ss_framework->column_classes( array( $width => $primary ), 'strimg' );
+				$class = $ss_framework->column_classes( array( $width => $primary ), 'string' );
 			} elseif ( $target == 'secondary' ) {
-				$class = $ss_framework->column_classes( array( $width => $secondary ), 'strimg' );
+				$class = $ss_framework->column_classes( array( $width => $secondary ), 'string' );
 			} elseif ( $target == 'wrapper' ) {
-				$class = $ss_framework->column_classes( array( $width => $wrapper ), 'strimg' );
+				$class = $ss_framework->column_classes( array( $width => $wrapper ), 'string' );
 			} else {
-				$class = $ss_framework->column_classes( array( $width => $main ), 'strimg' );
+				$class = $ss_framework->column_classes( array( $width => $main ), 'string' );
 			}
 
 			if ( $echo ) {

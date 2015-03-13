@@ -19,6 +19,21 @@ var Shoestrap = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+      /*$("#accordion-toggle .panel-collapse").collapse({
+        toggle: true
+      });*/
+      $('div[role="tabpanel"]').each(function(){
+        $(this).find('.nav li:first a').tab('show');
+      });
+      $('[data-toggle="tooltip"]').tooltip();
+      $('.carousel .carousel-inner > .item:first').addClass('active');
+
+      $('.carousel').each(function(){
+        var $$ = $(this);
+        $$.carousel({
+          interval: $$.data('interval')
+        });
+      });
     }
   },
   // Home page

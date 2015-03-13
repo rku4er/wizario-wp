@@ -4,14 +4,25 @@
     Author: Webuza
     Author URI: http://themeforest.net/user/Webuza/portfolio
     Description: An Ultra Responsive Multi-Purpose Theme.
-    Version: 3.3.0
+    Version: 1.0
     License: GNU General Public License version 3.0
     License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 -------------------------------------------------------------------------*/
 
+hr{
+  clear:both; }
+
 img {
   max-width: 100%; }
+img.alignleft{
+  margin-bottom: 0.5em;
+  margin-right: 1.5em;
+}
+img.alignright{
+  margin-bottom: 0.5em;
+  margin-left: 1.5em;
+}
 
 /*====================>-Header-<===================*/
 .fixed {
@@ -747,6 +758,9 @@ abbr[title], abbr[data-original-title] {
       opacity: 1; }
     .widget-item:hover .xmd-h, .widget-item:hover .pub-date {
       opacity: 0; }
+    .widget-item:hover .xmd-h{
+      transform: translateY(-4.2rem);
+    }
 
 .caption-gallery {
   font-size: 18px;
@@ -847,8 +861,8 @@ abbr[title], abbr[data-original-title] {
   display: block;
   opacity: 0;
   margin-top: -80px;
-  -webkit-transition: 250ms opacity;
-          transition: 250ms opacity;
+  -webkit-transition: .4s opacity;
+          transition: .4s opacity;
   z-index: 1; }
 
 .pub-date {
@@ -856,7 +870,10 @@ abbr[title], abbr[data-original-title] {
   font-size: 1.3rem;
   color: #666;
   line-height: 16px;
-  line-height: 1.6rem; }
+  line-height: 1.6rem;
+  -webkit-transition: .4s opacity;
+          transition: .4s opacity;
+  }
 
 .xmd-h {
   margin: 0;
@@ -872,6 +889,8 @@ abbr[title], abbr[data-original-title] {
   font-weight: bold;
   text-transform: uppercase;
   margin: 0 0 7px;
+  -webkit-transition: opacity .4s, transform .4s;
+          transition: opacity .4s, transform .4s;
   letter-spacing: 0.5px; }
 
 .best-prop-block {
@@ -1510,7 +1529,8 @@ abbr[title], abbr[data-original-title] {
     color: #666; }
 
 .page-title {
-  background: url(assets/img/bg2.jpg) 0 0 no-repeat;
+  background-image: url(assets/img/bg2.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
   padding: 72px 0 56px; }
@@ -1983,8 +2003,8 @@ abbr[title], abbr[data-original-title] {
     color: #1dd2af;
     font-family: Georgia; }
 
-.nav-tabs-body-ctx {
-  padding-top: 26px; }
+/* .nav-tabs-body-ctx {
+  padding-top: 26px; } */
 
 .col-tab-2, .col-tab-content-8 {
   padding-left: 15px;
@@ -2155,7 +2175,7 @@ abbr[title], abbr[data-original-title] {
   font-size: 32px;
   font-size: 3.2rem;
   font-weight: 700;
-  line-height: 49px;
+  line-height: 56px;
   text-align: center;
   width: 56px;
   height: 56px;
@@ -2167,7 +2187,7 @@ abbr[title], abbr[data-original-title] {
   font-size: 56px;
   font-size: 5.6rem;
   font-weight: 700;
-  line-height: 46px;
+  line-height: 56px;
   text-align: center;
   width: 56px;
   height: 56px;
@@ -2180,7 +2200,7 @@ abbr[title], abbr[data-original-title] {
   font-size: 3.2rem;
   background: #96d534;
   font-weight: 700;
-  line-height: 49px;
+  line-height: 56px;
   text-align: center;
   width: 56px;
   height: 56px;
@@ -2466,3 +2486,69 @@ body[class*="portfolio-"] .content-holder{
   padding: 0 20px 0 35px !important;
 }
 #copyright-bar { line-height: inherit; }
+
+.panel.panel-default{
+  background-color: transparent;
+  border-width: 0 0 1px 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.panel-default .panel-heading{
+  background-color: transparent;
+  padding: 0;
+}
+
+.panel-group .panel-heading + .panel-collapse > .panel-body{
+  border-top: 0 none;
+}
+
+.nav-tabs > li >a,
+.nav-tabs-bordered > li >a,
+.nav-tabs-vertical > li >a,
+.nav-tabs-bordered-vertical > li >a{
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.nav-tabs > li >a{
+  margin-right: 0;
+  border-radius: 0;
+}
+.nav-tabs > li >a:hover,
+.nav-tabs > li >a:focus{
+  background-color: #f3f3f3;
+}
+
+.nav-tabs,
+.nav-tabs >li >a,
+.nav-tabs > li >a:hover,
+.nav-tabs > li >a:focus
+.nav-tabs-bordered,
+.nav-tabs-bordered >li >a,
+.nav-tabs-bordered > li >a:hover,
+.nav-tabs-bordered > li >a:focus,
+.nav-tabs-bordered-vertical > li + li{
+  border-color: #dbdbdb;
+}
+
+.nav-tabs-bordered > li >a:hover,
+.nav-tabs-bordered > li >a:focus,
+.nav-tabs-bordered-vertical > li >a:hover,
+.nav-tabs-bordered-vertical > li >a:focus{
+  background-color: transparent;
+}
+
+.nav-tabs-vertical.nav-stacked > li + li,
+.nav-tabs-bordered-vertical.nav-stacked > li + li{
+  margin-top: 0;
+}
+
+.nav-tabs-body-ctx h3{
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+}
