@@ -16,8 +16,8 @@ function shoestrap_scripts() {
     wp_register_style( 'flexslider_css', SHOESTRAP_ASSETS_URL . '/css/flexslider.css', false, '1.0.0', 'screen' );
 	wp_register_style( 'waves_css', SHOESTRAP_ASSETS_URL . '/css/waves.css', false, '1.0.0' );
 
-    wp_register_style( 'mobile_css', SHOESTRAP_ASSETS_URL . '/css/mobile.css', false, '1.0.0', 'screen and (max-width: 1179px)' );
-    wp_register_style( 'tablet_css', SHOESTRAP_ASSETS_URL . '/css/tablet.css', false, '1.0.0', 'screen and (min-width: 1180px) and (max-width: 1350px)' );
+    wp_register_style( 'mobile_css', SHOESTRAP_ASSETS_URL . '/css/mobile.css', false, '1.0.0', 'screen and (max-width: 1049px)' );
+    wp_register_style( 'tablet_css', SHOESTRAP_ASSETS_URL . '/css/tablet.css', false, '1.0.0', 'screen and (min-width: 1050px) and (max-width: 1349px)' );
     wp_register_style( 'desktop_css', SHOESTRAP_ASSETS_URL . '/css/desktop.css', false, '1.0.0', 'screen and (min-width: 1350px)' );
     wp_register_style( 'main_css', get_stylesheet_directory_uri() .'/style.css', false, '1.0.0' );
 
@@ -40,6 +40,7 @@ function shoestrap_scripts() {
 	wp_register_script( 'fitvids', SHOESTRAP_ASSETS_URL . '/js/vendor/jquery.fitvids.js',false, null, true  );
 
 	// new scripts
+    wp_register_script( 'jquery-ui', SHOESTRAP_ASSETS_URL . '/js/vendor/jquery-ui.min.js', array('jquery'), '1.0.0', true  );
 	wp_register_script( 'tweenmax', SHOESTRAP_ASSETS_URL . '/js/vendor/TweenMax.min.js', array('jquery'), '1.0.0', true  );
 	wp_register_script( 'scrollmagic', SHOESTRAP_ASSETS_URL . '/js/vendor/jquery.scrollmagic.min.js', array('jquery'), '1.0.0', true  );
 	wp_register_script( 'scrollmagic_debug', SHOESTRAP_ASSETS_URL . '/js/vendor/jquery.scrollmagic.debug.js', array('jquery'), '1.0.0', true  );
@@ -52,6 +53,7 @@ function shoestrap_scripts() {
 	wp_register_script( 'themepunch_revolution', SHOESTRAP_ASSETS_URL . '/js/vendor/jquery.themepunch.revolution.min.js', array('jquery'), '1.0.0', true  );
 	wp_register_script( 'flexslider', SHOESTRAP_ASSETS_URL . '/js/vendor/jquery.flexslider-min.js', array('jquery'), '1.0.0', true  );
     wp_register_script( 'piechart', SHOESTRAP_ASSETS_URL . '/js/vendor/jquery.easypiechart.min.js', array('jquery'), '1.0.0', true  );
+    wp_register_script( 'chart', SHOESTRAP_ASSETS_URL . '/js/vendor/chart.min.js', array('jquery'), '1.0.0', true  );
 	wp_register_script( 'isotope', SHOESTRAP_ASSETS_URL . '/js/vendor/isotope.min.js', array('jquery'), '1.0.0', true  );
     wp_register_script( 'main', SHOESTRAP_ASSETS_URL . '/js/vendor/main.js', array('jquery'), '1.0.0', true  );
     wp_register_script( 'main_js', SHOESTRAP_ASSETS_URL . '/js/_main.js', array('main'), '1.0.0', true  );
@@ -62,18 +64,20 @@ function shoestrap_scripts() {
 	wp_enqueue_script( 'fitvids' );
 
 	// enqueue new scripts
-	wp_enqueue_script( 'tweenmax' );
-	wp_enqueue_script( 'scrollmagic' );
-	wp_enqueue_script( 'scrollmagic_debug' );
-	wp_enqueue_script( 'easing' );
-	wp_enqueue_script( 'waves' );
-	wp_enqueue_script( 'hoverintent' );
-	wp_enqueue_script( 'superfish' );
-	wp_enqueue_script( 'smooth' );
-	wp_enqueue_script( 'themepunch_plugins' );
-	wp_enqueue_script( 'themepunch_revolution' );
+    wp_enqueue_script( 'jquery-ui' );
+    wp_enqueue_script( 'tweenmax' );
+    wp_enqueue_script( 'scrollmagic' );
+    wp_enqueue_script( 'scrollmagic_debug' );
+    wp_enqueue_script( 'easing' );
+    wp_enqueue_script( 'waves' );
+    wp_enqueue_script( 'hoverintent' );
+    wp_enqueue_script( 'superfish' );
+    wp_enqueue_script( 'smooth' );
+    wp_enqueue_script( 'themepunch_plugins' );
+    wp_enqueue_script( 'themepunch_revolution' );
     wp_enqueue_script( 'flexslider' );
-	wp_enqueue_script( 'piechart' );
+    wp_enqueue_script( 'piechart' );
+    wp_enqueue_script( 'chart' );
     wp_enqueue_script( 'isotope' );
     wp_enqueue_script( 'main' );
 	wp_enqueue_script( 'main_js' );

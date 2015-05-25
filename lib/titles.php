@@ -48,8 +48,11 @@ function shoestrap_title_section( $header = true, $element = 'h1', $link = false
 	$title = count($options['_webuza_header_title']) ? $options['_webuza_header_title'][0] : get_the_title($postID);
 	$supertitle = $options['_webuza_header_supertitle'][0];
 	$subtitle = $options['_webuza_header_subtitle'][0];
-	$header_bg = $options['_webuza_header_bg'][0] ? 'background-image: url('.$options['_webuza_header_bg'][0].')' : '';
-	$content  = $header ? '<header class="' . $class . '" style="'. $header_bg .'">' : '';
+	$header_bg = $options['_webuza_header_bg'][0] ? ' background-image: url('.$options['_webuza_header_bg'][0].');' : '';
+	$header_height = $options['_webuza_header_bg_height'][0] ? ' height:'.$options['_webuza_header_bg_height'][0].'px;' : '';
+	$header_align = $options['_webuza_header_align'][0] ? ' text-align:'.$options['_webuza_header_align'][0].';' : '';
+	$style = $header_bg . $header_height . $header_align;
+	$content  = $header ? '<header class="' . $class . '" style="'. $style. '">' : '';
 	$content .= '<div class="container">';
 	$content .= $supertitle ? '<p class="supertitle">'.$supertitle.'</p>' : '';
 	$content .= '<' . $element . '>';

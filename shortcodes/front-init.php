@@ -1,5 +1,130 @@
 <?php
 
+/***** Headings *****/
+function webuza_heading( $attr, $content = null ){
+    extract( shortcode_atts( array( 'type' => __( 'Html Tag (H1, H2, ..., H6)', WEBUZA_THEME_NAME ) ), $attr ) );
+    return '<' . $type. '>'. do_shortcode( $content ) . '</' . $type . '>';
+}
+add_shortcode('heading', 'webuza_heading');
+
+/*** Our Main Service ***/
+function webuza_main_services( $attr, $content = null ){
+    return '<div class="main-services">' . do_shortcode( $content ) . '</div>';
+}
+add_shortcode( 'main_services', 'webuza_main_services' );
+
+/*** Left/Right Aligned item(image) ***/
+function webuza_aligned_item( $attr, $content = null ){
+    extract(
+        shortcode_atts( array(
+            'align' => __( 'Align', WEBUZA_THEME_NAME ),
+            'margin_bottom' => __( 'Margin Bottom', WEBUZA_THEME_NAME ),
+        ), $attr )
+    );
+    return '<div class="align-item-' . $align . '" style="margin-bottom: '.$margin_bottom.';">'. do_shortcode( $content ) . '</div>';
+}
+add_shortcode( 'aligned_item', 'webuza_aligned_item' );
+
+/*** Full Width Section ***/
+function webuza_full_width_section( $atts, $content = null ) {
+    extract(
+        shortcode_atts ( array(
+            "top_padding" => "40",
+            "bottom_padding" => "40",
+            'background_color'=> '',
+            'border_color'=> '',
+        ), $atts )
+    );
+
+    $style = null;
+    $etxra_class = null;
+
+    $parallax_class = 'standard_section';
+    $style .= 'padding-top: '. $top_padding .'px; ';
+    $style .= 'padding-bottom: '. $bottom_padding .'px; ';
+    $style .= 'background-color: #'. $background_color .'; ';
+    $style .= 'border-color: #' . $border_color .'; ';
+    return '<div id="'.uniqid( "wbz_" ).'" class="full-width-section ' . $parallax_class . ' " style="'. $style .'">' . do_shortcode( $content ) . '</div>';
+}
+add_shortcode( 'full_width_section', 'webuza_full_width_section' );
+
+/*** Standard Icons ***/
+function webuza_icon( $attr ){
+    extract( shortcode_atts( array(
+            'image' => __( 'Icon id', WEBUZA_THEME_NAME ),
+            'size'  => __( 'Icon size', WEBUZA_THEME_NAME )
+        ), $attr )
+    );
+    return '<span class="icon"><i class="' . $image . ' ' . $size . '"></i></span>';
+}
+add_shortcode( 'icon', 'webuza_icon' );
+
+/*** Social Icons ***/
+function webuza_social_icon( $attr ){
+    extract( shortcode_atts( array(
+            'image' => __( 'Icon id', WEBUZA_THEME_NAME ),
+            'size'  => __( 'Icon size', WEBUZA_THEME_NAME )
+        ), $attr )
+    );
+    return '<span class="icon"><i class="' . $image . ' ' . $size . '"></i></span>';
+}
+add_shortcode( 'social_icon', 'webuza_social_icon' );
+
+/*** Set Your Style for Icon ***/
+function webuza_custom_icon( $attr ){
+    extract( shortcode_atts( array(
+            'image' => __( 'Icon id', WEBUZA_THEME_NAME ),
+            'custom_image' => __( 'Custom Image', WEBUZA_THEME_NAME ),
+            'size'  => __( 'Font size', WEBUZA_THEME_NAME ),
+            'color'  => __( 'Icon color', WEBUZA_THEME_NAME ),
+            'bkg_color'  => __( 'Background Color', WEBUZA_THEME_NAME ),
+            'border_width'  => __( 'Border Width', WEBUZA_THEME_NAME ),
+            'border_radius'  => __( 'Border radius', WEBUZA_THEME_NAME ),
+            'padding'  => __( 'Padding', WEBUZA_THEME_NAME ),
+            'margin_bottom' => __( 'Margin Bottom', WEBUZA_THEME_NAME )
+        ), $attr )
+    );
+
+
+
+
+    $style_wrap = 'style="background-color: #' . $bkg_color . '; border: ' . $border_width. ' solid #' . $color . '; padding: ' . $padding . '; ';
+    if( $margin_bottom != 'auto' ) {
+        $style_wrap .= 'margin-bottom: ' . $margin_bottom . ';';
+    }
+    $style_wrap .= ' border-radius: ' . $border_radius . ';';
+    $style_wrap .= '"';
+    $style_icon = 'style="font-size: ' . $size . '; color: #' . $color . ';"';
+
+    if( $custom_image != 'Custom Image' ){
+        $_image_wh = getimagesize( $custom_image );
+        $_image_width = $_image_wh[0];
+        $_image_height = $_image_wh[1];
+        if( $_image_width == $_image_height ){
+            $_span_size = $_image_width;
+            $_span_padding = 'padding: 0px;';
+        }elseif( $_image_width > $_image_height ){
+            $_span_size = $_image_width;
+            $_tmp = ( $_image_width - $_image_height ) / 2;
+            $_span_padding = 'padding-top: '.$_tmp.'px ;';
+        }elseif( $_image_width < $_image_height ){
+            $_span_size = $_image_height;
+            $_tmp = ( $_image_height - $_image_width ) / 2;
+            $_span_padding = 'padding-left: '.$_tmp.'px; padding-right: '.$_tmp.'px;';
+        }
+        $_item = '<span style="'. $_span_size .'px; height: '. $_span_size .'px; display: block; '. $_span_padding .' "><img src="' . $custom_image . '" style="display: table-cell;" /></span>';
+    } else {
+        $_item = '<i class="' . $image . '" ' . $style_icon . ' ></i>';
+    }
+
+    $output = '<span class="icon custom';
+    if( $margin_bottom == 'auto' ) { $output .= ' mauto'; }
+    $output .= '" ' . $style_wrap . ' >'. $_item .'</span>';
+
+    return $output;
+}
+add_shortcode('custom_icon', 'webuza_custom_icon');
+
 /*** Table ***/
 function webuza_table( $attr, $content = null){
     extract(
@@ -59,91 +184,6 @@ function webuza_promo_box( $attr, $content = null ){
     return '<div class="promo_box">' . do_shortcode( $content ) . '</div>';
 }
 add_shortcode( 'promo_box', 'webuza_promo_box' );
-
-
-#-----------------------------------------------------------------#
-# Icons ShortCodes
-#-----------------------------------------------------------------#
-
-/*** Standard Icons ***/
-function webuza_icon( $attr ){
-    extract( shortcode_atts( array(
-            'image' => __( 'Icon id', WEBUZA_THEME_NAME ),
-            'size'  => __( 'Icon size', WEBUZA_THEME_NAME )
-        ), $attr )
-    );
-    return '<span class="icon"><i class="fa ' . $image . ' ' . $size . '"></i></span>';
-}
-add_shortcode( 'icon', 'webuza_icon' );
-
-/*** Social Icons ***/
-function webuza_social_icon( $attr ){
-    extract( shortcode_atts( array(
-            'image' => __( 'Icon id', WEBUZA_THEME_NAME ),
-            'size'  => __( 'Icon size', WEBUZA_THEME_NAME )
-        ), $attr )
-    );
-    return '<span class="icon"><i class="fa ' . $image . ' ' . $size . '"></i></span>';
-}
-add_shortcode( 'social_icon', 'webuza_social_icon' );
-
-/*** Set Your Style for Icon ***/
-function webuza_custom_icon( $attr ){
-    extract( shortcode_atts( array(
-            'image' => __( 'Icon id', WEBUZA_THEME_NAME ),
-            'custom_image' => __( 'Custom Image', WEBUZA_THEME_NAME ),
-            'size'  => __( 'Font size', WEBUZA_THEME_NAME ),
-            'color'  => __( 'Icon color', WEBUZA_THEME_NAME ),
-            'bkg_color'  => __( 'Background Color', WEBUZA_THEME_NAME ),
-            'border_width'  => __( 'Border Width', WEBUZA_THEME_NAME ),
-            'border_radius'  => __( 'Border radius', WEBUZA_THEME_NAME ),
-            'padding'  => __( 'Padding', WEBUZA_THEME_NAME ),
-            'margin_bottom' => __( 'Margin Bottom', WEBUZA_THEME_NAME )
-        ), $attr )
-    );
-
-    $style_wrap = 'style="background-color: #' . $bkg_color . '; border: ' . $border_width. ' solid #' . $color . '; padding: ' . $padding . '; ';
-    if( $margin_bottom != 'auto' ) {
-        $style_wrap .= 'margin-bottom: ' . $margin_bottom . ';';
-    }
-    $style_wrap .= ' border-radius: ' . $border_radius . ';';
-    $style_wrap .= '"';
-    $style_icon = 'style="font-size: ' . $size . '; color: #' . $color . ';"';
-
-    if( $custom_image != 'Custom Image' ){
-        $_image_wh = getimagesize( $custom_image );
-        $_image_width = $_image_wh[0];
-        $_image_height = $_image_wh[1];
-        if( $_image_width == $_image_height ){
-            $_span_size = $_image_width;
-            $_span_padding = 'padding: 0px;';
-        }elseif( $_image_width > $_image_height ){
-            $_span_size = $_image_width;
-            $_tmp = ( $_image_width - $_image_height ) / 2;
-            $_span_padding = 'padding-top: '.$_tmp.'px ;';
-        }elseif( $_image_width < $_image_height ){
-            $_span_size = $_image_height;
-            $_tmp = ( $_image_height - $_image_width ) / 2;
-            $_span_padding = 'padding-left: '.$_tmp.'px; padding-right: '.$_tmp.'px;';
-        }
-        $_item = '<span style="'. $_span_size .'px; height: '. $_span_size .'px; display: block; '. $_span_padding .' "><img src="' . $custom_image . '" style="display: table-cell;" /></span>';
-    } else {
-        $_item = '<i class="fa ' . $image . '" ' . $style_icon . ' ></i>';
-    }
-
-    $output = '<span class="icon custom';
-    if( $margin_bottom == 'auto' ) { $output .= ' mauto'; }
-    $output .= '" ' . $style_wrap . ' >'. $_item .'</span>';
-
-    return $output;
-}
-add_shortcode('custom_icon', 'webuza_custom_icon');
-
-/*** Our Main Service ***/
-function webuza_main_services( $attr, $content = null ){
-    return '<div class="main-services">' . do_shortcode( $content ) . '</div>';
-}
-add_shortcode( 'main_services', 'webuza_main_services' );
 
 #-----------------------------------------------------------------#
 # Other ShortCodes

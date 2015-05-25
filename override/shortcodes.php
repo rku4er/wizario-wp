@@ -48,7 +48,7 @@ function shoestrap_address( $attr, $content = null ){
 }
 
 // Icon
-add_shortcode( 'my_icon', 'shoestrap_icon' );
+add_shortcode( 'icon', 'shoestrap_icon' );
 function shoestrap_icon( $attr ){
     extract(
         shortcode_atts( array(
@@ -58,6 +58,58 @@ function shoestrap_icon( $attr ){
 
     return '<i class="fa fa-'. $slug .'"></i>';
 }
+
+/*** Set Your Style for Icon ***/
+/*add_shortcode('custom_icon', 'webuza_custom_icon');
+function webuza_custom_icon( $attr ){
+    extract( shortcode_atts( array(
+            'image' => __( 'Icon id', WEBUZA_THEME_NAME ),
+            'custom_image' => __( 'Custom Image', WEBUZA_THEME_NAME ),
+            'size'  => __( 'Font size', WEBUZA_THEME_NAME ),
+            'color'  => __( 'Icon color', WEBUZA_THEME_NAME ),
+            'bkg_color'  => __( 'Background Color', WEBUZA_THEME_NAME ),
+            'border_width'  => __( 'Border Width', WEBUZA_THEME_NAME ),
+            'border_radius'  => __( 'Border radius', WEBUZA_THEME_NAME ),
+            'padding'  => __( 'Padding', WEBUZA_THEME_NAME ),
+            'margin_bottom' => __( 'Margin Bottom', WEBUZA_THEME_NAME )
+        ), $attr )
+    );
+
+    $style_wrap = 'style="background-color: #' . $bkg_color . '; border: ' . $border_width. ' solid #' . $color . '; padding: ' . $padding . '; ';
+    if( $margin_bottom != 'auto' ) {
+        $style_wrap .= 'margin-bottom: ' . $margin_bottom . ';';
+    }
+    $style_wrap .= ' border-radius: ' . $border_radius . ';';
+    $style_wrap .= '"';
+    $style_icon = 'style="font-size: ' . $size . '; color: #' . $color . ';"';
+
+    if( $custom_image != 'Custom Image' ){
+        $_image_wh = getimagesize( $custom_image );
+        $_image_width = $_image_wh[0];
+        $_image_height = $_image_wh[1];
+        if( $_image_width == $_image_height ){
+            $_span_size = $_image_width;
+            $_span_padding = 'padding: 0px;';
+        }elseif( $_image_width > $_image_height ){
+            $_span_size = $_image_width;
+            $_tmp = ( $_image_width - $_image_height ) / 2;
+            $_span_padding = 'padding-top: '.$_tmp.'px ;';
+        }elseif( $_image_width < $_image_height ){
+            $_span_size = $_image_height;
+            $_tmp = ( $_image_height - $_image_width ) / 2;
+            $_span_padding = 'padding-left: '.$_tmp.'px; padding-right: '.$_tmp.'px;';
+        }
+        $_item = '<span style="'. $_span_size .'px; height: '. $_span_size .'px; display: block; '. $_span_padding .' "><img src="' . $custom_image . '" style="display: table-cell;" /></span>';
+    } else {
+        $_item = '<i class="fa ' . $image . '" ' . $style_icon . ' ></i>';
+    }
+
+    $output = '<span class="icon custom';
+    if( $margin_bottom == 'auto' ) { $output .= ' mauto'; }
+    $output .= '" ' . $style_wrap . ' >'. $_item .'</span>';
+
+    return $output;
+}*/
 
 // lorem-block
 add_shortcode( 'lorem_block', 'shoestrap_lorem_block' );
@@ -361,4 +413,106 @@ function webuza_toggle( $attr, $content = null ){
                     '<div class="panel-body">'.$content.'</div>'.
                 '</div>'.
             '</div>';
+}
+
+/** Progressbar ***/
+add_shortcode( 'progressbar', 'webuza_progressbar' );
+function webuza_progressbar( $attr, $content = null ){
+    extract(
+        shortcode_atts( array(
+            'color' => 'fff',
+            'caret_color' => 'fff',
+            'caret_bg_color' => '202020',
+            'bg_color' => '1',
+            'percent' => '100'
+        ), $attr )
+    );
+
+    $class = '';
+
+    if(strlen($bg_color) < 2) {
+        $class = 'color__type-'.$bg_color;
+        $bg_color = '';
+    }
+
+    $id = mt_rand(0, 9999);
+    $content = do_shortcode( preg_replace( "/\s?<br\s?[^>?]>\s?/", '', $content ) );
+
+    return '<div id="progress-'.$id.'" class="js-progressbar '.$class.'" data-graph-percent="'.$percent.'" data-graph-color="'.$color.'" data-graph-bg_color="'.$bg_color.'">'.
+                '<div class="progressbar-title">'.$content.'</div>'.
+            '</div>'.
+            '<style>'.
+                '#progress-'.$id.' .icon-caret-right {'.
+                    'border-left-color: #'.$bg_color.
+                '}'.
+                '#progress-'.$id.' .progressbar-title {'.
+                    'color: #'.$color.
+                    ';text-shadow: none'.
+                '}'.
+                '#progress-'.$id.' .ui-progressbar-value {'.
+                    'background-color: #'.$bg_color.
+                '}'.
+                '#progress-'.$id.' .graph-percent {'.
+                    ';background-color: #'.$caret_bg_color.
+                '}'.
+                '#progress-'.$id.' .graph-percent span{'.
+                    'color: #'.$caret_color.
+                '}'.
+            '</style>';
+}
+
+/** Pie Chart ***/
+add_shortcode( 'pie_chart', 'webuza_pie_chart' );
+function webuza_pie_chart( $attr, $content = null ){
+    extract(
+        shortcode_atts( array(
+            'width' => '500',
+            'height' => '500',
+            'json' => '{"legend":"Legend Default","value":100,"color":"#ff9900","highlight":"#d78203","label":"Chart"}',
+        ), $attr )
+    );
+
+    $items = json_decode('['.$json.']', true);
+
+    if(count($items)){
+        $legends = '';
+
+        $i = 0;
+        foreach($items as $item){
+            $i++;
+            $legends .= '<li><b class="pie-'.$i.'"></b> '.$item['legend'].'</li>';
+        }
+
+        $id = mt_rand(0, 9999);
+        $content = do_shortcode( preg_replace( "/\s?<br\s?[^>?]>\s?/", '', $content ) );
+
+        return '<div class="canvas-holder">'.
+                    '<canvas id="pie_chart-'.$id.'" data-settings="'.esc_attr('['.$json.']').'" class="pie-chart" width="'.$width.'" height="'.$height.'"></canvas>'.
+                '</div>'.
+                '<div class="legend-info">'.
+                    '<ul class="l-list">'.$legends.'</ul>'.
+                '</div>';
+    }
+}
+
+/** Easychart ***/
+add_shortcode( 'easy_chart', 'webuza_easy_chart' );
+function webuza_easy_chart( $attr, $content = null ){
+    extract(
+        shortcode_atts( array(
+            'percent' => '100',
+            'json' => '{"size":210,"line_width":30,"bar_color":"#34d5b6","track_color":"#f3f3f3","scale_length":0,"line_cap":"square"}',
+        ), $attr )
+    );
+
+    $items = json_decode('['.$json.']', true);
+
+    if(count($items)){
+        $id = mt_rand(0, 9999);
+        $content = do_shortcode( preg_replace( "/\s?<br\s?[^>?]>\s?/", '', $content ) );
+
+        return  '<span id="easy_chart-'.$id.'" class="easy-chart" data-percent="'.$percent.'">'.
+                    '<span class="percent">'.$percent.'</span>'.
+                '</span>';
+    }
 }

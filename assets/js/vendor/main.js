@@ -374,27 +374,6 @@
 			},
 
 			initPieChart: function() {
-				var doughnutData = [
-						{
-							value: 60,
-							color:"#ff9900",
-							highlight: "#d78203",
-							label: "Red"
-						},
-						{
-							value: 300,
-							color: "#34d5b6",
-							highlight: "#20c1a2",
-							label: "Grey"
-						},
-						{
-							value: 120,
-							color: "#96d534",
-							highlight: "#77b21c",
-							label: "Dark Grey"
-						}
-
-					];
 
 					function hasClassName(classname,id) {
 					  return  String ( ( document.getElementById(id)||{} ) .className )
@@ -402,21 +381,24 @@
 					         .indexOf(classname) >= 0;
 					}
 
-
-					if (hasClassName('','chart-area')) {
-						window.onload = function() {
-							var ctx = document.getElementById("chart-area").getContext("2d");
+					window.onload = function() {
+						$('.pie-chart').each(function(){
+							var doughnutData = $(this).data('settings');
+							var ctx = this.getContext("2d");
 							var myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
 								responsive : true,
 								animationEasing : "ease",
 								segmentShowStroke : false,
 								animationSteps: 40,
 							});
-						}
+						});
 					}
 
 
-					$('.chart').easyPieChart({
+					$('.easy-chart').each(function(){
+						var doughnutData = $(this).data('settings');
+
+						$(this).easyPieChart({
 							lineWidth: 30,
 							barColor: "#34d5b6",
 							trackColor: "#f3f3f3",
@@ -426,6 +408,7 @@
 							onStep: function(from, to, currentValue) {
 								$(this.el).find('.percent').text(Math.round(currentValue));
 							}
+						});
 					});
 
 			},

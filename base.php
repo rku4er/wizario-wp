@@ -18,7 +18,7 @@
 		<?php do_action( 'shoestrap_pre_wrap' ); ?>
 
 		<?php
-			$options = get_post_custom(get_the_ID());
+			$options = get_post_custom($wp_query->queried_object->ID);
     		$top_offset = $options['_webuza_header_style'][0] == 'style1' ? 'top-offset' : '';
     		$header_class = $options['_webuza_header_style'][0] == 'style1' ? 'page-title' : 'page-header';
 		?>

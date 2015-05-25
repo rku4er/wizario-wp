@@ -71,7 +71,7 @@
             <ul>
             <?php foreach($social_icons as $icon_id => $icon_name): ?>
                 <li onclick="webuza_add_click_icon_event(this);">
-                    <i class="<?php echo $icon_id ?> icon-large" id="<?php echo $icon_id ?>" />
+                    <i class="<?php echo $icon_id ?> fa fa-lg" id="<?php echo $icon_id ?>" />
                 </li>
             <?php endforeach; ?>
             </ul>
@@ -89,7 +89,7 @@
                 <ul>
                 <?php foreach($icon as $icon_id => $icon_name): ?>
                     <li onclick="webuza_add_click_icon_event(this);">
-                        <i class="<?php echo $icon_id ?> icon-large" id="<?php echo $icon_id ?>" />
+                        <i class="<?php echo $icon_id ?> fa fa-lg" id="<?php echo $icon_id ?>" />
                     </li>
                 <?php endforeach; ?>
                 </ul>

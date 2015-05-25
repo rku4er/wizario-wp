@@ -524,9 +524,9 @@ $short_codes[] = array(
             'title' => __( 'Size', WEBUZA_THEME_NAME ),
             'type' => 'select',
             'options' => array(
-                'icon-large' => __( 'Small', WEBUZA_THEME_NAME ),
-                'icon-2x' => __( 'Medium', WEBUZA_THEME_NAME ),
-                'icon-4x' => __( 'Large', WEBUZA_THEME_NAME ),
+                'fa-lg' => __( 'Small', WEBUZA_THEME_NAME ),
+                'fa-2x' => __( 'Medium', WEBUZA_THEME_NAME ),
+                'fa-4x' => __( 'Large', WEBUZA_THEME_NAME ),
             ),
             'std' => 'small'
         ),
